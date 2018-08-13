@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "나는 어떻게 구글에서 자료를 찾을 수 있을까-2?"
-date:   2018-08-05 00:45:22 +0900
+date:   2018-08-13 00:45:22 +0900
 categories: jekyll update
 ---
 첫번째 포스팅에선 초월적 활자규약과 http에 관한 이야기를 잠깐 했다. 
@@ -17,11 +17,12 @@ categories: jekyll update
 - DNS는 위의 그림처럼 재귀적으로 다른 DNS서버들을 호출하며 유저가 입력한 URL 값에 해당하는 실제 IP를 알아낸다. 결과적으로, 자연어 URL을 실제 https://www.google.com의 아이피 주소로 이동시키는 일이 그 다음에 일어난다. 
 
  ![img]({{ "/assets/img/tracert.png"|absolute_url}})
+
  ** 덤 **
 cmd 창에서 tracert(trace route) google.com 을 쳐보면 흥미로운 결과가 나온다. 바로 해당 사이트의 실제 IP 주소가 나오는 것! 실제로 스샷에서 나온 주소로 들어가보니 google 메인 화면이 떴다. 
 
 
-https://webhostinggeeks.com/guides/dns/
+[같이 보면 좋은 링크](https://webhostinggeeks.com/guides/dns/)
 
 
 
