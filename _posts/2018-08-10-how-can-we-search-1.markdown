@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "나는 어떻게 구글에서 자료를 찾을 수 있을까?"
+title:  "나는 어떻게 구글에서 자료를 찾을 수 있을까-1?"
 date:   2018-08-05 00:45:22 +0900
 img: google1.png
 categories: jekyll update
@@ -16,7 +16,7 @@ categories: jekyll update
  
 -	브라우저를 키면 기본으로 설정되어 있는 주소창의 https://www.google.com 의 https가 바로 이 애플리케이션 계층의 프로토콜이다. 초월적 활자 이동 규약이라는 뜻의 hyper text transfer protocol 은 말 그대로 이 텍스트에서 저 텍스트로 링크를 통한 널뛰기가 가능하다는 뜻이다. 
 
--	그럼 [초월적 활자 이동 규약]://www.google.com 은 어떻게 나에게 구글의 메인 화면을 띄워주는 걸까? 질문은 꼬리에 꼬리를 문다. [바로 이런것이다]([http://tlonist.github.io/jekyll/update/2018/08/05/how-can-we-search-2.html)
+-	그럼 [초월적 활자 이동 규약]://www.google.com 은 어떻게 나에게 구글의 메인 화면을 띄워주는 걸까? 질문은 꼬리에 꼬리를 문다. [바로 이런것이다](http://tlonist.github.io/jekyll/update/2018/08/05/how-can-we-search-2.html)
 
 
 ** 배경 지식 **
