@@ -2,7 +2,7 @@
 layout: post
 title:  "나는 어떻게 구글에서 자료를 찾을 수 있을까-3?"
 date:   2018-08-15 00:45:22 +0900
-categories: 네트워크
+categories: Network
 ---
 
 #3. 

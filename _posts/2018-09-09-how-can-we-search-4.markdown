@@ -2,7 +2,8 @@
 layout: post
 title:  "나는 어떻게 구글에서 자료를 찾을 수 있을까-4?"
 date:   2018-09-09 12:00:00 +0900
-categories: 네트워크
+comments: true
+categories: Network
 ---
 
 #4. 
@@ -11,10 +12,12 @@ categories: 네트워크
 
 
  ![img]({{ "/assets/img/router.jpg"|absolute_url}})
+
 요즘은 공유기+라우터 일체인 경우가 많아서, 먼저 요녀석부터 봐보자. 라우터는 저번 포스팅에서 살펴봤듯이 하나의 closed network 안에서 IP를 부여해주는 NAT(Network Address Translation)과 DHCP, DNS 서버등을 가지고 있고 Default Gateway로 다른 subnetwork들과의 통신을 가능케 하는 멋진 녀석이다. 공유기 기능이 들어간 라우터는 한가지 기능이 더 있는데, 바로 서브네트워크를 공유할 수 있도록 하는 기능이다. 만약 집/회사/공공장소에서 딱 하나의 기기만 네트워크에 연결되길 바란다면 이 공유기는 필요없다. 하지만 다수의 기기가 라우터를 통해 네트워크에 연결되어 인터넷망을 사용하고 싶다면, 공유기가 반드시 필요하다. 공유기란, 한마디로 유선 LAN을 통해서건 Wireless LAN을 통해서건, 이미 존재하는 네트워크 망을 여러 기기와 공유할 수 있도록 하는 장치다. 
 
 
 ![img]({{ "/assets/img/cable_modem.jpg"|absolute_url}})
+
 케이블 모뎀에 대해서 알아보자. ISP (Internet Service Provider)가 이때부터 본격적으로 등장한다. 한 개인이 네트워크를 위해서 케이블을 깔고 직접 컴퓨터들을 연결할 수는 없으니, 대부분은 인터넷 서비스를 제공하는 회사가 미리 구축한 시스템을 이용한다. 
 인터넷 패킷은 예전부터 크게 1) TV의 회선을 이용하는 방법 과 2)전화 회선을 이용하는 방법으로 나뉘는데, 케이블 모뎀은 바로 1)의 방법을 이용한다. 모뎀(MODEM)이란 modulat or/demodulator의 약자로 케이블에서 오는 아날로그 신호를 modulate해서 디지털 신호로 바꿔주고, 다시 디지털 신호를 demodulate해서 아날로그 신호로 바꿔주는 장치이다. 
 
