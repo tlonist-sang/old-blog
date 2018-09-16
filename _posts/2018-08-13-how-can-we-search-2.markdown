@@ -3,6 +3,7 @@ layout: post
 title:  "나는 어떻게 구글에서 자료를 찾을 수 있을까-2?"
 date:   2018-08-13 00:45:22 +0900
 categories: Network
+comments: true
 ---
 첫번째 포스팅에선 초월적 활자규약과 http에 관한 이야기를 잠깐 했다. 
 궁금증이 사실 전혀 해소되지 않았다. 다음 행동으로 가보자. [같이 보면 좋은 링크](https://webhostinggeeks.com/guides/dns/
