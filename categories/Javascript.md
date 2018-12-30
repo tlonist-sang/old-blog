@@ -2,6 +2,5 @@
 
 layout: category
 
-title:  General
-
+title:  Javascript
 ---

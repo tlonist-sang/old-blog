@@ -2,6 +2,6 @@
 
 layout: category
 
-title:  Blogging
+title:  Java
 
 ---
