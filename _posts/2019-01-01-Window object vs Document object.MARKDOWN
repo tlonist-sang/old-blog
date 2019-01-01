@@ -76,25 +76,8 @@ This posting will answer the following questions.
 	$(document).ready(function(){}) http://learn.jquery.com/using-jquery-core/document-ready/
 	document.onload is called when the DOM is ready, which can be prior to images and other external sources that should be loaded. Code included inside will only run once the page Document Object Model is ready for javascript code to execute; hence it is different from $(window).on("load", function()) in terms of the execution timing.  
 
-	<html>
-	<head>
-	    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-	    <script>
-	    $( document ).ready(function() {
-	        console.log( "document loaded" );
-	    });
-	 
-	    $( window ).on( "load", function() {
-	        console.log( "window loaded" );
-	    });
-	    </script>
-	</head>
-	<body>
-	    <iframe src="http://techcrunch.com"></iframe>
-	</body>
-	</html>
 
-
+<div class="colorscripter-code" style="color:#010101; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#fafafa; border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px; border-right:2px solid #e5e5e5"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#666; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div><div style="line-height:130%">10</div><div style="line-height:130%">11</div><div style="line-height:130%">12</div><div style="line-height:130%">13</div><div style="line-height:130%">14</div><div style="line-height:130%">15</div><div style="line-height:130%">16</div><div style="line-height:130%">17</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#010101; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;html&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;head&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src="https://code.jquery.com/jquery-1.9.1.min.js"&gt;&lt;/script&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;$(&nbsp;document&nbsp;).ready(function()&nbsp;{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(&nbsp;"document&nbsp;loaded"&nbsp;);</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;});</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;$(&nbsp;window&nbsp;).on(&nbsp;"load",&nbsp;function()&nbsp;{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(&nbsp;"window&nbsp;loaded"&nbsp;);</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;});</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;/head&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;body&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&lt;iframe&nbsp;src="http://techcrunch.com"&gt;&lt;/iframe&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;/body&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;/html&gt;</div></div><div style="text-align:right; margin-top:-13px; margin-right:5px; font-size:9px; font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#e5e5e5; text-decoration:none">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none; color:white"><span style="font-size:9px; word-break:normal; background-color:#e5e5e5; color:white; border-radius:10px; padding:1px">cs</span></a></td></tr></table></div>
 	
 
 
