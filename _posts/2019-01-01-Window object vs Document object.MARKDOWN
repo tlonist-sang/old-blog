@@ -3,7 +3,7 @@ layout: post
 title:  "Window? Document? stop confusing me"
 date:   2018-12-30 12:00:00 +0900
 comments: true
-categories: Javascript
+categories: JavaScript
 ---
 
 This posting will answer the following questions.
