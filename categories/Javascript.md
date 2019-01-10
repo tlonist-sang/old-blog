@@ -2,5 +2,5 @@
 
 layout: category
 
-title:  Javascript
+title:  JavaScript
 ---
