@@ -16,7 +16,6 @@ What exactly is the difference between HTML and Javascript? I couldn't answer th
 
 2. What is JavaScript? (http://web.stanford.edu/class/cs98si/slides/overview.html)
 - It is a programming language for the web that can update and change both HTML and CSS. JavaScript can calculate, manipulate and validate data. Its name has nothing to do with another famous programming language Java. (Mocha -> Livescript -> JavaScript). 
-
 - JavaScript is an interpreted language, not a compiled language. Interpreter in the browser reads over the JavaScript code, interprets each line, and runs it. 
 
 
