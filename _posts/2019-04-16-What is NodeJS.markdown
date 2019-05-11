@@ -6,13 +6,13 @@ comments: true
 categories: JavaScript
 ---
 
-#What is NodeJS?
+# What is NodeJS?
 
 In this posting, I will write about what NodeJS is.
 It will be sort of like a summary of the posting below.
 (https://medium.freecodecamp.org/what-exactly-is-node-js-ae36e97449f5)
 
-###Table of contents
+### Table of contents
 - Gibberish
 - Before Node.js 
 - Now with Node.js
@@ -52,9 +52,9 @@ This pretty much sums it up. Here is a good diagram that help understand this al
 
 4. Single Thread (just look it up)
 
-√√√
+```
 Hello NodeJS! (formatting syntax test)
-√√√
+```
 
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
