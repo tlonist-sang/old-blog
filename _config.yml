@@ -30,7 +30,8 @@ plugins:
   - jekyll-feed
 disqus:
   shortname: steadystack
-
+#Google Analytics
+google_analytics: UA-139982514-1
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
