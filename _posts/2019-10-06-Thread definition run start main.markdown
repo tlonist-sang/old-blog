@@ -6,7 +6,7 @@ comments: true
 categories: Java
 ---
 
-## [[Thread]]
+## Thread
 
 > #### Definitions : Process and Thread
 
