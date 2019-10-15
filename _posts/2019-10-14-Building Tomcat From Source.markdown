@@ -1,20 +1,22 @@
 ---
 layout: post
-title:  "Building Tomcat from its source"
+title:  "Building Tomcat from its source-1"
 date:   2019-10-14
 comments: true
 categories: Java
 ---
 
-####Building Tomcat From Its Source - 1 
-#####Downloading Tomcat Source and Opening it from an IDE
+### Building Tomcat From Its Source - 1 
+
+#### Downloading Tomcat Source and Opening it from an IDE
 
 So you want to build Tomcat from the downloaded source src.zip? Here we go.
-**Link**: https://tomcat.apache.org/download-90.cgi
+**Link**: [Download Source](https://tomcat.apache.org/download-90.cgi)
 
 1. Download from Source Code Distributions. (I chose 'zip')
+
 2. You can see the source code from IDE. 
-    ![img]({{ "/assets/img/buildtomcat1.png"|absolute_url}})
+    <img src="/assets/img/buildtomcat1.png" width="1200px">
 
 3. (IntelliJ only) IntelliJ won't recognize the opened source as its source, unless you tell it to.
     ![img]({{ "/assets/img/buildtomcat2.png"|absolute_url}})
