@@ -19,13 +19,13 @@ There were many people who were suffering from the same cause. Here are some exa
 Here I'd like to share how to add the reason phrase manually, by manipulating Tomcat 9 source code itself. 
 >The purpose of this article is to show that it is possible; and distribution of edited opensource project may not be permitted and is out of boundary of my knowledge. 
 
-##### 1. Download Tomcat 9 Source code
+#### 1. Download Tomcat 9 Source code
 - Download Tomcat 9 Source from apache Tomcat website (https://tomcat.apache.org/download-90.cgi)
 
 
-##### 2. Download Tomcat 8(or 8.5) Source code 
+#### 2. Download Tomcat 8(or 8.5) Source code 
 - Download Tomcat 8 Source from apache Tomcat website (https://tomcat.apache.org/download-80.cgi)
-##### 3. Observe the difference near 'reason phrase'
+#### 3. Observe the difference near 'reason phrase'
 
 - Now it gets interesting. Using your IDE or whatever tool you have, try to observe the differences in code where 'reason phrase' appears.
 
@@ -116,7 +116,7 @@ public void sendStatus() {
 ![img]({{ "/assets/img/tomcat9_red.png"|absolute_url}})
 - Now let's do something about'em.
 
-##### 4. Add missing classes and variables
+#### 4. Add missing classes and variables
 
 - HttpMessages (org.apache.tomcat.util.http)
 ![img]({{ "/assets/img/tomcat9_httpmessages.png"|absolute_url}})
@@ -130,7 +130,6 @@ public void sendStatus() {
 ![img]({{ "/assets/img/tomcat9_error.png"|absolute_url}})
 
 - I read from somewhere that the directory system of linux(and Mac) is different from that of Windows, hence causing this kind of error. In fact, when I copied the exact file to Windows and tested it, it was working like a charm.
-
 - To tackle this problem anyhow (it is absurd that source-built tomcat file cannot be run in OS other than Windows), I reviewd the log (Help -> Show log in Finder) and found out that I was missing a logging library.
 ![img]({{ "/assets/img/tomcat9_missing_library.png"|absolute_url}})
 
@@ -145,15 +144,12 @@ public void sendStatus() {
     </dependencies>
 ```
 ![img]({{ "/assets/img/tomcat9_add_library.png"|absolute_url}})
-
 - It is not working; and something is terribly wrong, and I decided firmly that I won't spend more than 30 minutes grappling with this bastard.
-(Some minutes passed)
-
 >The problem was from an awefully simple mistake.
 >##### I downloaded src.zip, not src.tar.gz.
 >There was a reason why Apache Tomcat was provided with two different versions after all. The tomcat directory structure must have been different, something that >cannot be easily manipulated by changing directory structures of visible files.
 
-##### 5. Build modified Tomcat 9 and test if it's working
+#### 5. Build modified Tomcat 9 and test if it's working
 
 - Now, go to the Tomcat source directory, and rebuild the project using ant command. 
 
