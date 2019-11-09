@@ -10,9 +10,9 @@ categories: Java
 From Tomcat 8.5 on, the **'reason phrase'**, which states some additional information to the incoming request according to the status code, is omitted. Not only did I feel frustrated for Apache developers who decided not to leave this even as an option, it was an acutal headache for me because the absence of the reason phrase was causing some serious issues for legacy projects. 
 
 There were many people who were suffering from the same cause. Here are some examples.
-    https://stackoverflow.com/questions/40522145/javatomcat-9-status-code-200-but-response-message-null
-    http://tomcat.10.x6.nabble.com/Bug-60362-New-Missing-reason-phrase-in-response-td5057191i40.html
-    https://superuser.com/questions/1201742/tomcat-reason-phrase
+    (https://stackoverflow.com/questions/40522145/javatomcat-9-status-code-200-but-response-message-null)
+    (http://tomcat.10.x6.nabble.com/Bug-60362-New-Missing-reason-phrase-in-response-td5057191i40.html)
+    (https://superuser.com/questions/1201742/tomcat-reason-phrase)
     ... etc
 
 
