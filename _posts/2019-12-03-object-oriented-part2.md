@@ -16,7 +16,7 @@ So I covered the basics to enter the world of OOP, and got to know that OOP is a
 
 In this posting, I will try to get hold of mainstream OOP features of Java language, namely encapsulation, polymorphism, inheritance, and abstraction. I'm not much of a novice to learn these concepts all anew, but I'd like to solidify my understanding and correct any misunderstanding if I had any.
 
-#### 2. Inheritance
+### 2. Inheritance
 
 Inheritance in OOP is to write a new class by re-using an existing class. 
 
@@ -31,7 +31,7 @@ Inheritance in OOP is to write a new class by re-using an existing class.
  
  The concept is well-known and quite easy to understand. So I will only go over some aspects that I've not been so familiar with. 
 
- ##### 2-1. Single Inheritance
+ #### 2-1. Single Inheritance
  ```java
   class Child extends Mom, Dad //error! cannot have two ancestors at once.
   class SomeClass extends Object //every class is descended from the Object class.
@@ -61,7 +61,7 @@ There is a roundabout way like below.
 It seems that the horse is singing, but in fact it is the bird within the SingingHorse that's singing.
 By doing so, when the Bird class is changed, the SingingHorse class can also be changed, as if it is inherited from the Bird class itself.
 
-##### 2-2. Overriding
+#### 2-2. Overriding
 ```java
  class 2DPoint {
      int x;
@@ -87,7 +87,7 @@ Overriding is changing the method inherited from the parent class. In order to o
 
 This should not be confused with **overloading**, which is defining a new method.
 
-##### super
+#### 2-3. super
 
 ```java
 public class TestSuper {
@@ -123,7 +123,7 @@ hello world!
 As can be seen, super is a variable that is used by the child class to refer to the member variables or the methods in the parent class. **super()** is a constructor version of **super**. 
 
 
-#### 3. Polymorphism
+### 3. Polymorphism
 
 As the name suggests, polymorphism means 'ability to have many forms'; and in Java, this means that one reference variable can reference other types of objects. To be more specific, parent class objects can reference child class instances. I will use Clash Royale, which is the game I've been playing for quite a long time, for examplification. 
 [![img]({{ "/assets/img/cr1.png"|absolute_url}})]({{ "/assets/img/cr1.png"|absolute_url}})
@@ -154,7 +154,7 @@ public static void main(String[] args){
 The above diagram shows the difference between using parent class reference variable to refer child class instance.
 On surface, there doesn't seem to be any merit in implementing polymorphism, because the restriction on parent class is still the same. Then why do we bother do this? 
 
-##### 3-1. Type Casting
+#### **3-1. Type Casting**
 
 Type can be cast from parent class instance to child class instance, and vice versa. 
 
@@ -174,7 +174,7 @@ public static void main(String[] args){
 - In this light, although **royalObject** has restrictions on accessing unit type variables, the unit2 reference variable will have **full** access to the unit instance created by **new Unit()**.
 - Type casting, in essense, controls the number of variables a reference variable can access.
 
-##### 3-2. instanceof
+#### **3-2. instanceof**
 
 Knowing the actual type of instance a reference variable refers is quite important. 
 
@@ -211,7 +211,7 @@ void doSomething(RoyalObject r){
 }
 ```
 
-##### 3-3. Polymorphism in method parameter
+#### **3-3. Polymorphism in method parameter**
 
 **UNITS - knigt, giant, and hog rider!**
 

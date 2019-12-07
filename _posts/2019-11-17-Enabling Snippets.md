@@ -41,9 +41,16 @@ This is handy when a figure is not so visible from the html :)
 	"Clickable image":{
 		"prefix": "imglink",
 		"body": [
-			"[![img]('$1')]('$1')",
+			"[![img]({{ \"/assets/img/$1\"|absolute_url}})]({{ \"/assets/img/$1\"|absolute_url}})",
 			"$2"
 		],
 		"description": "generate clickable image template"
+	},
+	"Java Code":{
+		"prefix":"javac",
+		"body":[
+			"```java\n$1\n```"
+		],
+		"description": "get java code"
 	}
 ```
