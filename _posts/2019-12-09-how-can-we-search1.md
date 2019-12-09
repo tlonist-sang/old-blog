@@ -13,20 +13,40 @@ About a year ago I tried to answer this question, but wasn't so successful. Now 
 
 To be more specific, this series of posting will trace and study the following user scenario.
 
-1. Run an internet browser, go to www.Google.com (I'm using Chrome Version 78.0.3904.108)
+<div style="background-color:#00ff722b; border:solid">
+>1. Run an internet browser, go to www.Google.com (I'm using Chrome Version 78.0.3904.108)
+
+</div>
 [![img]({{ "/assets/img/hcws5.png"|absolute_url}})]({{ "/assets/img/hcws5.png"|absolute_url}})
-<br>
-2. Type Amazon in the search box.
+<br/>
+
+<div style="background-color:#00ff722b; border:solid">
+>2. Type Amazon in the search box.
+
+</div>
 [![img]({{ "/assets/img/hcws4.png"|absolute_url}})]({{ "/assets/img/hcws4.png"|absolute_url}})
-<br>
-3. Click Amazon, and go into Amazon website.
-[![img]({{ "/assets/img/hcws3.png"|absolute_url}})]({{ "/assets/img/hcws3.png"|absolute_url}})\
-<br>
-4. Type Borges in the search box.
+<br/>
+
+<div style="background-color:#00ff722b; border:solid">
+>3. Click Amazon, and go into Amazon website.
+
+</div>
+[![img]({{ "/assets/img/hcws3.png"|absolute_url}})]({{ "/assets/img/hcws3.png"|absolute_url}})
+<br/>
+
+<div style="background-color:#00ff722b; border:solid">
+>4. Type Borges in the search box.
+
+</div>
 [![img]({{ "/assets/img/hcws2.png"|absolute_url}})]({{ "/assets/img/hcws2.png"|absolute_url}})
-<br>
-5. Click 'collected Fiction' and view result
+<br/>
+
+<div style="background-color:#00ff722b; border:solid">
+>5. Click 'collected Fiction' and view result
+
+</div>
 [![img]({{ "/assets/img/hcws1.png"|absolute_url}})]({{ "/assets/img/hcws1.png"|absolute_url}})
+<br/>
 
 #### Topics to be covered
 #### HTTP, HTTPS, Web Server, Proxy, Cache, Gateway, Web Crawler, OSI 7 Layers and etc (to be added)
