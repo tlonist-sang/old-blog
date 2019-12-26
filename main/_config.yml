@@ -10,8 +10,8 @@ baseurl:
 url: "https://tlonist-sang.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Website info
-title: Tlonist
-description: dev log
+title: Dev Log
+description: World exists to end up in a book
 cover: assets/img/blog-cover.jpg
 logo: assets/img/blog-icon.png
 logo_dark: assets/img/favicon.png
