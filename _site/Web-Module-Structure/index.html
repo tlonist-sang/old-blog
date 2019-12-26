@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Java Web Module Structure - Sanghyun's steady stack.</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Sanghyun's steady stack." property="og:site_name">
+  
+    <meta content="Java Web Module Structure" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content=""Slow but steady wins the race."
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/Web-Module-Structure/" property="og:url">
+  
+  
+    <meta content="2019-01-08T12:00:00+09:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/sanghyun.jpg" property="og:image">
+  
+  
+    
+    <meta content="Java" property="article:section">
+    
+  
+  
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="Java Web Module Structure">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/Web-Module-Structure/">
+  
+  
+    <meta name="twitter:description" content=""Slow but steady wins the race."
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/sanghyun.jpg">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/sanghyun.jpg" alt="Sanghyun Harry Kim"></a>
+      </div>
+      <div class="author-name">Sanghyun Harry Kim</div>
+      <p>Web developer. Love Go, Borges, and Gym</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:tlonist.sang@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2019 &copy; Sanghyun Harry Kim</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Java Web Module Structure</h1>
+        <div class="page-date"><span>2019, Jan 08&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>Searching through already-made web projects in the workplace, I have always wondered the functions of each directories that were composing the project. I heard only briefly that there is a specification document which defines the usages of things like those. There indeed was one (https://download.oracle.com/otn-pub/jcp/servlet-2.4-fr-spec-oth-JSpec/servlet-2_4-fr-spec.pdf?AuthParam=1546950640_7caec6a7bcffd7161ee994e7d7751fc5); and before delving into it (I will actually peruse it), I found a rather shorthand explanation of my curiosity from a document from Oracle. (https://docs.oracle.com/cd/E19226-01/820-7627/bnadx/index.html).</p>
+
+<p>In this posting I will provide</p>
+<ol>
+  <li>Brief recap of the aforementioned shorthand explanation of my curiosity</li>
+  <li>
+    <p>1 is just about it :P</p>
+  </li>
+  <li>Recap of [Web Module Structure]</li>
+</ol>
+
+<ul>
+  <li>Web module has a specific structure. Top level directory of the structure is called document root.</li>
+  <li>The document root contains a subdirectory named ‘WEB-INF’, which contains the following files and directories.
+    <ul>
+      <li>web.xml : web application deployment descriptor</li>
+      <li>classes : directory that contains server-side classes</li>
+      <li>tags : directory that contains tag files</li>
+      <li>lib : directory that contains JAR archives of libraries called by server-side classes.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="http://localhost:4000/assets/img/web-module.gif" alt="img" /></p>
+
+<ul>
+  <li>If a web module contains only XHTML pages and static files, web.xml is not needed.</li>
+  <li>a web module can be packaged in a JAR file known as a web archive (WAR) file. The contents and user of WAR files differ from those of JAR files, WAR file names use a .war extension. The web module just described in portable; and one can deploy it into any web container that conforms to the ‘Java Servlet Specification’!.</li>
+</ul>
+
+<p>[Making it solid : Difference between WAR and JAR] (https://stackoverflow.com/questions/5871053/difference-between-jar-and-war-in-java)</p>
+
+<ul>
+  <li>JAR: It contains “libraries, resources and accessories files”.</li>
+  <li>
+    <p>WAR: It contains a “web application” that can be deployed to any servlet/jsp container (it comprises of jsp, html, javascript.. etc).</p>
+  </li>
+  <li>Setting the Context Root
+    <ul>
+      <li>A context root identifies a web application in a Java EE server. It must start with a forward slash and end with a string.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>This was a rather-too-brief summary of what I read. Being a web engineer (or to be entitled to say so), I think it is also necessary to review how the Tomcat, the most well-known servlet container, works by investigating some of its codes. I hope I could write several posts regarding that topic before summer arrives.</p>
+
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Java Web Module Structure&url=http://localhost:4000/Web-Module-Structure/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/Web-Module-Structure/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/Web-Module-Structure/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//mr-brown.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-139982514-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Generics and Wildcard expression_1 - Sanghyun's steady stack.</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Sanghyun's steady stack." property="og:site_name">
+  
+    <meta content="Generics and Wildcard expression_1" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content=""Slow but steady wins the race."
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/Generics/" property="og:url">
+  
+  
+    <meta content="2019-11-12T00:00:00+09:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/sanghyun.jpg" property="og:image">
+  
+  
+    
+    <meta content="Java" property="article:section">
+    
+  
+  
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="Generics and Wildcard expression_1">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/Generics/">
+  
+  
+    <meta name="twitter:description" content=""Slow but steady wins the race."
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/sanghyun.jpg">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/sanghyun.jpg" alt="Sanghyun Harry Kim"></a>
+      </div>
+      <div class="author-name">Sanghyun Harry Kim</div>
+      <p>Web developer. Love Go, Borges, and Gym</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:tlonist.sang@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2019 &copy; Sanghyun Harry Kim</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Generics and Wildcard expression_1</h1>
+        <div class="page-date"><span>2019, Nov 12&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <h3 id="generics_part-1">Generics_Part 1</h3>
+
+<p>Generics was introduced from JDK 1.5 and since then been serving as a major feature in using Java language.</p>
+
+<p>Generics is a function that does compile-time type checks for method or collection classes that deals with various types of objects; hence classes like HashSet, ArrayList, and HashMap make very good uses of generics.</p>
+<h4 id="1-basics-"><span style="background-color: #DCDCDC">1. Basics </span></h4>
+<h5 id="generics-does">Generics does…</h5>
+<blockquote>
+  <p><strong>enhances type stability</strong> : it prevents objects from being saved in unintended types, and reduces errors when an object is taken out in a different type than its original type. <br />
+<strong>simplifies the code</strong> : it lets you omit writing codes for type checking and casting.</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">Generics</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="n">T</span> <span class="n">language</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">setLanguage</span><span class="o">(</span><span class="n">T</span> <span class="n">language</span><span class="o">){</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">language</span> <span class="o">=</span> <span class="n">language</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">T</span> <span class="nf">getLanguage</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">language</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>One thing to note is that ‘T’ can be substituted to basically any alphabet. Normally in case of arrayList, E (elements) is used; and for Map, K(key) and V(value) are often used.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">Person</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">person</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;&gt;();</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="s">"Java"</span><span class="o">);</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="k">new</span> <span class="n">Object</span><span class="o">());</span> <span class="c1">//&lt;---error!</span>
+</code></pre></div></div>
+
+<ul>
+  <li>The once-mysterious type T is not fixed to be a String. Once defined such, it has same as writing the whole class with String substituting T. Hence the error from the third line above. 
+<a href="''"><img src="''" alt="img" /></a></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">Person</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">person</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="s">"Java"</span><span class="o">);</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="k">new</span> <span class="n">Object</span><span class="o">());</span> <span class="c1">//&lt;---error!</span>
+        
+        <span class="n">Person</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">person2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">person2</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="s">"Python"</span><span class="o">);</span> <span class="c1">//&lt;---error!</span>
+        <span class="n">person2</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+</code></pre></div></div>
+<ul>
+  <li>It is possible to make several Person objects, much like it is possible to call a same function multiple times with varying arguments.</li>
+  <li>It will follow quite automatically that <strong>static members can’t have a generics type</strong>, because they should be used in a same way regardless of object types.</li>
+</ul>
+
+<h5 id="what-is-okay-and-not">What is okay and not</h5>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span><span class="o">&lt;</span><span class="n">M</span><span class="o">&gt;</span> <span class="o">{</span>
+            <span class="n">M</span> <span class="n">language</span><span class="o">;</span>
+            <span class="n">M</span><span class="o">[]</span> <span class="n">languageArr</span><span class="o">;</span> <span class="c1">//OK</span>
+            
+            <span class="n">M</span> <span class="nf">toArray</span><span class="o">(){</span>
+                <span class="n">M</span><span class="o">[]</span> <span class="n">tmpArr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">M</span><span class="o">[</span><span class="n">languageArr</span><span class="o">.</span><span class="na">length</span><span class="o">];</span> <span class="c1">//Error!</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+</code></pre></div></div>
+<ul>
+  <li>Declaring an array of generics type is okay, while instantiating a new one is not.</li>
+  <li>This is because <strong>new operator</strong> has to know exactly what type the T is during the compile time. Likewise, <strong>instanceof</strong> cannot be used because compiler has no way of knowing what T will be.</li>
+</ul>
+
+<h4 id="2-using-generics">2. Using Generics</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Person</span><span class="o">&lt;</span><span class="n">JavaDeveloper</span><span class="o">&gt;</span> <span class="n">javaPerson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;&gt;();</span> <span class="c1">// specific type of T can be ommited from JDK 1.7</span>
+        <span class="n">Person</span><span class="o">&lt;</span><span class="n">JavaDeveloper</span><span class="o">&gt;</span> <span class="n">javaScriptPerson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;</span><span class="n">JavaScriptDeveloper</span><span class="o">&gt;();</span> <span class="c1">//error</span>
+
+        <span class="n">Person</span><span class="o">&lt;</span><span class="n">JavaDeveloper</span><span class="o">&gt;</span> <span class="n">groupOfJavaPersons</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;&gt;();</span>
+        <span class="n">groupOfJavaPersons</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Java</span><span class="o">());</span>
+        <span class="n">groupOfJavaPersons</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JavaScript</span><span class="o">());</span> <span class="c1">//error!</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Programmer</span><span class="o">{}</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JavaDeveloper</span> <span class="kd">extends</span> <span class="n">Programmer</span><span class="o">{}</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JavaScriptDeveloper</span> <span class="kd">extends</span> <span class="n">Programmer</span><span class="o">{}</span>
+</code></pre></div></div>
+<ul>
+  <li>This is quite self-explanatory. Once declared with specific types, the created objects won’t tolerate other types to butt in.</li>
+</ul>
+
+<h4 id="3-limited-generics-class">3. Limited Generics Class</h4>
+
+<ul>
+  <li>As mentioned in beginning, generics was created to lessen the burden for type-checking and casting. So far there doesn’t seem to be much virtue in it. how about limiting the type <strong>T to only take certain types of objects</strong>?</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Programmer</span><span class="o">&gt;</span>
+</code></pre></div></div>
+<ul>
+  <li>This forces T to be <strong>descendents</strong> of Programmer. Hence, the below is possible.
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">Person</span><span class="o">&lt;</span><span class="n">Programmer</span><span class="o">&gt;</span> <span class="n">programmerBatch</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;&gt;();</span> 
+  <span class="n">programmerBatch</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JavaDeveloper</span><span class="o">());</span>
+  <span class="n">programmerBatch</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JavaScriptDeveloper</span><span class="o">());</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Basically if you omit and just write <strong>&lt;T&gt;</strong>, it is same as &lt;T extends Object&gt;</p>
+  </li>
+  <li>When it comes to implementing an interface, make sure to use <strong>extends</strong>, rather than the usual <strong>implements</strong>.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">interface</span> <span class="nf">codable</span><span class="o">()</span>
+    <span class="kd">class</span> <span class="nc">programmerBatch</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">codable</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h4 id="4-wildcard-expressions">4. Wildcard Expressions</h4>
+
+<ul>
+  <li>
+    <p>Once I bumped into this link in stackoverflow <a href="https://stackoverflow.com/questions/7573269/what-is-the-difference-between-and-t-in-class-and-method-signatures">https://stackoverflow.com/questions/7573269/what-is-the-difference-between-and-t-in-class-and-method-signatures</a></p>
+  </li>
+  <li>
+    <p>After reading the adopted answer, I could still not get 100% of what the difference was. Now let’s investigate.</p>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Outsourcing</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="n">webPage</span> <span class="nf">makeWebPage</span><span class="o">(</span><span class="n">Person</span><span class="o">&lt;</span><span class="n">Programmer</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">){</span>
+        <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="s">"Coded by "</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Programmer</span> <span class="n">p</span> <span class="o">:</span> <span class="n">box</span><span class="o">.</span><span class="na">getList</span><span class="o">())</span> <span class="n">temp</span> <span class="o">+=</span> <span class="n">p</span> <span class="o">+</span> <span class="s">" "</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">webPage</span><span class="o">(</span><span class="n">temp</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Above class has the following problems.</p>
+  <ul>
+    <li>(1) Since it is a static method, a specific type (programmer) has to be written</li>
+    <li>(2) Because of (1), if you want to substitute <strong>programmer</strong> to <strong>JavaDeveloper</strong> or <strong>JavaScriptDeveloper</strong>, you have to make separte methods like</li>
+  </ul>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="kd">static</span> <span class="n">webPage</span> <span class="nf">makeWebPage</span><span class="o">(</span><span class="n">Person</span><span class="o">&lt;</span><span class="n">JavaDeveloper</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">){</span>
+        <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="s">"Coded by "</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Programmer</span> <span class="n">p</span> <span class="o">:</span> <span class="n">box</span><span class="o">.</span><span class="na">getList</span><span class="o">())</span> <span class="n">temp</span> <span class="o">+=</span> <span class="n">p</span> <span class="o">+</span> <span class="s">" "</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">webPage</span><span class="o">(</span><span class="n">temp</span><span class="o">);</span>
+    <span class="o">}</span>
+
+      <span class="kd">static</span> <span class="n">webPage</span> <span class="nf">makeWebPage</span><span class="o">(</span><span class="n">Person</span><span class="o">&lt;</span><span class="n">JavaScriptDeveloper</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">){</span>
+        <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="s">"Coded by "</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Programmer</span> <span class="n">p</span> <span class="o">:</span> <span class="n">box</span><span class="o">.</span><span class="na">getList</span><span class="o">())</span> <span class="n">temp</span> <span class="o">+=</span> <span class="n">p</span> <span class="o">+</span> <span class="s">" "</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">webPage</span><span class="o">(</span><span class="n">temp</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>(3) However, this is NOT possible, because <strong>having different generic types does not allow overloading</strong>.</li>
+  <li>(4) This can be handled with <strong>?(wildcard)</strong>!</li>
+</ul>
+
+<blockquote>
+  <p>&lt;? extends T&gt;  :  upper limit. T and its descendents
+&lt;? super T&gt;    :  lower limit. T and its ancestors
+&lt;?&gt;            :  no limit. same as &lt;? extends Object&gt;</p>
+</blockquote>
+
+<ul>
+  <li>Converting the problematic <strong>makeWebPage</strong> function,</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">static</span> <span class="n">webPage</span> <span class="nf">makeWebPage</span><span class="o">(</span><span class="n">Person</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Programmer</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">){</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<ul>
+  <li>
+    <p>Now this <strong>makeWebPage</strong> can accomodate JavaDevelopers and JavaScriptDevelopers at once! (and any of Programmer’s descendets)</p>
+  </li>
+  <li>
+    <p>Going back to the <a href="https://stackoverflow.com/questions/7573269/what-is-the-difference-between-and-t-in-class-and-method-signatures">link</a>, I can conclude that <strong>Generic type T is a compile-time decided consistent type for class</strong>, whereas <strong>wildcard is an expression limiting the range of types</strong>. Those two are not of same nature, the former being a grammar and the latter a little like a hack.</p>
+  </li>
+</ul>
+
+<h4 id="5-generic-method">5. Generic Method</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">Comparator</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">c</span><span class="o">)</span>
+</code></pre></div></div>
+<ul>
+  <li>The <strong>T</strong> in method and <strong>T</strong> in class are ‘totally different’ things. They may or may not be the same, and utterly unrelated.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">static</span> <span class="n">webPage</span> <span class="nf">makeWebPage</span><span class="o">(</span><span class="n">Person</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Programmer</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">){</span>
+        <span class="o">...</span>
+    <span class="o">}</span> <span class="c1">//can be changed into ...</span>
+
+ <span class="kd">static</span> <span class="n">Person</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Programmer</span><span class="o">&gt;</span> <span class="n">webPage</span> <span class="nf">makeWebPage</span><span class="o">(</span><span class="n">Person</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">){</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Below is some tricky example
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">&gt;&gt;</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="n">List</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Okay. <strong>parameter ‘list’</strong> is of type T that is a <strong>decendents of Comparable&lt;? super T&gt;</strong> for one.</li>
+  <li>The comparable interface compares <strong>T or its ancestors</strong>.</li>
+  <li>If the list is given as <strong>JavaDevelopers</strong>, the comparable compares <strong>JavaDevelopers, Programmers and Persons and Objects</strong></li>
+</ul>
+
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Generics and Wildcard expression_1&url=http://localhost:4000/Generics/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/Generics/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/Generics/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//mr-brown.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-139982514-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tomcat 9 - Adding reason phrase 200 OK - Sanghyun's steady stack.</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Sanghyun's steady stack." property="og:site_name">
+  
+    <meta content="Tomcat 9 - Adding reason phrase 200 OK" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content=""Slow but steady wins the race."
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/Adding-reason-phrase/" property="og:url">
+  
+  
+    <meta content="2019-10-29T00:00:00+09:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/sanghyun.jpg" property="og:image">
+  
+  
+    
+    <meta content="Java" property="article:section">
+    
+  
+  
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="Tomcat 9 - Adding reason phrase 200 OK">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/Adding-reason-phrase/">
+  
+  
+    <meta name="twitter:description" content=""Slow but steady wins the race."
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/sanghyun.jpg">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/sanghyun.jpg" alt="Sanghyun Harry Kim"></a>
+      </div>
+      <div class="author-name">Sanghyun Harry Kim</div>
+      <p>Web developer. Love Go, Borges, and Gym</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:tlonist.sang@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2019 &copy; Sanghyun Harry Kim</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Tomcat 9 - Adding reason phrase 200 OK</h1>
+        <div class="page-date"><span>2019, Oct 29&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <h4 id="abstract">Abstract</h4>
+<p>From Tomcat 8.5 on, the <strong>‘reason phrase’</strong>, which states some additional information to the incoming request according to the status code, is omitted. Not only did I feel frustrated for Apache developers who decided not to leave this even as an option, it was an acutal headache for me because the absence of the reason phrase was causing some serious issues for legacy projects.</p>
+
+<p>There were many people who were suffering from the same cause. Here are some examples.
+    <a href="https://stackoverflow.com/questions/40522145/javatomcat-9-status-code-200-but-response-message-null">https://stackoverflow.com/questions/40522145/javatomcat-9-status-code-200-but-response-message-null</a><br />
+    <a href="http://tomcat.10.x6.nabble.com/Bug-60362-New-Missing-reason-phrase-in-response-td5057191i40.html">http://tomcat.10.x6.nabble.com/Bug-60362-New-Missing-reason-phrase-in-response-td5057191i40.html</a><br />
+    <a href="https://superuser.com/questions/1201742/tomcat-reason-phrase">ttps://superuser.com/questions/1201742/tomcat-reason-phrase</a><br />
+    … etc</p>
+
+<p>Here I’d like to share how to add the reason phrase manually, by manipulating Tomcat 9 source code itself.</p>
+<blockquote>
+  <p>The purpose of this article is to show that it is possible; and distribution of edited opensource project may not be permitted and is out of boundary of my knowledge.</p>
+</blockquote>
+
+<h4 id="1-download-tomcat-9-source-code">1. Download Tomcat 9 Source code</h4>
+<ul>
+  <li>Download Tomcat 9 Source from apache Tomcat website (https://tomcat.apache.org/download-90.cgi)</li>
+</ul>
+
+<h4 id="2-download-tomcat-8or-85-source-code">2. Download Tomcat 8(or 8.5) Source code</h4>
+<ul>
+  <li>Download Tomcat 8 Source from apache Tomcat website (https://tomcat.apache.org/download-80.cgi)
+    <h4 id="3-observe-the-difference-near-reason-phrase">3. Observe the difference near ‘reason phrase’</h4>
+  </li>
+  <li>Now it gets interesting. Using your IDE or whatever tool you have, try to observe the differences in code where ‘reason phrase’ appears.</li>
+</ul>
+
+<h6 id="tomcat-85">Tomcat 8.5</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendStatus</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Write protocol name</span>
+        <span class="n">write</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">HTTP_11_BYTES</span><span class="o">);</span>
+        <span class="n">headerBuffer</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">SP</span><span class="o">);</span>
+
+        <span class="c1">// Write status code</span>
+        <span class="kt">int</span> <span class="n">status</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getStatus</span><span class="o">();</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">status</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="mi">200</span><span class="o">:</span>
+            <span class="n">write</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">_200_BYTES</span><span class="o">);</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="mi">400</span><span class="o">:</span>
+            <span class="n">write</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">_400_BYTES</span><span class="o">);</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="mi">404</span><span class="o">:</span>
+            <span class="n">write</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">_404_BYTES</span><span class="o">);</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="n">write</span><span class="o">(</span><span class="n">status</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">headerBuffer</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">SP</span><span class="o">);</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">sendReasonPhrase</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// Write message</span>
+            <span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">org</span><span class="o">.</span><span class="na">apache</span><span class="o">.</span><span class="na">coyote</span><span class="o">.</span><span class="na">Constants</span><span class="o">.</span><span class="na">USE_CUSTOM_STATUS_MSG_IN_HEADER</span> <span class="o">&amp;&amp;</span>
+                    <span class="n">HttpMessages</span><span class="o">.</span><span class="na">isSafeInHttpHeader</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">getMessage</span><span class="o">()))</span> <span class="o">{</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getMessage</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">message</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">write</span><span class="o">(</span><span class="n">HttpMessages</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span>
+                        <span class="n">response</span><span class="o">.</span><span class="na">getLocale</span><span class="o">()).</span><span class="na">getMessage</span><span class="o">(</span><span class="n">status</span><span class="o">));</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">write</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="c1">// The reason phrase is optional but the space before it is not. Skip</span>
+            <span class="c1">// sending the reason phrase. Clients should ignore it (RFC 7230) and it</span>
+            <span class="c1">// just wastes bytes.</span>
+        <span class="o">}</span>
+
+        <span class="n">headerBuffer</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">CR</span><span class="o">).</span><span class="na">put</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">LF</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<ul>
+  <li>Note the <mark>sendReasonPhrase</mark> part. For 8.5, sending reason phrase is optional and can be manipulated from <mark>server.xml</mark> file. (refer to <a href="https://tomcat.apache.org/tomcat-8.5-doc/config/http.html">link</a>) But from Tomcat 9 on, it is no longer supported.</li>
+</ul>
+
+<h6 id="tomcat-9026">Tomcat 9.0.26</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendStatus</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Write protocol name</span>
+        <span class="n">write</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">HTTP_11_BYTES</span><span class="o">);</span>
+        <span class="n">headerBuffer</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">SP</span><span class="o">);</span>
+
+        <span class="c1">// Write status code</span>
+        <span class="kt">int</span> <span class="n">status</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getStatus</span><span class="o">();</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">status</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="mi">200</span><span class="o">:</span>
+            <span class="n">write</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">_200_BYTES</span><span class="o">);</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="mi">400</span><span class="o">:</span>
+            <span class="n">write</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">_400_BYTES</span><span class="o">);</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="mi">404</span><span class="o">:</span>
+            <span class="n">write</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">_404_BYTES</span><span class="o">);</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="n">write</span><span class="o">(</span><span class="n">status</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">headerBuffer</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">SP</span><span class="o">);</span>
+
+        <span class="c1">// The reason phrase is optional but the space before it is not. Skip</span>
+        <span class="c1">// sending the reason phrase. Clients should ignore it (RFC 7230) and it</span>
+        <span class="c1">// just wastes bytes.</span>
+
+        <span class="n">headerBuffer</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">CR</span><span class="o">).</span><span class="na">put</span><span class="o">(</span><span class="n">Constants</span><span class="o">.</span><span class="na">LF</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Contrasting the above two code snippets, you can notice that the entire part where it says <mark>sendReasonPhrase</mark> is missing in Tomcat 9. Your job is to restore this part, together with all the dependencies that are missing.</li>
+</ul>
+
+<p><a href="http://localhost:4000/assets/img/tomcat9_red.png"><img src="http://localhost:4000/assets/img/tomcat9_red.png" alt="img" /></a></p>
+<ul>
+  <li>Now let’s do something about’em.</li>
+</ul>
+
+<h4 id="4-add-missing-classes-and-variables">4. Add missing classes and variables</h4>
+
+<ul>
+  <li>
+    <p>HttpMessages (org.apache.tomcat.util.http)
+<a href="http://localhost:4000/assets/img/tomcat9_httpmessages.png"><img src="http://localhost:4000/assets/img/tomcat9_httpmessages.png" alt="img" /></a></p>
+  </li>
+  <li>
+    <p>Constants (org.apache.coyote)
+<a href="http://localhost:4000/assets/img/tomcat9_constants.png"><img src="http://localhost:4000/assets/img/tomcat9_constants.png" alt="img" /></a></p>
+  </li>
+  <li>
+    <p>write function (overloading)</p>
+  </li>
+  <li>
+    <p>I’ve been trying this on my Macbook. Previously when I was testing this in my Windows desktop it was working smoothly, but somehow the Mac version is not. My IntelliJ is producing errors like below every time I try to launch my simple Spring MVC controller.
+<a href="http://localhost:4000/assets/img/tomcat9_error.png"><img src="http://localhost:4000/assets/img/tomcat9_error.png" alt="img" /></a></p>
+  </li>
+  <li>I read from somewhere that the directory system of linux(and Mac) is different from that of Windows, hence causing this kind of error. In fact, when I copied the exact file to Windows and tested it, it was working like a charm.</li>
+  <li>To tackle this problem anyhow (it is absurd that source-built tomcat file cannot be run in OS other than Windows), I reviewd the log (Help -&gt; Show log in Finder) and found out that I was missing a logging library.
+<a href="http://localhost:4000/assets/img/tomcat9_missing_library.png"><img src="http://localhost:4000/assets/img/tomcat9_missing_library.png" alt="img" /></a></li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> &lt;dependencies&gt;</span>
+<span class="gp">        &lt;dependency&gt;</span>
+<span class="gp">            &lt;groupId&gt;</span>org.slf4j&lt;/groupId&gt;
+<span class="gp">            &lt;artifactId&gt;</span>slf4j-api&lt;/artifactId&gt;
+<span class="gp">            &lt;version&gt;</span>1.8.0-beta2&lt;/version&gt;
+<span class="gp">            &lt;scope&gt;</span>compile&lt;/scope&gt;
+<span class="gp">        &lt;/dependency&gt;</span>
+<span class="gp">    &lt;/dependencies&gt;</span>
+</code></pre></div></div>
+<p><a href="http://localhost:4000/assets/img/tomcat9_add_library.png"><img src="http://localhost:4000/assets/img/tomcat9_add_library.png" alt="img" /></a></p>
+
+<ul>
+  <li>It is not working; and something is terribly wrong, and I decided firmly that I won’t spend more than 30 minutes grappling with this bastard.
+    <blockquote>
+      <p>The problem was from an awefully simple mistake.</p>
+      <h5 id="i-downloaded-srczip-not-srctargz">I downloaded src.zip, not src.tar.gz.</h5>
+      <p>There was a reason why Apache Tomcat was provided with two different versions after all. The tomcat directory structure must have been different, something that &gt;cannot be easily manipulated by changing directory structures of visible files.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h4 id="5-build-modified-tomcat-9-and-test-if-its-working">5. Build modified Tomcat 9 and test if it’s working</h4>
+
+<ul>
+  <li>Now, go to the Tomcat source directory, and rebuild the project using ant command.</li>
+</ul>
+
+<p><strong>Result</strong>
+<a href="http://localhost:4000/assets/img/tomcat9_200notworking.png"><img src="http://localhost:4000/assets/img/tomcat9_200notworking.png" alt="img" /></a></p>
+
+<ul>
+  <li>
+    <p>We definited expected something like this.
+<a href="http://localhost:4000/assets/img/tomcat9_200working.png"><img src="http://localhost:4000/assets/img/tomcat9_200working.png" alt="img" /></a></p>
+  </li>
+  <li>Let’s examine why.</li>
+  <li>If you look carefully into the class HttpMessages.java, you’ll find that the actual OK code will be inserted with <em>getMessage</em> fucntion.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="n">String</span> <span class="nf">getMessage</span><span class="o">(</span><span class="kt">int</span> <span class="n">status</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// method from Response.</span>
+
+        <span class="c1">// Does HTTP requires/allow international messages or</span>
+        <span class="c1">// are pre-defined? The user doesn't see them most of the time</span>
+        <span class="k">switch</span><span class="o">(</span> <span class="n">status</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="mi">200</span><span class="o">:</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">st_200</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">)</span> <span class="o">{</span>
+                <span class="n">st_200</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"sc.200"</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">return</span> <span class="n">st_200</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>The string OK is picked up from a variable <em>sm</em>, (StringManager). You can simply search from <strong>sc.200</strong> from the whole package 8.5 or lower, to see where the key value is mapped into in the project. 
+<a href="http://localhost:4000/assets/img/tomcat9_findsc200.png"><img src="http://localhost:4000/assets/img/tomcat9_findsc200.png" alt="img" /></a></p>
+  </li>
+  <li>
+    <p>Copy the entire package under the right position.
+<a href="http://localhost:4000/assets/img/tomcat9_copypackage.png"><img src="http://localhost:4000/assets/img/tomcat9_copypackage.png" alt="img" /></a></p>
+  </li>
+  <li>
+    <p>Rebuild using ant, and enjoy the victory!
+<a href="http://localhost:4000/assets/img/tomcat9_victory.png"><img src="http://localhost:4000/assets/img/tomcat9_victory.png" alt="img" /></a></p>
+  </li>
+</ul>
+
+<h4 id="concluding">Concluding…</h4>
+
+<p>Though I was using Tomcat almost on daily basis with my company’s project, I’ve never actually looked into its source code until this problem was nagging me. OpenSource projects, especially something as big and historical as Tomcat, has somehow been intimidating for me, not just because of its sheer lines of codes, but because its enigmatic(without even looking into them in details!) comments and interfaces. This is a small thing, really; and I might have done something wrong in the process. But it nontheless made me realize that I do not need to run away from intimidating looking codes anymore!</p>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Tomcat 9 - Adding reason phrase 200 OK&url=http://localhost:4000/Adding-reason-phrase/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/Adding-reason-phrase/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/Adding-reason-phrase/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//mr-brown.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-139982514-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

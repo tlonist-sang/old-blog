@@ -1,0 +1,105 @@
+
+<hr />
+<p>layout: post
+title:  “Thread - Thread Priority”
+date:   2019-10-09
+comments: true
+categories: Java
+—</p>
+
+<h4 id="thread-priority">Thread Priority</h4>
+
+<ul>
+  <li>You can set the priorities of existing threads by using <strong>setPriority</strong> method. Below is the actual Java code for setPriority method.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="cm">/**
+     * Changes the priority of this thread.
+     * Otherwise, the priority of this thread is set to the smaller of
+     * the specified &lt;code&gt;newPriority&lt;/code&gt; and the maximum permitted
+     * priority of the thread's thread group.
+     *
+     * @param newPriority priority to set this thread to
+     * @exception  IllegalArgumentException  If the priority is not in the
+     *               range &lt;code&gt;MIN_PRIORITY&lt;/code&gt; to
+     *               &lt;code&gt;MAX_PRIORITY&lt;/code&gt;.
+     * @exception  SecurityException  if the current thread cannot modify
+     *               this thread.
+     * @see        #getPriority
+     * @see        #checkAccess()
+     * @see        #getThreadGroup()
+     * @see        #MAX_PRIORITY
+     * @see        #MIN_PRIORITY
+     * @see        ThreadGroup#getMaxPriority()
+     */</span>
+
+  <span class="kd">public</span> <span class="kd">final</span> <span class="kt">void</span> <span class="nf">setPriority</span><span class="o">(</span><span class="kt">int</span> <span class="n">newPriority</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">ThreadGroup</span> <span class="n">g</span><span class="o">;</span>
+        <span class="n">checkAccess</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">newPriority</span> <span class="o">&gt;</span> <span class="n">MAX_PRIORITY</span> <span class="o">||</span> <span class="n">newPriority</span> <span class="o">&lt;</span> <span class="n">MIN_PRIORITY</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">if</span><span class="o">((</span><span class="n">g</span> <span class="o">=</span> <span class="n">getThreadGroup</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">newPriority</span> <span class="o">&gt;</span> <span class="n">g</span><span class="o">.</span><span class="na">getMaxPriority</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">newPriority</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="na">getMaxPriority</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="n">setPriority0</span><span class="o">(</span><span class="n">priority</span> <span class="o">=</span> <span class="n">newPriority</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Here is a concrete example using setPriority method. The default priority for any newly created thread is 5. The main below is expected to finish t2 “=” prior to “&amp;” since t2’s priority is set to 7(&gt;5)</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Thread4</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">ThreadPr1</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ThreadPr1</span><span class="o">();</span>
+        <span class="n">ThreadPr2</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ThreadPr2</span><span class="o">();</span>
+
+        <span class="n">t2</span><span class="o">.</span><span class="na">setPriority</span><span class="o">(</span><span class="mi">7</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Priority of t1 : "</span><span class="o">+</span> <span class="n">t1</span><span class="o">.</span><span class="na">getPriority</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Priority of t2 : "</span><span class="o">+</span> <span class="n">t2</span><span class="o">.</span><span class="na">getPriority</span><span class="o">());</span>
+
+        <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="n">t2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThreadPr1</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">400</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"&amp;"</span><span class="o">);</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="mi">10000000</span><span class="o">;</span> <span class="n">j</span><span class="o">++);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThreadPr2</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">400</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"="</span><span class="o">);</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="mi">10000000</span><span class="o">;</span> <span class="n">j</span><span class="o">++);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>Console Output</strong></p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Priority of t1 : 5
+Priority of t2 : 7
+&amp;=&amp;=&amp;&amp;&amp;&amp;&amp;&amp;&amp;==================&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;==&amp;&amp;&amp;
+==================================&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;=====================================&amp;&amp;&amp;&amp;&amp;===
+======&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;===========&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;=========&amp;&amp;&amp;&amp;&amp;======================
+===&amp;&amp;&amp;===========&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;==&amp;&amp;&amp;&amp;&amp;=====
+============&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;=====&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;==&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;=========&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;========
+=================&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;============&amp;&amp;&amp;========
+</span></code></pre></div></div>
+
+<ul>
+  <li><strong><em>???</em></strong></li>
+  <li>It didn’t work as I’d expected. This may be due to the fact that my MacBook uses multi core CPU, making each thread independent of each other. Hmm..</li>
+</ul>

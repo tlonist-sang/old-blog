@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Enabling VS code snippets for markdown - Sanghyun's steady stack.</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Sanghyun's steady stack." property="og:site_name">
+  
+    <meta content="Enabling VS code snippets for markdown" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content=""Slow but steady wins the race."
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/Enabling-Snippets/" property="og:url">
+  
+  
+    <meta content="2019-11-17T00:00:00+09:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/sanghyun.jpg" property="og:image">
+  
+  
+    
+    <meta content="Micellaneous" property="article:section">
+    
+  
+  
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="Enabling VS code snippets for markdown">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/Enabling-Snippets/">
+  
+  
+    <meta name="twitter:description" content=""Slow but steady wins the race."
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/sanghyun.jpg">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/sanghyun.jpg" alt="Sanghyun Harry Kim"></a>
+      </div>
+      <div class="author-name">Sanghyun Harry Kim</div>
+      <p>Web developer. Love Go, Borges, and Gym</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:tlonist.sang@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2019 &copy; Sanghyun Harry Kim</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Enabling VS code snippets for markdown</h1>
+        <div class="page-date"><span>2019, Nov 17&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>[link_for_enabling_snippets] (https://github.com/Microsoft/vscode/issues/26108)</p>
+
+<h4 id="quick-tip-for-enabling-snippets-for-markdown">Quick tip for enabling snippets for Markdown</h4>
+
+<p>I’ve been trying to add VS code snippet functions for many times, and the link above was my savior. It is very simple.</p>
+
+<ol>
+  <li>Press Shift + CMD + P</li>
+  <li>Go to Preferences : Configure Language Specific Settings</li>
+  <li>Choose Markdown</li>
+  <li>Add the part with <strong>“[markdown]”</strong></li>
+</ol>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"java.errors.incompleteClasspath.severity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ignore"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"C_Cpp.updateChannel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Insiders"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"editor.suggestSelection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"first"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vsintellicode.modify.editor.suggestSelection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"automaticallyOverrodeDefaultValue"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"window.zoomLevel"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"workbench.tree.indent"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"[markdown]"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"editor.quickSuggestions"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="the-snippet-i-added">The snippet I added</h4>
+
+<p>Below is what I added. It makes an image clickable and show its original size. 
+This is handy when a figure is not so visible from the html :)</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">	</span><span class="s2">"Clickable image"</span><span class="p">:{</span><span class="w">
+		</span><span class="s2">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imglink"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+			</span><span class="s2">"[![img]()]()"</span><span class="p">,</span><span class="w">
+			</span><span class="s2">"$2"</span><span class="w">
+		</span><span class="p">],</span><span class="w">
+		</span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generate clickable image template"</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+	</span><span class="s2">"Java Code"</span><span class="p">:{</span><span class="w">
+		</span><span class="s2">"prefix"</span><span class="p">:</span><span class="s2">"javac"</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"body"</span><span class="p">:[</span><span class="w">
+			</span><span class="s2">"```java</span><span class="se">\n</span><span class="s2">$1</span><span class="se">\n</span><span class="s2">```"</span><span class="w">
+		</span><span class="p">],</span><span class="w">
+		</span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get java code"</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Enabling VS code snippets for markdown&url=http://localhost:4000/Enabling-Snippets/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/Enabling-Snippets/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/Enabling-Snippets/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//mr-brown.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-139982514-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

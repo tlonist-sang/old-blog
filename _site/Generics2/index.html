@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Generics and Wildcard expression_2 - Sanghyun's steady stack.</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Sanghyun's steady stack." property="og:site_name">
+  
+    <meta content="Generics and Wildcard expression_2" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content=""Slow but steady wins the race."
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/Generics2/" property="og:url">
+  
+  
+    <meta content="2019-11-17T00:00:00+09:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/sanghyun.jpg" property="og:image">
+  
+  
+    
+    <meta content="Java" property="article:section">
+    
+  
+  
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="Generics and Wildcard expression_2">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/Generics2/">
+  
+  
+    <meta name="twitter:description" content=""Slow but steady wins the race."
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/sanghyun.jpg">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/sanghyun.jpg" alt="Sanghyun Harry Kim"></a>
+      </div>
+      <div class="author-name">Sanghyun Harry Kim</div>
+      <p>Web developer. Love Go, Borges, and Gym</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:tlonist.sang@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2019 &copy; Sanghyun Harry Kim</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Generics and Wildcard expression_2</h1>
+        <div class="page-date"><span>2019, Nov 17&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>reference: Java의 정석</p>
+
+<h3 id="generics_part-2">Generics_Part 2</h3>
+
+<h4 id="1-generic-type-casting">1. Generic type casting</h4>
+<pre><code class="language-Java">    Person&lt;Object&gt; person1 = null;
+    Person&lt;String&gt; person2 = null;
+    Person&lt;? extends Object&gt; person3 = null;
+
+    person1 = (Person&lt;Object&gt;)person2; //error!
+    person2 = (Person&lt;String&gt;)person1; //error!
+    person3 = new Person&lt;String&gt;();//OK!
+</code></pre>
+
+<ul>
+  <li>This is quite expected. The substituted type <T> should be matched, even if it is an object type.</T></li>
+</ul>
+
+<pre><code class="language-Java">public final class Optional&lt;T&gt; {
+    private static final Optional&lt;?&gt; EMPTY = new Optional&lt;&gt;();
+    private final T value;
+    private Optional() {
+        this.value = null;
+    }
+    public static&lt;T&gt; Optional&lt;T&gt; empty() {
+        @SuppressWarnings("unchecked")
+        Optional&lt;T&gt; t = (Optional&lt;T&gt;) EMPTY;
+        return t;
+    }
+</code></pre>
+
+<ul>
+  <li>Above is a fraction of actual Java Optional class.</li>
+  <li>&lt;?&gt; is identical to &lt;? extends Object&gt;</li>
+  <li>Since a new method should always have a concrete type, new Optional&lt;&gt;() is actually new Optional<object>()</object></li>
+  <li>Let us think about <strong>why the type of EMPTY was set Optional&lt;?&gt; and not Optioanl&lt;Object&gt;</strong></li>
+</ul>
+
+<pre><code class="language-Java">    Optional&lt;?&gt; opt1 = new Optional&lt;Object&gt;();
+    Optional&lt;Object&gt; opt2 = new Optional&lt;Object&gt;();
+
+    Optional&lt;String&gt; stropt1 = (Optional&lt;String&gt;)opt1; //OK
+    Optional&lt;String&gt; stropt1 = (Optional&lt;String&gt;)opt2; //Error!
+</code></pre>
+
+<ul>
+  <li>To conclude, casting Optional&lt;Object&gt; to Optional<String> is impossible. **Optional\<object> -&gt; Optional\<T>**</T></object></String></li>
+  <li>But, <strong>Optional&lt;Object&gt; -&gt; Optional&lt;?&gt; -&gt; Optional&lt;T&gt;</strong> is possible</li>
+</ul>
+
+<h4 id="how-generic-type-is-actually-compiled">How Generic type is actually compiled</h4>
+
+<ul>
+  <li>
+    <ol>
+      <li>Compiler checks source file with Generic type, and casts wherever is necessary</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Compiler removes the generic type. Hence, the compiled class file (*.class) does NOT have any information about the generic type.</li>
+    </ol>
+  </li>
+</ul>
+
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Generics and Wildcard expression_2&url=http://localhost:4000/Generics2/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/Generics2/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/Generics2/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//mr-brown.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-139982514-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

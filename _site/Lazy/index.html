@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Lazy - Sanghyun's steady stack.</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Sanghyun's steady stack." property="og:site_name">
+  
+    <meta content="Lazy" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content=""Slow but steady wins the race."
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/Lazy/" property="og:url">
+  
+  
+    <meta content="2019-12-17T00:45:22+09:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/sanghyun.jpg" property="og:image">
+  
+  
+    
+    <meta content="Spring" property="article:section">
+    
+  
+  
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="Lazy">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/Lazy/">
+  
+  
+    <meta name="twitter:description" content=""Slow but steady wins the race."
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/sanghyun.jpg">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/sanghyun.jpg" alt="Sanghyun Harry Kim"></a>
+      </div>
+      <div class="author-name">Sanghyun Harry Kim</div>
+      <p>Web developer. Love Go, Borges, and Gym</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:tlonist.sang@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2019 &copy; Sanghyun Harry Kim</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Lazy</h1>
+        <div class="page-date"><span>2019, Dec 17&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>There was one time when my company application crashed from the beginning, emitting a bean creation error.
+Looking into the source code, I found out that one bean needed for other beans’ creation was not created in advance, failing successively in the process of bean creation. For this kind of situation, you need to initialize certain beans after a specific dependent bean is created. A @Lazy annotation can solve this problem.</p>
+
+<p><a href="https://spring.io/blog/2019/03/14/lazy-initialization-in-spring-boot-2-2">https://spring.io/blog/2019/03/14/lazy-initialization-in-spring-boot-2-2</a></p>
+<blockquote>
+  <p>Spring Framework has had support for lazy bean initialization since before its source code moved to Git 11 years ago. By default, when an application context is &gt;being refreshed, every bean in the context is created and its dependencies are injected. By contrast, when a bean definition is configured to be initialized &gt;lazily it will not be created and its dependencies will not be injected until it’s needed.</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@SpringBootApplication</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LazytestApplication</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">LazytestApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">StartRunner</span> <span class="kd">implements</span> <span class="n">ApplicationRunner</span> <span class="o">{</span>
+    <span class="c1">// @Autowired</span>
+    <span class="c1">// BeanOne beanOne;</span>
+
+    <span class="c1">// @Autowired</span>
+    <span class="c1">// BeanTwo beanTwo;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">ApplicationArguments</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"run!"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LogBeanPostProcessor</span> <span class="kd">implements</span> <span class="n">BeanPostProcessor</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Object</span> <span class="nf">postProcessBeforeInitialization</span><span class="o">(</span><span class="n">Object</span> <span class="n">bean</span><span class="o">,</span> <span class="n">String</span> <span class="n">beanName</span><span class="o">)</span>
+            <span class="kd">throws</span> <span class="n">BeansException</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">bean</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Object</span> <span class="nf">postProcessAfterInitialization</span><span class="o">(</span><span class="n">Object</span> <span class="n">bean</span><span class="o">,</span> <span class="n">String</span> <span class="n">beanName</span><span class="o">)</span>
+            <span class="kd">throws</span> <span class="n">BeansException</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">((</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"Bean instantiated with name %s and class %s"</span><span class="o">,</span> <span class="n">beanName</span><span class="o">,</span> <span class="n">bean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getSimpleName</span><span class="o">())));</span>
+        <span class="k">return</span> <span class="n">bean</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>BeanPostProcessor is an interface one can use not only for logging, but for various other usages one wants after initialization (as the name obviously suggests).
+In the example code following, two classes will be made into spring beans that will be taken care of by the spring context.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeanTwo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">twoMessage</span><span class="o">(){</span>
+        <span class="c1">//System.out.println("BeanTwo is created!");</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">//@Lazy</span>
+<span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeanOne</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">oneMessage</span><span class="o">(){</span>
+        <span class="c1">//System.out.println("BeanOne is created!");</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>There is nothing special with these beans, just plain classes which has println method within.
+When running the code above, below is the result.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.2.RELEASE)
+
+2019-12-17 21:27:18.542  INFO 22243 --- [           main] c.e.lazy.lazytest.LazytestApplication    : Starting LazytestApplication on Sanghyuns-MacBook-Pro.local with PID 22243 (started by tlonist in /Users/tlonist/Documents/Spring Study/lazytest)
+2019-12-17 21:27:18.543  INFO 22243 --- [           main] c.e.lazy.lazytest.LazytestApplication    : No active profile set, falling back to default profiles: default
+</span><span class="gp">Bean instantiated with name lazytestApplication and class LazytestApplication$</span><span class="nv">$EnhancerBySpringCGLIB$$</span>cf9c84e0
+<span class="go">Bean instantiated with name beanOne and class BeanOne
+Bean instantiated with name beanTwo and class BeanTwo
+2019-12-17 21:28:46.553  INFO 22248 --- [           main] c.e.lazy.lazytest.LazytestApplication    : Started LazytestApplication in 0.469 seconds (JVM running for 0.896)run!
+</span></code></pre></div></div>
+<p>First of all, beanOne and beanTwo are created because they are @autowired in the applicationRunner class. The order of the beans created, however, may change according to specific settings of your configuration. Anyways, what I want to do here is to specifically making sure that the creation of beanTwo is processed before that of beanOne.</p>
+
+<ul>
+  <li>To do so, I will put @Lazy annotations for BeanOne classes. What I expect is as following.
+    <ol>
+      <li>Springboot scans for the entire packages within the project and creates beans EXCEPT for those that are annotated @Lazy (BeanTwo created)</li>
+      <li>Springboot creates @Lazy beans when it is specifically autowired or being used. (BeanOne created)
+Below is the console result.</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">Bean instantiated with name lazytestApplication and class LazytestApplication$</span><span class="nv">$EnhancerBySpringCGLIB$$</span>ac28e0af
+<span class="go">Bean instantiated with name beanTwo and class BeanTwo
+Bean instantiated with name beanOne and class BeanOne
+</span></code></pre></div></div>
+
+<p>There are other annotations like @DependsOn, through which you can control the creation of beans specifically with your own taste. 
+It will be a topic for future blog posting!</p>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Lazy&url=http://localhost:4000/Lazy/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/Lazy/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/Lazy/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//mr-brown.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-139982514-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

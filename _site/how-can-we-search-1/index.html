@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>How can I see stuffs on the internet? - 1(revised) - Sanghyun's steady stack.</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Sanghyun's steady stack." property="og:site_name">
+  
+    <meta content="How can I see stuffs on the internet? - 1(revised)" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content=""Slow but steady wins the race."
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/how-can-we-search-1/" property="og:url">
+  
+  
+    <meta content="2018-08-05T00:45:22+09:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/google1.png" property="og:image">
+  
+  
+    
+    <meta content="Network" property="article:section">
+    
+  
+  
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="How can I see stuffs on the internet? - 1(revised)">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/how-can-we-search-1/">
+  
+  
+    <meta name="twitter:description" content=""Slow but steady wins the race."
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/google1.png">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/sanghyun.jpg" alt="Sanghyun Harry Kim"></a>
+      </div>
+      <div class="author-name">Sanghyun Harry Kim</div>
+      <p>Web developer. Love Go, Borges, and Gym</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:tlonist.sang@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2019 &copy; Sanghyun Harry Kim</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src=/assets/img/google1.png alt="How can I see stuffs on the internet? - 1(revised)">
+        
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">How can I see stuffs on the internet? - 1(revised)</h1>
+        <div class="page-date"><span>2018, Aug 05&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>reference: HTTP the definitive Guide</p>
+
+<p>How can I search stuffs on Google? How is it possible to watch videos on Youtube?
+About a year ago I tried to answer this question with my own effort, but wasn’t so successful. Now that I’ve gained more knowledge of how it works, I want to start a series of postings that arranges my understanding on how web works in general.</p>
+
+<p>To be more specific, this series of posting will trace and study the following user scenario.</p>
+
+<ol>
+  <li>
+    <p>Run an internet browser, go to Google.com (I’m using Chrome Version 78.0.3904.108)
+<a href="http://localhost:4000/assets/img/hcws5.png"><img src="http://localhost:4000/assets/img/hcws5.png" alt="img" /></a></p>
+  </li>
+  <li>
+    <p>Type Amazon in the search box.
+<a href="http://localhost:4000/assets/img/hcws4.png"><img src="http://localhost:4000/assets/img/hcws4.png" alt="img" /></a></p>
+  </li>
+  <li>Click Amazon, and go into Amazon website.
+<a href="http://localhost:4000/assets/img/hcws3.png"><img src="http://localhost:4000/assets/img/hcws3.png" alt="img" /></a>\
+<br /></li>
+  <li>Type Borges in the search box.
+<a href="http://localhost:4000/assets/img/hcws2.png"><img src="http://localhost:4000/assets/img/hcws2.png" alt="img" /></a>
+<br /></li>
+  <li>Click ‘collected Fiction’
+<a href="http://localhost:4000/assets/img/hcws1.png"><img src="http://localhost:4000/assets/img/hcws1.png" alt="img" /></a></li>
+</ol>
+
+<p>#1.	인터넷 브라우저를 실행한다. (네트워크의 애플리케이션 계층)</p>
+<ul>
+  <li>웹브라우저를 실행하면, 애플리케이션이 시작되어 메모리에 올라가고, 프로세스로 간주되어 처리되기 시작한다. (이 과정은 시스템 프로그래밍 공부하게..되면 복습해보자) 애플리케이션 계층은 이 프로그램이 다른 장치에 로딩된 애플리케이션/서비스와 데이터를 교환하는데 있어 일관된 룰을 정립해준다. 한마디로 최상위 애플리케이션들이 어떤 약속으로 데이터를 교환할 것인가를 정해주는 것이다.</li>
+</ul>
+
+<p><img src="http://localhost:4000/assets/img/google1.png" alt="img" /></p>
+
+<ul>
+  <li>
+    <p>브라우저를 키면 기본으로 설정되어 있는 주소창의 https://www.google.com 의 https가 바로 이 애플리케이션 계층의 프로토콜이다. 초월적 활자 이동 규약이라는 뜻의 hyper text transfer protocol 은 말 그대로 이 텍스트에서 저 텍스트로 링크를 통한 널뛰기가 가능하다는 뜻이다.</p>
+  </li>
+  <li>
+    <p>그럼 [초월적 활자 이동 규약]://www.google.com 은 어떻게 나에게 구글의 메인 화면을 띄워주는 걸까? 질문은 꼬리에 꼬리를 문다. <a href="http://tlonist.github.io/jekyll/update/2018/08/05/how-can-we-search-2.html">바로 이런것이다</a></p>
+  </li>
+</ul>
+
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=How can I see stuffs on the internet? - 1(revised)&url=http://localhost:4000/how-can-we-search-1/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/how-can-we-search-1/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/how-can-we-search-1/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//mr-brown.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-139982514-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>
