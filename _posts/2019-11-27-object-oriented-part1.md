@@ -4,6 +4,9 @@ title:  "Object oriented programming - 1"
 date:   2019-11-29 00:45:22 +0900
 categories: Java
 comments: true
+img: oopimg1.jpg # Add image post (optional)
+fig-caption: # Add figcaption (optional)
+tags: [OOP, java]
 ---
 
 What is an object-oriented programming? and why is it so important?

@@ -4,6 +4,9 @@ title:  "Object Oriented Programming - 3"
 date:   2019-12-03 00:45:22 +0900
 categories: Java
 comments: true
+img: oopimg3.jpg # Add image post (optional)
+fig-caption: # Add figcaption (optional)
+tags: [OOP, java]
 ---
 
 So far I've covered Inheritance and Polymorphism. Now we have abstraction and encapsulation left. I will go on with the previous example of Clash Royale characters in explaining its concepts.

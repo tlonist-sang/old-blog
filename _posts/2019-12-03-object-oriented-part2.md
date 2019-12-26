@@ -4,6 +4,9 @@ title:  "Object Oriented Programming - 2"
 date:   2019-12-03 00:45:22 +0900
 categories: Java
 comments: true
+img: oopimg2.jpg # Add image post (optional)
+fig-caption: # Add figcaption (optional)
+tags: [OOP, java]
 ---
 
 (Continuing from the previous post...)

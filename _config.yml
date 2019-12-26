@@ -13,8 +13,14 @@ about-author: Web developer. Love Go, Borges, and Gym
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
 social-github:  # add your Github handle
-social-linkedin: www.linkedin.com/in/sanghyun-harry-kim
+social-linkedin: sanghyun-harry-kim
 social-email: tlonist.sang@gmail.com
+
+#category
+category_dir: categories/
+
+#tag
+tag_dir: tag/
 
 # Disqus
 discus-identifier: mr-brown # add your discus identifier
