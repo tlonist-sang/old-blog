@@ -1,6 +1,7 @@
 @import 'normalize';
 @import 'syntax';
 @import 'variables';
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -8,6 +9,7 @@
 
 html {
   line-height: 1.5;
+  font-size : 18px;
 }
 
 body {
@@ -35,7 +37,7 @@ img + em {
   margin-top: 10px;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 blockquote {
@@ -76,7 +78,7 @@ table td, table.blueTable th {
   padding: 3px 2px;
 }
 table tbody td {
-  font-size: 13px;
+  font-size: 18px;
 }
 table tr:nth-child(even) {
   background: #adbecc;
@@ -87,7 +89,7 @@ table thead {
   border-bottom: 1px solid #8c8c8c;
 }
 table thead th {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   color: #fff;
   border-left: 1px solid #d0e4f5;
@@ -97,7 +99,7 @@ table thead th:first-child {
 }
 
 table tfoot {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   color: #fff;
   background: #d0e4f5;
