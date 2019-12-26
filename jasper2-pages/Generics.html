@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Generics and Wildcard expression_1</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="assets/built/syntax.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="dev log" />
+    <link rel="shortcut icon" href="http://localhost:4000assets/img/favicon.p" type="image/png" />
+    <link rel="canonical" href="http://localhost:4000Generics" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Tlonist" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Generics and Wildcard expression_1" />
+    <meta property="og:description" content="dev log" />
+    <meta property="og:url" content="http://localhost:4000Generics" />
+    <meta property="og:image" content="http://localhost:4000assets/img/blog-cover.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Generics and Wildcard expression_1" />
+    <meta name="twitter:description" content="dev log" />
+    <meta name="twitter:url" content="http://localhost:4000" />
+    <meta name="twitter:image" content="http://localhost:4000assets/img/blog-cover.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Tlonist" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="666" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Tlonist",
+        "logo": "http://localhost:4000assets/img/blog-icon.png"
+    },
+    "url": "http://localhost:4000Generics",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:4000assets/img/blog-cover.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:4000Generics"
+    },
+    "description": "dev log"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="Generics and Wildcard expression_1" href="feed.xml" />
+
+
+</head>
+<body class="home-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="http://localhost:4000"><img src="assets/img/blog-icon.png" alt="Tlonist" /></a>
+            
+        
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  no-image">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="12 November 2019">12 November 2019</time>
+                    
+                </section>
+                <h1 class="post-full-title">Generics and Wildcard expression_1</h1>
+            </header>
+
+            
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <h3 id="generics_part-1">Generics_Part 1</h3>
+
+<p>Generics was introduced from JDK 1.5 and since then been serving as a major feature in using Java language.</p>
+
+<p>Generics is a function that does compile-time type checks for method or collection classes that deals with various types of objects; hence classes like HashSet, ArrayList, and HashMap make very good uses of generics.</p>
+<h4 id="1-basics-"><span style="background-color: #DCDCDC">1. Basics </span></h4>
+<h5 id="generics-does">Generics does…</h5>
+<blockquote>
+  <p><strong>enhances type stability</strong> : it prevents objects from being saved in unintended types, and reduces errors when an object is taken out in a different type than its original type. <br />
+<strong>simplifies the code</strong> : it lets you omit writing codes for type checking and casting.</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">Generics</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="n">T</span> <span class="n">language</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">setLanguage</span><span class="o">(</span><span class="n">T</span> <span class="n">language</span><span class="o">){</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">language</span> <span class="o">=</span> <span class="n">language</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">T</span> <span class="nf">getLanguage</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">language</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>One thing to note is that ‘T’ can be substituted to basically any alphabet. Normally in case of arrayList, E (elements) is used; and for Map, K(key) and V(value) are often used.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">Person</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">person</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;&gt;();</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="s">"Java"</span><span class="o">);</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="k">new</span> <span class="n">Object</span><span class="o">());</span> <span class="c1">//&lt;---error!</span>
+</code></pre></div></div>
+
+<ul>
+  <li>The once-mysterious type T is not fixed to be a String. Once defined such, it has same as writing the whole class with String substituting T. Hence the error from the third line above. 
+<a href="''"><img src="''" alt="img" /></a></li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">Person</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">person</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="s">"Java"</span><span class="o">);</span>
+        <span class="n">person</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="k">new</span> <span class="n">Object</span><span class="o">());</span> <span class="c1">//&lt;---error!</span>
+        
+        <span class="n">Person</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">person2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">person2</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="s">"Python"</span><span class="o">);</span> <span class="c1">//&lt;---error!</span>
+        <span class="n">person2</span><span class="o">.</span><span class="na">setLanguage</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+</code></pre></div></div>
+<ul>
+  <li>It is possible to make several Person objects, much like it is possible to call a same function multiple times with varying arguments.</li>
+  <li>It will follow quite automatically that <strong>static members can’t have a generics type</strong>, because they should be used in a same way regardless of object types.</li>
+</ul>
+
+<h5 id="what-is-okay-and-not">What is okay and not</h5>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span><span class="o">&lt;</span><span class="n">M</span><span class="o">&gt;</span> <span class="o">{</span>
+            <span class="n">M</span> <span class="n">language</span><span class="o">;</span>
+            <span class="n">M</span><span class="o">[]</span> <span class="n">languageArr</span><span class="o">;</span> <span class="c1">//OK</span>
+            
+            <span class="n">M</span> <span class="nf">toArray</span><span class="o">(){</span>
+                <span class="n">M</span><span class="o">[]</span> <span class="n">tmpArr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">M</span><span class="o">[</span><span class="n">languageArr</span><span class="o">.</span><span class="na">length</span><span class="o">];</span> <span class="c1">//Error!</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+</code></pre></div></div>
+<ul>
+  <li>Declaring an array of generics type is okay, while instantiating a new one is not.</li>
+  <li>This is because <strong>new operator</strong> has to know exactly what type the T is during the compile time. Likewise, <strong>instanceof</strong> cannot be used because compiler has no way of knowing what T will be.</li>
+</ul>
+
+<h4 id="2-using-generics">2. Using Generics</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Person</span><span class="o">&lt;</span><span class="n">JavaDeveloper</span><span class="o">&gt;</span> <span class="n">javaPerson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;&gt;();</span> <span class="c1">// specific type of T can be ommited from JDK 1.7</span>
+        <span class="n">Person</span><span class="o">&lt;</span><span class="n">JavaDeveloper</span><span class="o">&gt;</span> <span class="n">javaScriptPerson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;</span><span class="n">JavaScriptDeveloper</span><span class="o">&gt;();</span> <span class="c1">//error</span>
+
+        <span class="n">Person</span><span class="o">&lt;</span><span class="n">JavaDeveloper</span><span class="o">&gt;</span> <span class="n">groupOfJavaPersons</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;&gt;();</span>
+        <span class="n">groupOfJavaPersons</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Java</span><span class="o">());</span>
+        <span class="n">groupOfJavaPersons</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JavaScript</span><span class="o">());</span> <span class="c1">//error!</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Programmer</span><span class="o">{}</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JavaDeveloper</span> <span class="kd">extends</span> <span class="n">Programmer</span><span class="o">{}</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">JavaScriptDeveloper</span> <span class="kd">extends</span> <span class="n">Programmer</span><span class="o">{}</span>
+</code></pre></div></div>
+<ul>
+  <li>This is quite self-explanatory. Once declared with specific types, the created objects won’t tolerate other types to butt in.</li>
+</ul>
+
+<h4 id="3-limited-generics-class">3. Limited Generics Class</h4>
+
+<ul>
+  <li>As mentioned in beginning, generics was created to lessen the burden for type-checking and casting. So far there doesn’t seem to be much virtue in it. how about limiting the type <strong>T to only take certain types of objects</strong>?</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Programmer</span><span class="o">&gt;</span>
+</code></pre></div></div>
+<ul>
+  <li>This forces T to be <strong>descendents</strong> of Programmer. Hence, the below is possible.
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">Person</span><span class="o">&lt;</span><span class="n">Programmer</span><span class="o">&gt;</span> <span class="n">programmerBatch</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">&lt;&gt;();</span> 
+  <span class="n">programmerBatch</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JavaDeveloper</span><span class="o">());</span>
+  <span class="n">programmerBatch</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JavaScriptDeveloper</span><span class="o">());</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Basically if you omit and just write <strong>&lt;T&gt;</strong>, it is same as &lt;T extends Object&gt;</p>
+  </li>
+  <li>When it comes to implementing an interface, make sure to use <strong>extends</strong>, rather than the usual <strong>implements</strong>.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">interface</span> <span class="nf">codable</span><span class="o">()</span>
+    <span class="kd">class</span> <span class="nc">programmerBatch</span><span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">codable</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h4 id="4-wildcard-expressions">4. Wildcard Expressions</h4>
+
+<ul>
+  <li>
+    <p>Once I bumped into this link in stackoverflow <a href="https://stackoverflow.com/questions/7573269/what-is-the-difference-between-and-t-in-class-and-method-signatures">https://stackoverflow.com/questions/7573269/what-is-the-difference-between-and-t-in-class-and-method-signatures</a></p>
+  </li>
+  <li>
+    <p>After reading the adopted answer, I could still not get 100% of what the difference was. Now let’s investigate.</p>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Outsourcing</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="n">webPage</span> <span class="nf">makeWebPage</span><span class="o">(</span><span class="n">Person</span><span class="o">&lt;</span><span class="n">Programmer</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">){</span>
+        <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="s">"Coded by "</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Programmer</span> <span class="n">p</span> <span class="o">:</span> <span class="n">box</span><span class="o">.</span><span class="na">getList</span><span class="o">())</span> <span class="n">temp</span> <span class="o">+=</span> <span class="n">p</span> <span class="o">+</span> <span class="s">" "</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">webPage</span><span class="o">(</span><span class="n">temp</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Above class has the following problems.</p>
+  <ul>
+    <li>(1) Since it is a static method, a specific type (programmer) has to be written</li>
+    <li>(2) Because of (1), if you want to substitute <strong>programmer</strong> to <strong>JavaDeveloper</strong> or <strong>JavaScriptDeveloper</strong>, you have to make separte methods like</li>
+  </ul>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="kd">static</span> <span class="n">webPage</span> <span class="nf">makeWebPage</span><span class="o">(</span><span class="n">Person</span><span class="o">&lt;</span><span class="n">JavaDeveloper</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">){</span>
+        <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="s">"Coded by "</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Programmer</span> <span class="n">p</span> <span class="o">:</span> <span class="n">box</span><span class="o">.</span><span class="na">getList</span><span class="o">())</span> <span class="n">temp</span> <span class="o">+=</span> <span class="n">p</span> <span class="o">+</span> <span class="s">" "</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">webPage</span><span class="o">(</span><span class="n">temp</span><span class="o">);</span>
+    <span class="o">}</span>
+
+      <span class="kd">static</span> <span class="n">webPage</span> <span class="nf">makeWebPage</span><span class="o">(</span><span class="n">Person</span><span class="o">&lt;</span><span class="n">JavaScriptDeveloper</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">){</span>
+        <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="s">"Coded by "</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Programmer</span> <span class="n">p</span> <span class="o">:</span> <span class="n">box</span><span class="o">.</span><span class="na">getList</span><span class="o">())</span> <span class="n">temp</span> <span class="o">+=</span> <span class="n">p</span> <span class="o">+</span> <span class="s">" "</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">webPage</span><span class="o">(</span><span class="n">temp</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>(3) However, this is NOT possible, because <strong>having different generic types does not allow overloading</strong>.</li>
+  <li>(4) This can be handled with <strong>?(wildcard)</strong>!</li>
+</ul>
+
+<blockquote>
+  <p>&lt;? extends T&gt;  :  upper limit. T and its descendents
+&lt;? super T&gt;    :  lower limit. T and its ancestors
+&lt;?&gt;            :  no limit. same as &lt;? extends Object&gt;</p>
+</blockquote>
+
+<ul>
+  <li>Converting the problematic <strong>makeWebPage</strong> function,</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">static</span> <span class="n">webPage</span> <span class="nf">makeWebPage</span><span class="o">(</span><span class="n">Person</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Programmer</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">){</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+<ul>
+  <li>
+    <p>Now this <strong>makeWebPage</strong> can accomodate JavaDevelopers and JavaScriptDevelopers at once! (and any of Programmer’s descendets)</p>
+  </li>
+  <li>
+    <p>Going back to the <a href="https://stackoverflow.com/questions/7573269/what-is-the-difference-between-and-t-in-class-and-method-signatures">link</a>, I can conclude that <strong>Generic type T is a compile-time decided consistent type for class</strong>, whereas <strong>wildcard is an expression limiting the range of types</strong>. Those two are not of same nature, the former being a grammar and the latter a little like a hack.</p>
+  </li>
+</ul>
+
+<h4 id="5-generic-method">5. Generic Method</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">Comparator</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">c</span><span class="o">)</span>
+</code></pre></div></div>
+<ul>
+  <li>The <strong>T</strong> in method and <strong>T</strong> in class are ‘totally different’ things. They may or may not be the same, and utterly unrelated.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">static</span> <span class="n">webPage</span> <span class="nf">makeWebPage</span><span class="o">(</span><span class="n">Person</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Programmer</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">){</span>
+        <span class="o">...</span>
+    <span class="o">}</span> <span class="c1">//can be changed into ...</span>
+
+ <span class="kd">static</span> <span class="n">Person</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Programmer</span><span class="o">&gt;</span> <span class="n">webPage</span> <span class="nf">makeWebPage</span><span class="o">(</span><span class="n">Person</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">box</span><span class="o">){</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Below is some tricky example
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Comparable</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">&gt;&gt;</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="n">List</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Okay. <strong>parameter ‘list’</strong> is of type T that is a <strong>decendents of Comparable&lt;? super T&gt;</strong> for one.</li>
+  <li>The comparable interface compares <strong>T or its ancestors</strong>.</li>
+  <li>If the list is given as <strong>JavaDevelopers</strong>, the comparable compares <strong>JavaDevelopers, Programmers and Persons and Objects</strong></li>
+</ul>
+
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page -->
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Tlonist</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = 'http://localhost:4000';
+                            this.page.identifier = 'Tlonist';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://steadystack.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card  no-image">
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="Enum">
+                <header class="post-card-header">
+                    
+
+                    <h2 class="post-card-title">Enum</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card  no-image">
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="clickable-image">
+                <header class="post-card-header">
+                    
+
+                    <h2 class="post-card-title">Clickable Image</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="http://localhost:4000">
+            
+                <img src="assets/img/favicon.png" alt="Tlonist icon" />
+            
+            <span>Tlonist</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">Generics and Wildcard expression_1</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Generics+and+Wildcard+expression_1&amp;url=https://jekyller.github.io/jasper2/Generics"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://jekyller.github.io/jasper2/Generics"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="http://localhost:4000">Tlonist</a> &copy; 2019</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                    <img class="subscribe-overlay-logo" src="assets/img/blog-icon.png" alt="Tlonist" />
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Tlonist</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-139982514-1', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>

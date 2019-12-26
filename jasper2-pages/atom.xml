@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> - Articles</title>
+    <description>dev log</description>
+    <link>
+    http://localhost:4000</link>
+    
+      
+      <item>
+        <title>Object Oriented Programming - 3</title>
+        
+          <description>&lt;p&gt;So far I’ve covered Inheritance and Polymorphism. Now we have abstraction and encapsulation left. I will go on with the previous example of Clash Royale characters in explaining its concepts.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 03 Dec 2019 00:45:22 +0900</pubDate>
+        <link>
+        http://localhost:4000/object-oriented-part3</link>
+        <guid isPermaLink="true">http://localhost:4000/object-oriented-part3</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Object Oriented Programming - 2</title>
+        
+          <description>&lt;p&gt;(Continuing from the previous post…)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 03 Dec 2019 00:45:22 +0900</pubDate>
+        <link>
+        http://localhost:4000/object-oriented-part2</link>
+        <guid isPermaLink="true">http://localhost:4000/object-oriented-part2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Object oriented programming - 1</title>
+        
+          <description>&lt;p&gt;What is an object-oriented programming? and why is it so important?
+Do I really understand what it is?&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 29 Nov 2019 00:45:22 +0900</pubDate>
+        <link>
+        http://localhost:4000/object-oriented-part1</link>
+        <guid isPermaLink="true">http://localhost:4000/object-oriented-part1</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Vue Practice1</title>
+        
+          <description>
+</description>
+        
+        <pubDate>Wed, 20 Nov 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/vue-practice1</link>
+        <guid isPermaLink="true">http://localhost:4000/vue-practice1</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Enumeration</title>
+        
+          <description>&lt;h3 id=&quot;1-enumeration&quot;&gt;1. Enumeration&lt;/h3&gt;
+
+</description>
+        
+        <pubDate>Tue, 19 Nov 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/enum-type</link>
+        <guid isPermaLink="true">http://localhost:4000/enum-type</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Generics and Wildcard expression_2</title>
+        
+          <description>&lt;p&gt;reference: Java의 정석&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 17 Nov 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Generics2</link>
+        <guid isPermaLink="true">http://localhost:4000/Generics2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Enabling VS code snippets for markdown</title>
+        
+          <description>&lt;p&gt;[link_for_enabling_snippets] (https://github.com/Microsoft/vscode/issues/26108)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 17 Nov 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Enabling-Snippets</link>
+        <guid isPermaLink="true">http://localhost:4000/Enabling-Snippets</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Enum</title>
+        
+          <description>&lt;h4 id=&quot;simple-vue-app&quot;&gt;Simple Vue App&lt;/h4&gt;
+
+</description>
+        
+        <pubDate>Sat, 16 Nov 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Simple-Vue-App</link>
+        <guid isPermaLink="true">http://localhost:4000/Simple-Vue-App</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Enum</title>
+        
+          <description>&lt;h4 id=&quot;enum&quot;&gt;Enum&lt;/h4&gt;
+
+</description>
+        
+        <pubDate>Tue, 12 Nov 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Enum</link>
+        <guid isPermaLink="true">http://localhost:4000/Enum</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Generics and Wildcard expression_1</title>
+        
+          <description>&lt;h3 id=&quot;generics_part-1&quot;&gt;Generics_Part 1&lt;/h3&gt;
+
+</description>
+        
+        <pubDate>Tue, 12 Nov 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Generics</link>
+        <guid isPermaLink="true">http://localhost:4000/Generics</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Clickable Image</title>
+        
+          <description>
+</description>
+        
+        <pubDate>Sat, 09 Nov 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/clickable-image</link>
+        <guid isPermaLink="true">http://localhost:4000/clickable-image</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Tomcat 9 - Adding reason phrase 200 OK</title>
+        
+          <description>&lt;h4 id=&quot;abstract&quot;&gt;Abstract&lt;/h4&gt;
+&lt;p&gt;From Tomcat 8.5 on, the &lt;strong&gt;‘reason phrase’&lt;/strong&gt;, which states some additional information to the incoming request according to the status code, is omitted. Not only did I feel frustrated for Apache developers who decided not to leave this even as an option, it was an acutal headache for me because the absence of the reason phrase was causing some serious issues for legacy projects.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 29 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Adding-reason-phrase</link>
+        <guid isPermaLink="true">http://localhost:4000/Adding-reason-phrase</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Polymorphism - Interface </title>
+        
+          <description>
+</description>
+        
+        <pubDate>Mon, 28 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/polymorphism</link>
+        <guid isPermaLink="true">http://localhost:4000/polymorphism</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Building Tomcat from its source-2</title>
+        
+          <description>&lt;p&gt;####Building Tomcat From Its Source - 2 
+#####Downloading Tomcat Source and Opening it from an IDE&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 14 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Building-Tomcat-Source-From-Source-2</link>
+        <guid isPermaLink="true">http://localhost:4000/Building-Tomcat-Source-From-Source-2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Building Tomcat from its source-1</title>
+        
+          <description>&lt;h3 id=&quot;building-tomcat-from-its-source---1&quot;&gt;Building Tomcat From Its Source - 1&lt;/h3&gt;
+
+</description>
+        
+        <pubDate>Mon, 14 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Building-Tomcat-From-Source</link>
+        <guid isPermaLink="true">http://localhost:4000/Building-Tomcat-From-Source</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>fork and join</title>
+        
+          <description>&lt;h4 id=&quot;fork--join&quot;&gt;Fork &amp;amp; Join&lt;/h4&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/fork-and-join</link>
+        <guid isPermaLink="true">http://localhost:4000/fork-and-join</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>volatile</title>
+        
+          <description>&lt;p&gt;Each multicore processor has its own cache, like the diagram below describes.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 09 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/volatile</link>
+        <guid isPermaLink="true">http://localhost:4000/volatile</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Thread flow and control</title>
+        
+          <description>&lt;h4 id=&quot;thread-flow-and-control&quot;&gt;Thread flow and control&lt;/h4&gt;
+
+</description>
+        
+        <pubDate>Wed, 09 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Thread-flow-and-control</link>
+        <guid isPermaLink="true">http://localhost:4000/Thread-flow-and-control</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Thread - Daemon Thread</title>
+        
+          <description>&lt;h4 id=&quot;daemon-thread&quot;&gt;Daemon Thread&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Daemon thread&lt;/strong&gt; is a subsidiary thread that helps other non-daemon threads’ tasks. You can easily think of Java’s garbage collection, WordProcessor’s auto-save, or auto-screen reloading functionalities.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 09 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Daemon-Thread</link>
+        <guid isPermaLink="true">http://localhost:4000/Daemon-Thread</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Thread priority</title>
+        
+          <description>
+&lt;hr /&gt;
+&lt;p&gt;layout: post
+title:  “Thread - Thread Priority”
+date:   2019-10-09
+comments: true
+categories: Java
+—&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 08 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Thread-Priority</link>
+        <guid isPermaLink="true">http://localhost:4000/Thread-Priority</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Thread - Definition, run()&amp;start(), main</title>
+        
+          <description>&lt;h2 id=&quot;thread&quot;&gt;Thread&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 06 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Thread-definition-run-start-main</link>
+        <guid isPermaLink="true">http://localhost:4000/Thread-definition-run-start-main</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>JVM</title>
+        
+          <description>&lt;p&gt;##[[JVM (Java Virtual Machine)]]&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 06 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/JVM</link>
+        <guid isPermaLink="true">http://localhost:4000/JVM</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Spring JPA - 1</title>
+        
+          <description>&lt;p&gt;In this posting, I will write about&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;ORM paradigm inconsistency problem&lt;/li&gt;
+  &lt;li&gt;Basic settings for getting started with Spring JPA&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        
+        <pubDate>Wed, 19 Jun 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Spring-JPA</link>
+        <guid isPermaLink="true">http://localhost:4000/Spring-JPA</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>A little bit about I/O Streams</title>
+        
+          <description>&lt;p&gt;In this posting, I am writing about&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Gibberish on why I am writing about this&lt;/li&gt;
+  &lt;li&gt;What is stream? why do I need it?&lt;/li&gt;
+  &lt;li&gt;Kinds of streams (and what are readers and writers?)&lt;/li&gt;
+  &lt;li&gt;Summary&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Sun, 21 Apr 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/InputStream,-OutputStream(ing)</link>
+        <guid isPermaLink="true">http://localhost:4000/InputStream,-OutputStream(ing)</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>What is NodeJS</title>
+        
+          <description>&lt;p&gt;In this posting, I will write about what NodeJS is.
+It will be sort of like a summary of the posting below.
+(https://medium.freecodecamp.org/what-exactly-is-node-js-ae36e97449f5)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 16 Apr 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Using-XML-marshaller-&-unmarshaller(ing)</link>
+        <guid isPermaLink="true">http://localhost:4000/Using-XML-marshaller-&-unmarshaller(ing)</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>What is NodeJS</title>
+        
+          <description>&lt;p&gt;In this posting, I will write about what NodeJS is.
+It will be sort of like a summary of the posting below.
+(https://medium.freecodecamp.org/what-exactly-is-node-js-ae36e97449f5)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 16 Apr 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Elastic-Search-with-Spring(ing)</link>
+        <guid isPermaLink="true">http://localhost:4000/Elastic-Search-with-Spring(ing)</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>What is NodeJS</title>
+        
+          <description>&lt;h1 id=&quot;what-is-nodejs&quot;&gt;What is NodeJS?&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Tue, 16 Apr 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/What-is-NodeJS</link>
+        <guid isPermaLink="true">http://localhost:4000/What-is-NodeJS</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>What is NodeJS</title>
+        
+          <description>&lt;p&gt;In this posting, I will write about what NodeJS is.
+It will be sort of like a summary of the posting below.
+(https://medium.freecodecamp.org/what-exactly-is-node-js-ae36e97449f5)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 16 Apr 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Sending-HTTPS-request(ing)</link>
+        <guid isPermaLink="true">http://localhost:4000/Sending-HTTPS-request(ing)</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>What is NodeJS</title>
+        
+          <description>&lt;p&gt;In this posting, I will write about what NodeJS is.
+It will be sort of like a summary of the posting below.
+(https://medium.freecodecamp.org/what-exactly-is-node-js-ae36e97449f5)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 16 Apr 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/JQuery-performance-tips-and-tricks(ing)</link>
+        <guid isPermaLink="true">http://localhost:4000/JQuery-performance-tips-and-tricks(ing)</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>RequestBody Annotation</title>
+        
+          <description>&lt;p&gt;In this posting, I will write about
+ReqeustBody annotation in Spring Framework&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 05 Mar 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/RequestBody-Annotation</link>
+        <guid isPermaLink="true">http://localhost:4000/RequestBody-Annotation</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>MVC models</title>
+        
+          <description>&lt;p&gt;In this posting, I will write about&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;MVC model 1 and MVC model 2&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        
+        <pubDate>Wed, 23 Jan 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/MVC-model</link>
+        <guid isPermaLink="true">http://localhost:4000/MVC-model</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>!Important directive</title>
+        
+          <description>&lt;p&gt;So it was just an ordinary day of grappling with JavaScript and CSS. I wanted to apply to a DOM element certain sizes of width and height; I made a new class in CSS file, and set width and height values the element needed to be applied. But the style was not applying the width and height values I set for, while other values were normally applied. A senior told me that I can make use the !important rule in that case, and here is the posting related to it.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 20 Jan 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/!important</link>
+        <guid isPermaLink="true">http://localhost:4000/!important</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Implementing log4 into a Spring project</title>
+        
+          <description>&lt;p&gt;Needless to say, logs are best friends of any software engineers. In this posting, I will briefly go over how I added log4j feature to my pet project. There must be many ways of implementing it, but the one I did was by using ‘HandlerUnterceptorAdapter’. Many blog sources are out there, and http://addio3305.tistory.com/43 is one that I referred most.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 14 Jan 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Implementing-Log4j-into-your-project!</link>
+        <guid isPermaLink="true">http://localhost:4000/Implementing-Log4j-into-your-project!</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Float and Position - Visual formatting model</title>
+        
+          <description>&lt;p&gt;In this posting, I want to grasp some properties of DOM element like ‘float’ and ‘position’.
+Upon doing some searching, I found out https://www.w3.org/TR/CSS21/visuren.html, and just decided to write a short recap (short version of already shortened recap!) of my own, and here it goes.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 11 Jan 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/HTML-Position-and-Float-(~ing)</link>
+        <guid isPermaLink="true">http://localhost:4000/HTML-Position-and-Float-(~ing)</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Heap and Stack</title>
+        
+          <description>&lt;p&gt;I will review the concepts of heap and stack here. Through this posting I will clarify&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Definition of heap and stack&lt;/li&gt;
+  &lt;li&gt;Major differences (+ stuffs worth knowing)
+(https://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap)
+(https://www.programmerinterview.com/index.php/data-structures/difference-between-stack-and-heap/)&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Jan 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Heap-and-Stack</link>
+        <guid isPermaLink="true">http://localhost:4000/Heap-and-Stack</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Java Web Module Structure</title>
+        
+          <description>&lt;p&gt;Searching through already-made web projects in the workplace, I have always wondered the functions of each directories that were composing the project. I heard only briefly that there is a specification document which defines the usages of things like those. There indeed was one (https://download.oracle.com/otn-pub/jcp/servlet-2.4-fr-spec-oth-JSpec/servlet-2_4-fr-spec.pdf?AuthParam=1546950640_7caec6a7bcffd7161ee994e7d7751fc5); and before delving into it (I will actually peruse it), I found a rather shorthand explanation of my curiosity from a document from Oracle. (https://docs.oracle.com/cd/E19226-01/820-7627/bnadx/index.html).&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 08 Jan 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Web-Module-Structure</link>
+        <guid isPermaLink="true">http://localhost:4000/Web-Module-Structure</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>@ResponseBody</title>
+        
+          <description>&lt;p&gt;Sometimes a controller has to return not the name of the view, but a JSON object that contains some information within.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 06 Jan 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/@ResponseBody</link>
+        <guid isPermaLink="true">http://localhost:4000/@ResponseBody</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>JavaScript and HTML</title>
+        
+          <description>&lt;p&gt;What exactly is the difference between HTML and Javascript? I couldn’t answer this question well to myself, and here is what I found. From this posting, I will clarify&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;What HTML is.&lt;/li&gt;
+  &lt;li&gt;What JavaScript is.&lt;/li&gt;
+  &lt;li&gt;How those two are differernt.&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        
+        <pubDate>Sun, 06 Jan 2019 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Javascript-vs-HTML</link>
+        <guid isPermaLink="true">http://localhost:4000/Javascript-vs-HTML</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Compile time and Run time</title>
+        
+          <description>&lt;p&gt;Having a firm understanding about what is runtime/compile time is very important in developing. I’d like to clear up the distinction between these two. This is pretty much my regurgitation of a good source (https://stackoverflow.com/questions/846103/runtime-vs-compile-time). Two concepts could be analyzed by four questions as below:&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 30 Dec 2018 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Compile-Time-vs-Run-Time</link>
+        <guid isPermaLink="true">http://localhost:4000/Compile-Time-vs-Run-Time</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Window? Document? stop confusing me</title>
+        
+          <description>&lt;p&gt;This posting will answer the following questions.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 30 Dec 2018 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Window-object-vs-Document-object</link>
+        <guid isPermaLink="true">http://localhost:4000/Window-object-vs-Document-object</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>나는 어떻게 구글에서 자료를 찾을 수 있을까-4?</title>
+        
+          <description>&lt;p&gt;#4.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 09 Sep 2018 12:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/how-can-we-search-4</link>
+        <guid isPermaLink="true">http://localhost:4000/how-can-we-search-4</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>나는 어떻게 구글에서 자료를 찾을 수 있을까-3?</title>
+        
+          <description>&lt;p&gt;#3.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 15 Aug 2018 00:45:22 +0900</pubDate>
+        <link>
+        http://localhost:4000/how-can-we-search-3</link>
+        <guid isPermaLink="true">http://localhost:4000/how-can-we-search-3</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>나는 어떻게 구글에서 자료를 찾을 수 있을까-2?</title>
+        
+          <description>&lt;p&gt;첫번째 포스팅에선 초월적 활자규약과 http에 관한 이야기를 잠깐 했다. 
+궁금증이 사실 전혀 해소되지 않았다. 다음 행동으로 가보자. &lt;a href=&quot;https://webhostinggeeks.com/guides/dns/&quot;&gt;같이 보면 좋은 링크&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 13 Aug 2018 00:45:22 +0900</pubDate>
+        <link>
+        http://localhost:4000/how-can-we-search-2</link>
+        <guid isPermaLink="true">http://localhost:4000/how-can-we-search-2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>How can I see stuffs on the internet? - 1(revised)</title>
+        
+          <description>&lt;p&gt;reference: HTTP the definitive Guide&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 05 Aug 2018 00:45:22 +0900</pubDate>
+        <link>
+        http://localhost:4000/how-can-we-search-1</link>
+        <guid isPermaLink="true">http://localhost:4000/how-can-we-search-1</guid>
+      </item>
+      
+    
+  </channel>
+</rss>
