@@ -23,7 +23,6 @@ disqus:
 # Tracker
 analytics: UA-139982514-1
 
-theme: flexible-jekyll
 # Build Settings
 markdown: kramdown
 plugins:
