@@ -3,7 +3,13 @@ layout: post
 title:  "Thread - Definition, run()&start(), main"
 date:   2019-10-06
 comments: true
-categories: Java
+tags: Java
+class: post-template
+subclass: 'post tag-Java'
+logo: assets/images/canyon.png
+author: tlonist
+navigation: True
+cover: assets/images/himalayan.jpg
 ---
 
 ## Thread

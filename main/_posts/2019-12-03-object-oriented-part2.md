@@ -2,12 +2,10 @@
 layout: post
 title:  "Object Oriented Programming - 2"
 date:   2019-12-03 00:45:22 +0900
-categories: Java
+tags: Java
 comments: true
-img: oopimg2.jpg # Add image post (optional)
-fig-caption: # Add figcaption (optional)
-tags: [OOP, java]
-cover: 'assets/img/oop2cover.jpg'
+navigation: True
+cover: assets/images/nevada.jpg
 ---
 
 (Continuing from the previous post...)
@@ -130,7 +128,7 @@ As can be seen, super is a variable that is used by the child class to refer to 
 ### 3. Polymorphism
 
 As the name suggests, polymorphism means 'ability to have many forms'; and in Java, this means that one reference variable can reference other types of objects. To be more specific, parent class objects can reference child class instances. I will use Clash Royale, which is the game I've been playing for quite a long time, for examplification. 
-[![img]({{ "/assets/img/cr1.png"|absolute_url}})]({{ "/assets/img/cr1.png"|absolute_url}})
+[![img]({{ "/assets/images/cr1.png"|absolute_url}})]({{ "/assets/images/cr1.png"|absolute_url}})
 
 
 ```java
@@ -153,7 +151,7 @@ public static void main(String[] args){
 }
 ```
 
-[![img]({{ "/assets/img/oop2-1.png"|absolute_url}})]({{ "/assets/img/oop2-1.png"|absolute_url}})
+[![img]({{ "/assets/images/oop2-1.png"|absolute_url}})]({{ "/assets/images/oop2-1.png"|absolute_url}})
 
 The above diagram shows the difference between using parent class reference variable to refer child class instance.
 On surface, there doesn't seem to be any merit in implementing polymorphism, because the restriction on parent class is still the same. Then why do we bother do this? 
@@ -219,7 +217,7 @@ void doSomething(RoyalObject r){
 
 **UNITS - knigt, giant, and hog rider!**
 
-[![img]({{ "/assets/img/cr4.png"|absolute_url}})]({{ "/assets/img/cr2.png"|absolute_url}})
+[![img]({{ "/assets/images/cr4.png"|absolute_url}})]({{ "/assets/images/cr2.png"|absolute_url}})
 
 ```java
 class Unit extends RoyaleObject{
@@ -279,4 +277,4 @@ class Knight extends Unit{ super(1000); } //initializes HP of Knight unit
 class Giant extends Unit{ super(1600); }
 class HogRider extends Unit{ super(1100); }
 ```
-[![img]({{ "/assets/img/cr6.png"|absolute_url}})]({{ "/assets/img/cr6.png"|absolute_url}})
+[![img]({{ "/assets/images/cr6.png"|absolute_url}})]({{ "/assets/images/cr6.png"|absolute_url}})

@@ -3,7 +3,9 @@ layout: post
 title:  "fork and join"
 date:   2019-10-10
 comments: true
-categories: Java
+tags: Java
+navigation: True
+cover: assets/images/fork.png
 ---
 
 #### Fork & Join

@@ -3,13 +3,18 @@ layout: post
 title:  "Thread flow and control"
 date:   2019-10-09
 comments: true
-categories: Java
+tags: Java
+class: post-template
+subclass: 'post tag-Java'
+logo: assets/images/summit.jpg
+author: tlonist
+cover: assets/images/summit.jpg
 ---
 
 #### Thread flow and control
 
 
- ![img]({{ "/assets/img/Threadflow.png"|absolute_url}})
+ ![img]({{ "/assets/images/Threadflow.png"|absolute_url}})
 
 - **sleep(long millis)** : stops a thread for a given amount of time (static method)
 ```java

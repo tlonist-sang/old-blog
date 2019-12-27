@@ -3,7 +3,9 @@ layout: post
 title:  "Tomcat 9 - Adding reason phrase 200 OK"
 date:   2019-10-29
 comments: true
-categories: Java
+tags: Micellaneous
+navigation: True
+cover: assets/images/malaysia.jpg
 ---
 
 #### Abstract
@@ -113,25 +115,25 @@ public void sendStatus() {
 
 - Contrasting the above two code snippets, you can notice that the entire part where it says <mark>sendReasonPhrase</mark> is missing in Tomcat 9. Your job is to restore this part, together with all the dependencies that are missing. 
 
-[![img]({{ "/assets/img/tomcat9_red.png"|absolute_url}})]({{ "/assets/img/tomcat9_red.png"|absolute_url}})
+[![img]({{ "/assets/images/tomcat9_red.png"|absolute_url}})]({{ "/assets/images/tomcat9_red.png"|absolute_url}})
 - Now let's do something about'em.
 
 #### 4. Add missing classes and variables
 
 - HttpMessages (org.apache.tomcat.util.http)
-[![img]({{ "/assets/img/tomcat9_httpmessages.png"|absolute_url}})]({{ "/assets/img/tomcat9_httpmessages.png"|absolute_url}})
+[![img]({{ "/assets/images/tomcat9_httpmessages.png"|absolute_url}})]({{ "/assets/images/tomcat9_httpmessages.png"|absolute_url}})
 
 - Constants (org.apache.coyote)
-[![img]({{ "/assets/img/tomcat9_constants.png"|absolute_url}})]({{ "/assets/img/tomcat9_constants.png"|absolute_url}})
+[![img]({{ "/assets/images/tomcat9_constants.png"|absolute_url}})]({{ "/assets/images/tomcat9_constants.png"|absolute_url}})
 
 - write function (overloading)
 
 - I've been trying this on my Macbook. Previously when I was testing this in my Windows desktop it was working smoothly, but somehow the Mac version is not. My IntelliJ is producing errors like below every time I try to launch my simple Spring MVC controller.
-[![img]({{ "/assets/img/tomcat9_error.png"|absolute_url}})]({{ "/assets/img/tomcat9_error.png"|absolute_url}})
+[![img]({{ "/assets/images/tomcat9_error.png"|absolute_url}})]({{ "/assets/images/tomcat9_error.png"|absolute_url}})
 
 - I read from somewhere that the directory system of linux(and Mac) is different from that of Windows, hence causing this kind of error. In fact, when I copied the exact file to Windows and tested it, it was working like a charm.
 - To tackle this problem anyhow (it is absurd that source-built tomcat file cannot be run in OS other than Windows), I reviewd the log (Help -> Show log in Finder) and found out that I was missing a logging library.
-[![img]({{ "/assets/img/tomcat9_missing_library.png"|absolute_url}})]({{ "/assets/img/tomcat9_missing_library.png"|absolute_url}})
+[![img]({{ "/assets/images/tomcat9_missing_library.png"|absolute_url}})]({{ "/assets/images/tomcat9_missing_library.png"|absolute_url}})
 
 ``` console
  <dependencies>
@@ -143,7 +145,7 @@ public void sendStatus() {
         </dependency>
     </dependencies>
 ```
-[![img]({{ "/assets/img/tomcat9_add_library.png"|absolute_url}})]({{ "/assets/img/tomcat9_add_library.png"|absolute_url}})
+[![img]({{ "/assets/images/tomcat9_add_library.png"|absolute_url}})]({{ "/assets/images/tomcat9_add_library.png"|absolute_url}})
 
 - It is not working; and something is terribly wrong, and I decided firmly that I won't spend more than 30 minutes grappling with this bastard.
 >The problem was from an awefully simple mistake.
@@ -155,10 +157,10 @@ public void sendStatus() {
 - Now, go to the Tomcat source directory, and rebuild the project using ant command. 
 
 **Result**
-[![img]({{ "/assets/img/tomcat9_200notworking.png"|absolute_url}})]({{ "/assets/img/tomcat9_200notworking.png"|absolute_url}})
+[![img]({{ "/assets/images/tomcat9_200notworking.png"|absolute_url}})]({{ "/assets/images/tomcat9_200notworking.png"|absolute_url}})
 
 - We definited expected something like this.
-[![img]({{ "/assets/img/tomcat9_200working.png"|absolute_url}})]({{ "/assets/img/tomcat9_200working.png"|absolute_url}})
+[![img]({{ "/assets/images/tomcat9_200working.png"|absolute_url}})]({{ "/assets/images/tomcat9_200working.png"|absolute_url}})
 
 - Let's examine why. 
 - If you look carefully into the class HttpMessages.java, you'll find that the actual OK code will be inserted with *getMessage* fucntion.
@@ -178,14 +180,14 @@ public String getMessage(int status) {
 ```
 
 - The string OK is picked up from a variable *sm*, (StringManager). You can simply search from **sc.200** from the whole package 8.5 or lower, to see where the key value is mapped into in the project. 
-[![img]({{ "/assets/img/tomcat9_findsc200.png"|absolute_url}})]({{ "/assets/img/tomcat9_findsc200.png"|absolute_url}})
+[![img]({{ "/assets/images/tomcat9_findsc200.png"|absolute_url}})]({{ "/assets/images/tomcat9_findsc200.png"|absolute_url}})
 
 
 - Copy the entire package under the right position.
-[![img]({{ "/assets/img/tomcat9_copypackage.png"|absolute_url}})]({{ "/assets/img/tomcat9_copypackage.png"|absolute_url}})
+[![img]({{ "/assets/images/tomcat9_copypackage.png"|absolute_url}})]({{ "/assets/images/tomcat9_copypackage.png"|absolute_url}})
 
 - Rebuild using ant, and enjoy the victory!
-[![img]({{ "/assets/img/tomcat9_victory.png"|absolute_url}})]({{ "/assets/img/tomcat9_victory.png"|absolute_url}})
+[![img]({{ "/assets/images/tomcat9_victory.png"|absolute_url}})]({{ "/assets/images/tomcat9_victory.png"|absolute_url}})
 
 
 #### Concluding...

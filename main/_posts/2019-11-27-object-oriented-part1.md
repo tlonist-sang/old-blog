@@ -2,12 +2,10 @@
 layout: post
 title:  "Object oriented programming - 1"
 date:   2019-11-29 00:45:22 +0900
-categories: Java
+tags: Java
 comments: true
-img: oopimg1.jpg # Add image post (optional)
-fig-caption: # Add figcaption (optional)
-tags: [OOP, java]
-cover: 'assets/img/oop1cover.jpg'
+navigation: True
+cover: assets/images/bear.jpg
 ---
 
 What is an object-oriented programming? and why is it so important?
@@ -46,7 +44,7 @@ Fruit a;          //declaring a reference variable with type Fruit
 a = new Fruit();  //After making a fruit instance, the address of fruit instance is saved in a
 ```
 
-[![img]({{ "/assets/img/oop1.png"|absolute_url}})]({{ "/assets/img/oop1.png"|absolute_url}})
+[![img]({{ "/assets/images/oop1.png"|absolute_url}})]({{ "/assets/images/oop1.png"|absolute_url}})
 
 - One thing to note is that the instantiation and declaration is a separate thing; **and I think this plays a crucial role in understanding what will come next with object-oriented programming.** Instance can only be manipulated by its referece variable, and the type of reference variable **must match** with that of instance type. 
 
@@ -111,7 +109,7 @@ public class CallStackTest {
 
 Below diagrams show the flow of the **CallStackTest**
 
-[![img]({{ "/assets/img/oop2.png"|absolute_url}})]({{ "/assets/img/oop2.png"|absolute_url}})
+[![img]({{ "/assets/images/oop2.png"|absolute_url}})]({{ "/assets/images/oop2.png"|absolute_url}})
 
 ##### 1-5. Initializing variables
 

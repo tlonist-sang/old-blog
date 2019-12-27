@@ -3,7 +3,9 @@ layout: post
 title:  "Enabling VS code snippets for markdown"
 date:   2019-11-17
 comments: true
-categories: Micellaneous
+tags: Micellaneous
+navigation: True
+cover: assets/images/bear.jpg
 ---
 
 
@@ -41,7 +43,7 @@ This is handy when a figure is not so visible from the html :)
 	"Clickable image":{
 		"prefix": "imglink",
 		"body": [
-			"[![img]({{ \"/assets/img/$1\"|absolute_url}})]({{ \"/assets/img/$1\"|absolute_url}})",
+			"[![img]({{ \"/assets/images/$1\"|absolute_url}})]({{ \"/assets/images/$1\"|absolute_url}})",
 			"$2"
 		],
 		"description": "generate clickable image template"

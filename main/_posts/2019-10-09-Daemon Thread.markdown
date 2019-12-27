@@ -3,7 +3,12 @@ layout: post
 title:  "Thread - Daemon Thread"
 date:   2019-10-09
 comments: true
-categories: Java
+tags: Java
+class: post-template
+subclass: 'post tag-Java'
+logo: assets/images/sweden.jpg
+author: tlonist
+cover: assets/images/sweden.jpg
 ---
 
 #### Daemon Thread

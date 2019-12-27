@@ -2,12 +2,10 @@
 layout: post
 title:  "Object Oriented Programming - 3"
 date:   2019-12-03 00:45:22 +0900
-categories: Java
+tags: Java
 comments: true
-img: oopimg3.jpg # Add image post (optional)
-fig-caption: # Add figcaption (optional)
-tags: [OOP, java]
-cover: 'assets/img/oop3cover.jpg'
+navigation: True
+cover: assets/images/new-york.jpg
 ---
 
 So far I've covered Inheritance and Polymorphism. Now we have abstraction and encapsulation left. I will go on with the previous example of Clash Royale characters in explaining its concepts.
@@ -28,7 +26,7 @@ abstract class Unit{
 ```
 
 A new card has come out, namely a **Baby Dragon**
-[![img]({{ "/assets/img/cr7bb.png"|absolute_url}})]({{ "/assets/img/cr7bb.png"|absolute_url}})
+[![img]({{ "/assets/images/cr7bb.png"|absolute_url}})]({{ "/assets/images/cr7bb.png"|absolute_url}})
 
 This baby dragon has a particular way of attacking, **from the sky.**.
 A developer, thinking that this situation may be repeated for other cards that will be added in the future, decided to make attack() an abstract class, and let **child classes of Unit** finish the implementation.
@@ -50,7 +48,7 @@ If abstract class is an unfinished blueprint, interface is a basic blueprint. It
 Because it has only abstract methods and constants as its members, it is possible that a child class(interface) **inherits from multiple parents(interface)**.
 <br>
 One feature of hog rider unit is that it can jump rivers.
-[![img]({{ "/assets/img/oop3-1.png"|absolute_url}})]({{ "/assets/img/oop3-1.png"|absolute_url}})
+[![img]({{ "/assets/images/oop3-1.png"|absolute_url}})]({{ "/assets/images/oop3-1.png"|absolute_url}})
 
 and for explanation's sake let's say hog rider also shouts. (which is true)
 
@@ -104,12 +102,12 @@ HogRidable some_method2(){
 #### 3-4 More about Interface
 
 Recently, there has been an addition of a new card, the BATTLE HEALER! (https://clashroyale.fandom.com/wiki/Battle_Healer)
-[![img]({{ "/assets/img/cr8.png"|absolute_url}})]({{ "/assets/img/cr8.png"|absolute_url}})
+[![img]({{ "/assets/images/cr8.png"|absolute_url}})]({{ "/assets/images/cr8.png"|absolute_url}})
 
 This is a flying unit that **heals** on every attack it does.
 Before going through further discussion, let's have think about the current abstraction diagram of our cards.
 
-[![img]({{ "/assets/img/oop3-2.png"|absolute_url}})]({{ "/assets/img/oop3-2.png"|absolute_url}})
+[![img]({{ "/assets/images/oop3-2.png"|absolute_url}})]({{ "/assets/images/oop3-2.png"|absolute_url}})
 
 This battle healer has following features.
 - she can **jump** the river. (wings she has)
@@ -144,7 +142,7 @@ class GroundUnit extends Unit implements Healable{} //is this possible?
 ```
 
 Below is a visualized version of class relations.
-[![img]({{ "/assets/img/oop3-3.png"|absolute_url}})]({{ "/assets/img/oop3-3.png"|absolute_url}})
+[![img]({{ "/assets/images/oop3-3.png"|absolute_url}})]({{ "/assets/images/oop3-3.png"|absolute_url}})
 
 <br>
 The point is, the healing feature is so smoothly added, without much altering to the existing classes!

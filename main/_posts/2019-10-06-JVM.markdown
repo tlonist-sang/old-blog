@@ -3,7 +3,12 @@ layout: post
 title:  "JVM"
 date:   2019-10-06
 comments: true
-categories: Java
+tags: Java
+class: post-template
+subclass: 'post tag-Java'
+logo: assets/images/advanced.jpg
+author: tlonist
+cover: assets/images/advanced.jpg
 ---
 
 ##[[JVM (Java Virtual Machine)]]
