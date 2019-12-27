@@ -8,7 +8,7 @@ categories: Java
 tags: Java
 class: post-template
 subclass: 'post tag-Java'
-logo: assets/images/bg_about.png
+logo: assets/images/bg_about.jpg
 author: tlonist
 ---
 
