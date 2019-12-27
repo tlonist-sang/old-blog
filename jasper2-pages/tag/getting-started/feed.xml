@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="http://localhost:4000/author/ghost/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:4000/tag/getting-started/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
   <updated>2019-12-28T02:41:39+09:00</updated>
-  <id>http://localhost:4000/author/ghost/feed.xml</id>
+  <id>http://localhost:4000/tag/getting-started/feed.xml</id>
 
   
   

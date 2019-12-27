@@ -15,9 +15,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
-    <link rel="stylesheet" type="text/css" href="assets/built/screen.css" />
-    <link rel="stylesheet" type="text/css" href="assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="assets/built/syntax.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
     <!-- highlight.js -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <style>.hljs { background: none; }</style>
@@ -34,26 +34,29 @@
     <![endif]-->
     
     <!-- This tag outputs SEO meta+structured data and other important settings -->
-    <meta name="description" content="dev log" />
-    <link rel="shortcut icon" href="http://localhost:4000assets/img/favicon.p" type="image/png" />
-    <link rel="canonical" href="http://localhost:4000JVM" />
+    <meta name="description" content="Slow but steady wins the race." />
+    <link rel="shortcut icon" href="http://localhost:4000/assets/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="http://localhost:4000/JVM" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
-    <meta property="og:site_name" content="Tlonist" />
+    <meta property="og:site_name" content="steady stack" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="JVM" />
-    <meta property="og:description" content="dev log" />
-    <meta property="og:url" content="http://localhost:4000JVM" />
-    <meta property="og:image" content="http://localhost:4000assets/img/blog-cover.jpg" />
+    <meta property="og:description" content="Slow but steady wins the race." />
+    <meta property="og:url" content="http://localhost:4000/JVM" />
+    <meta property="og:image" content="http://localhost:4000/assets/images/advanced.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:tag" content="Java" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JVM" />
-    <meta name="twitter:description" content="dev log" />
-    <meta name="twitter:url" content="http://localhost:4000" />
-    <meta name="twitter:image" content="http://localhost:4000assets/img/blog-cover.jpg" />
+    <meta name="twitter:description" content="Slow but steady wins the race." />
+    <meta name="twitter:url" content="http://localhost:4000/" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/advanced.jpg" />
     <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="Tlonist" />
+    <meta name="twitter:data1" content="steady stack" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Java" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="2000" />
@@ -65,21 +68,21 @@
     "@type": "Website",
     "publisher": {
         "@type": "Organization",
-        "name": "Tlonist",
-        "logo": "http://localhost:4000assets/img/blog-icon.png"
+        "name": "steady stack",
+        "logo": "http://localhost:4000/assets/images/blog-icon.png"
     },
-    "url": "http://localhost:4000JVM",
+    "url": "http://localhost:4000/JVM",
     "image": {
         "@type": "ImageObject",
-        "url": "http://localhost:4000assets/img/blog-cover.jpg",
+        "url": "http://localhost:4000/assets/images/advanced.jpg",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://localhost:4000JVM"
+        "@id": "http://localhost:4000/JVM"
     },
-    "description": "dev log"
+    "description": "Slow but steady wins the race."
 }
     </script>
 
@@ -92,11 +95,11 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="JVM" href="feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="JVM" href="/feed.xml" />
 
 
 </head>
-<body class="home-template">
+<body class="post-template">
 
     <div class="site-wrapper">
         <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
@@ -111,7 +114,7 @@ into the {body} of the default.hbs template -->
     <div class="site-nav-left">
         
             
-                <a class="site-nav-logo" href="http://localhost:4000"><img src="assets/img/blog-icon.png" alt="Tlonist" /></a>
+                <a class="site-nav-logo" href="http://localhost:4000/"><img src="/assets/images/blog-icon.png" alt="steady stack" /></a>
             
         
         
@@ -136,16 +139,26 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  no-image">
+        <article class="post-full post tag-Java ">
 
             <header class="post-full-header">
                 <section class="post-full-meta">
                     <time class="post-full-meta-date" datetime=" 6 October 2019"> 6 October 2019</time>
                     
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/java/'>JAVA</a>
+                            
+                        
+                    
                 </section>
                 <h1 class="post-full-title">JVM</h1>
             </header>
 
+            
+            <figure class="post-full-image" style="background-image: url(/assets/images/advanced.jpg)">
+            </figure>
             
 
             <section class="post-full-content">
@@ -209,7 +222,7 @@ Java Application   : [ Java Application ] + <strong>[       JVM        ]</strong
             <!-- Email subscribe form at the bottom of the page -->
             
                 <section class="subscribe-form">
-                    <h3 class="subscribe-form-title">Subscribe to Tlonist</h3>
+                    <h3 class="subscribe-form-title">Subscribe to steady stack</h3>
                     <p>Get the latest posts delivered right to your inbox</p>
                     <form method="post" action="/subscribe/" class="">
     <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
@@ -249,22 +262,6 @@ Java Application   : [ Java Application ] + <strong>[       JVM        ]</strong
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
             
-                <section class="post-full-comments">
-                    <div id="disqus_thread"></div>
-                    <script>
-                        var disqus_config = function () {
-                            this.page.url = 'http://localhost:4000';
-                            this.page.identifier = 'Tlonist';
-                        };
-                        (function() {
-                            var d = document, s = d.createElement('script');
-                            s.src = 'https://steadystack.disqus.com/embed.js';
-                            s.setAttribute('data-timestamp', +new Date());
-                            (d.head || d.body).appendChild(s);
-                        })();
-                    </script>
-                </section>
-            
 
         </article>
 
@@ -276,16 +273,174 @@ Java Application   : [ Java Application ] + <strong>[       JVM        ]</strong
     <div class="inner">
         <div class="read-next-feed">
             
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/images/blog-cover.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; steady stack &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/java/">Java</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/object-oriented-part3">Object Oriented Programming - 3</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/object-oriented-part2">Object Oriented Programming - 2</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/object-oriented-part1">Object oriented programming - 1</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/java/">
+                                
+                                    See all 11 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
             
                 
 
-    <article class="post-card  no-image">
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/Thread-definition-run-start-main">
+                <div class="post-card-image" style="background-image: url(/assets/images/himalayan.jpg)"></div>
+            </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="Thread-definition-run-start-main">
+            <a class="post-card-content-link" href="/Thread-definition-run-start-main">
                 <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Java</span>
+                            
+                        
                     
 
                     <h2 class="post-card-title">Thread - Definition, run()&start(), main</h2>
@@ -328,14 +483,24 @@ Java Application   : [ Java Application ] + <strong>[       JVM        ]</strong
             
                 
 
-    <article class="post-card  no-image">
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/the-editor">
+                <div class="post-card-image" style="background-image: url(/assets/images/writing.jpg)"></div>
+            </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="Spring-JPA">
+            <a class="post-card-content-link" href="/the-editor">
                 <header class="post-card-header">
                     
+                        
+                            
+                                <span class="post-card-tags">Getting started</span>
+                            
+                        
+                    
 
-                    <h2 class="post-card-title">Spring JPA - 1</h2>
+                    <h2 class="post-card-title">Using the Ghost editor</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -345,6 +510,13 @@ Java Application   : [ Java Application ] + <strong>[       JVM        ]</strong
             </a>
             <footer class="post-card-meta">
                 
+                    
+                        
+                        <img class="author-profile-image" src="/assets/images/ghost.png" alt="Ghost" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/ghost/">Ghost</a>
+                        </span>
                     
                 
                     
@@ -378,11 +550,11 @@ Java Application   : [ Java Application ] + <strong>[       JVM        ]</strong
 <!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
 <div class="floating-header">
     <div class="floating-header-logo">
-        <a href="http://localhost:4000">
+        <a href="http://localhost:4000/">
             
-                <img src="assets/img/favicon.png" alt="Tlonist icon" />
+                <img src="/assets/images/favicon.png" alt="steady stack icon" />
             
-            <span>Tlonist</span>
+            <span>steady stack</span>
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
@@ -422,12 +594,12 @@ Java Application   : [ Java Application ] + <strong>[       JVM        ]</strong
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="http://localhost:4000">Tlonist</a> &copy; 2019</section>
+                <section class="copyright"><a href="http://localhost:4000/">steady stack</a> &copy; 2019</section>
                 <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
                     <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
                     <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
                 <nav class="site-footer-nav">
-                    <a href="">Latest Posts</a>
+                    <a href="/">Latest Posts</a>
                     
                     
                     <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
@@ -443,9 +615,9 @@ Java Application   : [ Java Application ] + <strong>[       JVM        ]</strong
             <a class="subscribe-overlay-close" href="#"></a>
             <div class="subscribe-overlay-content">
                 
-                    <img class="subscribe-overlay-logo" src="assets/img/blog-icon.png" alt="Tlonist" />
+                    <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="steady stack" />
                 
-                <h1 class="subscribe-overlay-title">Subscribe to Tlonist</h1>
+                <h1 class="subscribe-overlay-title">Subscribe to steady stack</h1>
                 <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
                 <form method="post" action="/subscribe/" class="">
     <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
@@ -475,7 +647,7 @@ Java Application   : [ Java Application ] + <strong>[       JVM        ]</strong
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
 
 
@@ -484,7 +656,7 @@ Java Application   : [ Java Application ] + <strong>[       JVM        ]</strong
     <!-- <script>
         var maxPages = parseInt('');
     </script>
-    <script src="assets/js/infinitescroll.js"></script> -->
+    <script src="/assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
 
     
@@ -505,6 +677,71 @@ Java Application   : [ Java Application ] + <strong>[       JVM        ]</strong
 
 
     <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
     
 
     <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->

@@ -15,9 +15,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
-    <link rel="stylesheet" type="text/css" href="assets/built/screen.css" />
-    <link rel="stylesheet" type="text/css" href="assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="assets/built/syntax.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
     <!-- highlight.js -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <style>.hljs { background: none; }</style>
@@ -34,26 +34,29 @@
     <![endif]-->
     
     <!-- This tag outputs SEO meta+structured data and other important settings -->
-    <meta name="description" content="dev log" />
-    <link rel="shortcut icon" href="http://localhost:4000assets/img/favicon.p" type="image/png" />
-    <link rel="canonical" href="http://localhost:4000Adding-reason-phrase" />
+    <meta name="description" content="Slow but steady wins the race." />
+    <link rel="shortcut icon" href="http://localhost:4000/assets/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="http://localhost:4000/Adding-reason-phrase" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
-    <meta property="og:site_name" content="Tlonist" />
+    <meta property="og:site_name" content="steady stack" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Tomcat 9 - Adding reason phrase 200 OK" />
-    <meta property="og:description" content="dev log" />
-    <meta property="og:url" content="http://localhost:4000Adding-reason-phrase" />
-    <meta property="og:image" content="http://localhost:4000assets/img/blog-cover.jpg" />
+    <meta property="og:description" content="Slow but steady wins the race." />
+    <meta property="og:url" content="http://localhost:4000/Adding-reason-phrase" />
+    <meta property="og:image" content="http://localhost:4000/assets/images/malaysia.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:tag" content="Micellaneous" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Tomcat 9 - Adding reason phrase 200 OK" />
-    <meta name="twitter:description" content="dev log" />
-    <meta name="twitter:url" content="http://localhost:4000" />
-    <meta name="twitter:image" content="http://localhost:4000assets/img/blog-cover.jpg" />
+    <meta name="twitter:description" content="Slow but steady wins the race." />
+    <meta name="twitter:url" content="http://localhost:4000/" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/malaysia.jpg" />
     <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="Tlonist" />
+    <meta name="twitter:data1" content="steady stack" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Micellaneous" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="2000" />
@@ -65,21 +68,21 @@
     "@type": "Website",
     "publisher": {
         "@type": "Organization",
-        "name": "Tlonist",
-        "logo": "http://localhost:4000assets/img/blog-icon.png"
+        "name": "steady stack",
+        "logo": "http://localhost:4000/assets/images/blog-icon.png"
     },
-    "url": "http://localhost:4000Adding-reason-phrase",
+    "url": "http://localhost:4000/Adding-reason-phrase",
     "image": {
         "@type": "ImageObject",
-        "url": "http://localhost:4000assets/img/blog-cover.jpg",
+        "url": "http://localhost:4000/assets/images/malaysia.jpg",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://localhost:4000Adding-reason-phrase"
+        "@id": "http://localhost:4000/Adding-reason-phrase"
     },
-    "description": "dev log"
+    "description": "Slow but steady wins the race."
 }
     </script>
 
@@ -92,7 +95,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="Tomcat 9 - Adding reason phrase 200 OK" href="feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Tomcat 9 - Adding reason phrase 200 OK" href="/feed.xml" />
 
 
 </head>
@@ -111,9 +114,18 @@ into the {body} of the default.hbs template -->
     <div class="site-nav-left">
         
             
-                <a class="site-nav-logo" href="http://localhost:4000"><img src="assets/img/blog-icon.png" alt="Tlonist" /></a>
+                <a class="site-nav-logo" href="http://localhost:4000/"><img src="/assets/images/blog-icon.png" alt="steady stack" /></a>
             
         
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <!-- <li class="nav-getting-started" role="menuitem"><a href="/tag/getting-started/">Getting Started</a></li> -->
+    <li class="nav-Java" role="menuitem"><a href="/tag/Java">Java</a></li>
+    <li class="nav-Java" role="menuitem"><a href="/tag/Micellaneous">Micellaneous</a></li>
+</ul>
+
         
     </div>
     <div class="site-nav-right">
@@ -136,16 +148,26 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  no-image">
+        <article class="post-full  ">
 
             <header class="post-full-header">
                 <section class="post-full-meta">
                     <time class="post-full-meta-date" datetime="29 October 2019">29 October 2019</time>
                     
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/micellaneous/'>MICELLANEOUS</a>
+                            
+                        
+                    
                 </section>
                 <h1 class="post-full-title">Tomcat 9 - Adding reason phrase 200 OK</h1>
             </header>
 
+            
+            <figure class="post-full-image" style="background-image: url(/assets/images/malaysia.jpg)">
+            </figure>
             
 
             <section class="post-full-content">
@@ -263,7 +285,7 @@ into the {body} of the default.hbs template -->
   <li>Contrasting the above two code snippets, you can notice that the entire part where it says <mark>sendReasonPhrase</mark> is missing in Tomcat 9. Your job is to restore this part, together with all the dependencies that are missing.</li>
 </ul>
 
-<p><a href="http://localhost:4000/assets/img/tomcat9_red.png"><img src="http://localhost:4000/assets/img/tomcat9_red.png" alt="img" /></a></p>
+<p><a href="http://localhost:4000/assets/images/tomcat9_red.png"><img src="http://localhost:4000/assets/images/tomcat9_red.png" alt="img" /></a></p>
 <ul>
   <li>Now let’s do something about’em.</li>
 </ul>
@@ -273,22 +295,22 @@ into the {body} of the default.hbs template -->
 <ul>
   <li>
     <p>HttpMessages (org.apache.tomcat.util.http)
-<a href="http://localhost:4000/assets/img/tomcat9_httpmessages.png"><img src="http://localhost:4000/assets/img/tomcat9_httpmessages.png" alt="img" /></a></p>
+<a href="http://localhost:4000/assets/images/tomcat9_httpmessages.png"><img src="http://localhost:4000/assets/images/tomcat9_httpmessages.png" alt="img" /></a></p>
   </li>
   <li>
     <p>Constants (org.apache.coyote)
-<a href="http://localhost:4000/assets/img/tomcat9_constants.png"><img src="http://localhost:4000/assets/img/tomcat9_constants.png" alt="img" /></a></p>
+<a href="http://localhost:4000/assets/images/tomcat9_constants.png"><img src="http://localhost:4000/assets/images/tomcat9_constants.png" alt="img" /></a></p>
   </li>
   <li>
     <p>write function (overloading)</p>
   </li>
   <li>
     <p>I’ve been trying this on my Macbook. Previously when I was testing this in my Windows desktop it was working smoothly, but somehow the Mac version is not. My IntelliJ is producing errors like below every time I try to launch my simple Spring MVC controller.
-<a href="http://localhost:4000/assets/img/tomcat9_error.png"><img src="http://localhost:4000/assets/img/tomcat9_error.png" alt="img" /></a></p>
+<a href="http://localhost:4000/assets/images/tomcat9_error.png"><img src="http://localhost:4000/assets/images/tomcat9_error.png" alt="img" /></a></p>
   </li>
   <li>I read from somewhere that the directory system of linux(and Mac) is different from that of Windows, hence causing this kind of error. In fact, when I copied the exact file to Windows and tested it, it was working like a charm.</li>
   <li>To tackle this problem anyhow (it is absurd that source-built tomcat file cannot be run in OS other than Windows), I reviewd the log (Help -&gt; Show log in Finder) and found out that I was missing a logging library.
-<a href="http://localhost:4000/assets/img/tomcat9_missing_library.png"><img src="http://localhost:4000/assets/img/tomcat9_missing_library.png" alt="img" /></a></li>
+<a href="http://localhost:4000/assets/images/tomcat9_missing_library.png"><img src="http://localhost:4000/assets/images/tomcat9_missing_library.png" alt="img" /></a></li>
 </ul>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> &lt;dependencies&gt;</span>
@@ -300,7 +322,7 @@ into the {body} of the default.hbs template -->
 <span class="gp">        &lt;/dependency&gt;</span>
 <span class="gp">    &lt;/dependencies&gt;</span>
 </code></pre></div></div>
-<p><a href="http://localhost:4000/assets/img/tomcat9_add_library.png"><img src="http://localhost:4000/assets/img/tomcat9_add_library.png" alt="img" /></a></p>
+<p><a href="http://localhost:4000/assets/images/tomcat9_add_library.png"><img src="http://localhost:4000/assets/images/tomcat9_add_library.png" alt="img" /></a></p>
 
 <ul>
   <li>It is not working; and something is terribly wrong, and I decided firmly that I won’t spend more than 30 minutes grappling with this bastard.
@@ -319,12 +341,12 @@ into the {body} of the default.hbs template -->
 </ul>
 
 <p><strong>Result</strong>
-<a href="http://localhost:4000/assets/img/tomcat9_200notworking.png"><img src="http://localhost:4000/assets/img/tomcat9_200notworking.png" alt="img" /></a></p>
+<a href="http://localhost:4000/assets/images/tomcat9_200notworking.png"><img src="http://localhost:4000/assets/images/tomcat9_200notworking.png" alt="img" /></a></p>
 
 <ul>
   <li>
     <p>We definited expected something like this.
-<a href="http://localhost:4000/assets/img/tomcat9_200working.png"><img src="http://localhost:4000/assets/img/tomcat9_200working.png" alt="img" /></a></p>
+<a href="http://localhost:4000/assets/images/tomcat9_200working.png"><img src="http://localhost:4000/assets/images/tomcat9_200working.png" alt="img" /></a></p>
   </li>
   <li>Let’s examine why.</li>
   <li>If you look carefully into the class HttpMessages.java, you’ll find that the actual OK code will be inserted with <em>getMessage</em> fucntion.</li>
@@ -346,15 +368,15 @@ into the {body} of the default.hbs template -->
 <ul>
   <li>
     <p>The string OK is picked up from a variable <em>sm</em>, (StringManager). You can simply search from <strong>sc.200</strong> from the whole package 8.5 or lower, to see where the key value is mapped into in the project. 
-<a href="http://localhost:4000/assets/img/tomcat9_findsc200.png"><img src="http://localhost:4000/assets/img/tomcat9_findsc200.png" alt="img" /></a></p>
+<a href="http://localhost:4000/assets/images/tomcat9_findsc200.png"><img src="http://localhost:4000/assets/images/tomcat9_findsc200.png" alt="img" /></a></p>
   </li>
   <li>
     <p>Copy the entire package under the right position.
-<a href="http://localhost:4000/assets/img/tomcat9_copypackage.png"><img src="http://localhost:4000/assets/img/tomcat9_copypackage.png" alt="img" /></a></p>
+<a href="http://localhost:4000/assets/images/tomcat9_copypackage.png"><img src="http://localhost:4000/assets/images/tomcat9_copypackage.png" alt="img" /></a></p>
   </li>
   <li>
     <p>Rebuild using ant, and enjoy the victory!
-<a href="http://localhost:4000/assets/img/tomcat9_victory.png"><img src="http://localhost:4000/assets/img/tomcat9_victory.png" alt="img" /></a></p>
+<a href="http://localhost:4000/assets/images/tomcat9_victory.png"><img src="http://localhost:4000/assets/images/tomcat9_victory.png" alt="img" /></a></p>
   </li>
 </ul>
 
@@ -368,7 +390,7 @@ into the {body} of the default.hbs template -->
             <!-- Email subscribe form at the bottom of the page -->
             
                 <section class="subscribe-form">
-                    <h3 class="subscribe-form-title">Subscribe to Tlonist</h3>
+                    <h3 class="subscribe-form-title">Subscribe to steady stack</h3>
                     <p>Get the latest posts delivered right to your inbox</p>
                     <form method="post" action="/subscribe/" class="">
     <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
@@ -408,22 +430,6 @@ into the {body} of the default.hbs template -->
             The only thing you need to change is "test-apkdzgmqhj" - which
             should be replaced with your own Disqus site-id. -->
             
-                <section class="post-full-comments">
-                    <div id="disqus_thread"></div>
-                    <script>
-                        var disqus_config = function () {
-                            this.page.url = 'http://localhost:4000';
-                            this.page.identifier = 'Tlonist';
-                        };
-                        (function() {
-                            var d = document, s = d.createElement('script');
-                            s.src = 'https://steadystack.disqus.com/embed.js';
-                            s.setAttribute('data-timestamp', +new Date());
-                            (d.head || d.body).appendChild(s);
-                        })();
-                    </script>
-                </section>
-            
 
         </article>
 
@@ -435,19 +441,137 @@ into the {body} of the default.hbs template -->
     <div class="inner">
         <div class="read-next-feed">
             
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/images/blog-cover.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; steady stack &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/micellaneous/">Micellaneous</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/Enabling-Snippets">Enabling VS code snippets for markdown</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/Building-Tomcat-Source-From-Source-2">Building Tomcat from its source-2</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/Building-Tomcat-From-Source">Building Tomcat from its source-1</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/micellaneous/">
+                                
+                                    See all 3 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
             
                 
 
-    <article class="post-card  no-image">
+    <article class="post-card ">
+        
+            <a class="post-card-image-link" href="/Generics">
+                <div class="post-card-image" style="background-image: url(/assets/images/bg_contact.jpg)"></div>
+            </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="clickable-image">
+            <a class="post-card-content-link" href="/Generics">
                 <header class="post-card-header">
                     
+                        
+                            
+                                <span class="post-card-tags">Java</span>
+                            
+                        
+                    
 
-                    <h2 class="post-card-title">Clickable Image</h2>
+                    <h2 class="post-card-title">Generics and Wildcard expression_1</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -487,14 +611,24 @@ into the {body} of the default.hbs template -->
             
                 
 
-    <article class="post-card  no-image">
+    <article class="post-card ">
+        
+            <a class="post-card-image-link" href="/Building-Tomcat-Source-From-Source-2">
+                <div class="post-card-image" style="background-image: url(/assets/images/summit.jpg)"></div>
+            </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="polymorphism">
+            <a class="post-card-content-link" href="/Building-Tomcat-Source-From-Source-2">
                 <header class="post-card-header">
                     
+                        
+                            
+                                <span class="post-card-tags">Micellaneous</span>
+                            
+                        
+                    
 
-                    <h2 class="post-card-title">Polymorphism - Interface </h2>
+                    <h2 class="post-card-title">Building Tomcat from its source-2</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
@@ -537,11 +671,11 @@ into the {body} of the default.hbs template -->
 <!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
 <div class="floating-header">
     <div class="floating-header-logo">
-        <a href="http://localhost:4000">
+        <a href="http://localhost:4000/">
             
-                <img src="assets/img/favicon.png" alt="Tlonist icon" />
+                <img src="/assets/images/favicon.png" alt="steady stack icon" />
             
-            <span>Tlonist</span>
+            <span>steady stack</span>
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
@@ -581,12 +715,12 @@ into the {body} of the default.hbs template -->
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="http://localhost:4000">Tlonist</a> &copy; 2019</section>
+                <section class="copyright"><a href="http://localhost:4000/">steady stack</a> &copy; 2019</section>
                 <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
                     <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
                     <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
                 <nav class="site-footer-nav">
-                    <a href="">Latest Posts</a>
+                    <a href="/">Latest Posts</a>
                     
                     
                     <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
@@ -602,9 +736,9 @@ into the {body} of the default.hbs template -->
             <a class="subscribe-overlay-close" href="#"></a>
             <div class="subscribe-overlay-content">
                 
-                    <img class="subscribe-overlay-logo" src="assets/img/blog-icon.png" alt="Tlonist" />
+                    <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="steady stack" />
                 
-                <h1 class="subscribe-overlay-title">Subscribe to Tlonist</h1>
+                <h1 class="subscribe-overlay-title">Subscribe to steady stack</h1>
                 <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
                 <form method="post" action="/subscribe/" class="">
     <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
@@ -634,7 +768,7 @@ into the {body} of the default.hbs template -->
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
     <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
 
 
@@ -643,7 +777,7 @@ into the {body} of the default.hbs template -->
     <!-- <script>
         var maxPages = parseInt('');
     </script>
-    <script src="assets/js/infinitescroll.js"></script> -->
+    <script src="/assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
 
     
