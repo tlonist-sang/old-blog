@@ -16,7 +16,6 @@ logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.png
 favicon: assets/images/favicon.png
 CNAME: #add cname for website to be created
-url: "https://tlonist-sang.github.io"
 
 # Social info
 navigation: True # show the navbar links
