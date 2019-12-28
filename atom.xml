@@ -2,22 +2,266 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title> - Articles</title>
-    <description>The professional publishing platform</description>
+    <description>Slow but steady wins the race.</description>
     <link>
     http://localhost:4000</link>
     
       
       <item>
-        <title>Welcome to Ghost</title>
+        <title>Object Oriented Programming - 3</title>
         
-          <description>&lt;p&gt;Hey! Welcome to Ghost, it’s great to have you :)&lt;/p&gt;
+          <description>&lt;p&gt;So far I’ve covered Inheritance and Polymorphism. Now we have abstraction and encapsulation left. I will go on with the previous example of Clash Royale characters in explaining its concepts.&lt;/p&gt;
 
 </description>
         
-        <pubDate>Thu, 27 Jul 2017 19:00:00 +0900</pubDate>
+        <pubDate>Tue, 03 Dec 2019 00:45:22 +0900</pubDate>
         <link>
-        http://localhost:4000/welcome</link>
-        <guid isPermaLink="true">http://localhost:4000/welcome</guid>
+        http://localhost:4000/object-oriented-part3</link>
+        <guid isPermaLink="true">http://localhost:4000/object-oriented-part3</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Object Oriented Programming - 2</title>
+        
+          <description>&lt;p&gt;(Continuing from the previous post…)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 03 Dec 2019 00:45:22 +0900</pubDate>
+        <link>
+        http://localhost:4000/object-oriented-part2</link>
+        <guid isPermaLink="true">http://localhost:4000/object-oriented-part2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Object oriented programming - 1</title>
+        
+          <description>&lt;p&gt;What is an object-oriented programming? and why is it so important?
+Do I really understand what it is?&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 29 Nov 2019 00:45:22 +0900</pubDate>
+        <link>
+        http://localhost:4000/object-oriented-part1</link>
+        <guid isPermaLink="true">http://localhost:4000/object-oriented-part1</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Enumeration</title>
+        
+          <description>&lt;h3 id=&quot;1-enumeration&quot;&gt;1. Enumeration&lt;/h3&gt;
+
+</description>
+        
+        <pubDate>Tue, 19 Nov 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/enum-type</link>
+        <guid isPermaLink="true">http://localhost:4000/enum-type</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Generics and Wildcard expression_2</title>
+        
+          <description>&lt;p&gt;reference: Java의 정석&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 17 Nov 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Generics2</link>
+        <guid isPermaLink="true">http://localhost:4000/Generics2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Enabling VS code snippets for markdown</title>
+        
+          <description>&lt;p&gt;[link_for_enabling_snippets] (https://github.com/Microsoft/vscode/issues/26108)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 17 Nov 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Enabling-Snippets</link>
+        <guid isPermaLink="true">http://localhost:4000/Enabling-Snippets</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Generics and Wildcard expression_1</title>
+        
+          <description>&lt;h3 id=&quot;generics_part-1&quot;&gt;Generics_Part 1&lt;/h3&gt;
+
+</description>
+        
+        <pubDate>Tue, 12 Nov 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Generics</link>
+        <guid isPermaLink="true">http://localhost:4000/Generics</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Tomcat 9 - Adding reason phrase 200 OK</title>
+        
+          <description>&lt;h4 id=&quot;abstract&quot;&gt;Abstract&lt;/h4&gt;
+&lt;p&gt;From Tomcat 8.5 on, the &lt;strong&gt;‘reason phrase’&lt;/strong&gt;, which states some additional information to the incoming request according to the status code, is omitted. Not only did I feel frustrated for Apache developers who decided not to leave this even as an option, it was an acutal headache for me because the absence of the reason phrase was causing some serious issues for legacy projects.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 29 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Adding-reason-phrase</link>
+        <guid isPermaLink="true">http://localhost:4000/Adding-reason-phrase</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Building Tomcat from its source-2</title>
+        
+          <description>&lt;p&gt;####Building Tomcat From Its Source - 2 
+#####Downloading Tomcat Source and Opening it from an IDE&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 14 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Building-Tomcat-Source-From-Source-2</link>
+        <guid isPermaLink="true">http://localhost:4000/Building-Tomcat-Source-From-Source-2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Building Tomcat from its source-1</title>
+        
+          <description>&lt;h3 id=&quot;building-tomcat-from-its-source---1&quot;&gt;Building Tomcat From Its Source - 1&lt;/h3&gt;
+
+</description>
+        
+        <pubDate>Mon, 14 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Building-Tomcat-From-Source</link>
+        <guid isPermaLink="true">http://localhost:4000/Building-Tomcat-From-Source</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>fork and join</title>
+        
+          <description>&lt;h4 id=&quot;fork--join&quot;&gt;Fork &amp;amp; Join&lt;/h4&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/fork-and-join</link>
+        <guid isPermaLink="true">http://localhost:4000/fork-and-join</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>volatile</title>
+        
+          <description>&lt;p&gt;Each multicore processor has its own cache, like the diagram below describes.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 09 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/volatile</link>
+        <guid isPermaLink="true">http://localhost:4000/volatile</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Thread flow and control</title>
+        
+          <description>&lt;h4 id=&quot;thread-flow-and-control&quot;&gt;Thread flow and control&lt;/h4&gt;
+
+</description>
+        
+        <pubDate>Wed, 09 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Thread-flow-and-control</link>
+        <guid isPermaLink="true">http://localhost:4000/Thread-flow-and-control</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Thread - Daemon Thread</title>
+        
+          <description>&lt;h4 id=&quot;daemon-thread&quot;&gt;Daemon Thread&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Daemon thread&lt;/strong&gt; is a subsidiary thread that helps other non-daemon threads’ tasks. You can easily think of Java’s garbage collection, WordProcessor’s auto-save, or auto-screen reloading functionalities.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 09 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Daemon-Thread</link>
+        <guid isPermaLink="true">http://localhost:4000/Daemon-Thread</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Thread - Thread Priority</title>
+        
+          <description>&lt;h4 id=&quot;thread-priority&quot;&gt;Thread Priority&lt;/h4&gt;
+
+</description>
+        
+        <pubDate>Wed, 09 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Thread-Priority</link>
+        <guid isPermaLink="true">http://localhost:4000/Thread-Priority</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Thread - Definition, run()&amp;start(), main</title>
+        
+          <description>&lt;h2 id=&quot;thread&quot;&gt;Thread&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 06 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/Thread-definition-run-start-main</link>
+        <guid isPermaLink="true">http://localhost:4000/Thread-definition-run-start-main</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>JVM</title>
+        
+          <description>&lt;p&gt;##[[JVM (Java Virtual Machine)]]&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 06 Oct 2019 00:00:00 +0900</pubDate>
+        <link>
+        http://localhost:4000/JVM</link>
+        <guid isPermaLink="true">http://localhost:4000/JVM</guid>
       </item>
       
     
@@ -247,21 +491,6 @@
     
       
       <item>
-        <title>The Businessman &amp; The Fisherman</title>
-        
-          <description>&lt;p&gt;An American businessman took a vacation to a small coastal Mexican village on doctor’s orders. Unable to sleep after an urgent phone call from the office the first morning, he walked out to the pier to clear his head. A small boat with just one fisherman had docked, and inside the boat were several large yellowfin tuna. The American complimented the Mexican on the quality of his fish.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Tue, 12 Aug 2014 19:18:00 +0900</pubDate>
-        <link>
-        http://localhost:4000/the-businessman-and-fisherman</link>
-        <guid isPermaLink="true">http://localhost:4000/the-businessman-and-fisherman</guid>
-      </item>
-      
-    
-      
-      <item>
         <title>A Full and Comprehensive Style Test</title>
         
           <description>&lt;p&gt;Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.&lt;/p&gt;
@@ -277,21 +506,6 @@
     
       
       <item>
-        <title>I Have a Dream</title>
-        
-          <description>&lt;p&gt;I am happy to join with you today in what will go down in history as the greatest demonstration for freedom in the history of our nation.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Wed, 28 Aug 1963 19:18:00 +0900</pubDate>
-        <link>
-        http://localhost:4000/i-have-a-dream</link>
-        <guid isPermaLink="true">http://localhost:4000/i-have-a-dream</guid>
-      </item>
-      
-    
-      
-      <item>
         <title>The Purpose of Education</title>
         
           <description>&lt;p&gt;As I engage in the so-called “bull sessions” around and about the school, I too often find that most college men have a misconception of the purpose of education. Most of the “brethren” think that education should equip them with the proper instruments of exploitation so that they can forever trample over the masses. Still others think that education should furnish them with noble ends rather than means to an end.&lt;/p&gt;
@@ -302,68 +516,6 @@
         <link>
         http://localhost:4000/the-purpose-of-education</link>
         <guid isPermaLink="true">http://localhost:4000/the-purpose-of-education</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>Out to Sea</title>
-        
-          <description>&lt;p&gt;I had this story from one who had no business to tell it to me, or to any other. I may credit the seductive influence of an old vintage upon the narrator for the beginning of it, and my own skeptical incredulity during the days that followed for the balance of the strange tale.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Wed, 24 Jul 1912 19:18:00 +0900</pubDate>
-        <link>
-        http://localhost:4000/out-to-sea</link>
-        <guid isPermaLink="true">http://localhost:4000/out-to-sea</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>Looking-Glass house</title>
-        
-          <description>&lt;p&gt;One thing was certain, that the white kitten had had nothing to do with it:— it was the black kitten’s fault entirely. For the white kitten had been having its face washed by the old cat for the last quarter of an hour (and bearing it pretty well, considering); so you see that it couldn’t have had any hand in the mischief.
-The way Dinah washed her children’s faces was this: first she held the poor thing down by its ear with one paw, and then with the other paw she rubbed its face all over, the wrong way, beginning at the nose: and just now, as I said, she was hard at work on the white kitten, which was lying quite still and trying to purr — no doubt feeling that it was all meant for its good.
-But the black kitten had been finished with earlier in the afternoon, and so, while Alice was sitting curled up in a corner of the great arm-chair, half talking to herself and half asleep, the kitten had been having a grand game of romps with the ball of worsted Alice had been trying to wind up, and had been rolling it up and down till it had all come undone again; and there it was, spread over the hearth-rug, all knots and tangles, with the kitten running after its own tail in the middle.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sat, 18 Mar 1871 19:18:00 +0900</pubDate>
-        <link>
-        http://localhost:4000/looking-glass-house</link>
-        <guid isPermaLink="true">http://localhost:4000/looking-glass-house</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>Down The Rabbit Hole</title>
-        
-          <description>&lt;p&gt;Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, ‘and what is the use of a book,’ thought Alice ‘without pictures or conversation?’&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Sun, 26 Nov 1865 19:18:00 +0900</pubDate>
-        <link>
-        http://localhost:4000/down-the-rabbit-hole</link>
-        <guid isPermaLink="true">http://localhost:4000/down-the-rabbit-hole</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>Gettysburg Address</title>
-        
-          <description>&lt;p&gt;Fourscore and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Thu, 19 Nov 1863 19:18:00 +0900</pubDate>
-        <link>
-        http://localhost:4000/gettysburg-address</link>
-        <guid isPermaLink="true">http://localhost:4000/gettysburg-address</guid>
       </item>
       
     
