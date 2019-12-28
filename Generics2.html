@@ -43,14 +43,17 @@
     <meta property="og:site_name" content="steady stack" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Generics and Wildcard expression_2" />
-    <meta property="og:description" content="Slow but steady wins the race." />
+    <meta property="og:description" content="Generics_Part 2 1. Generic type casting Person&lt;Object&gt; person1 = null; Person&lt;String&gt; person2 = null; Person&lt;? extends Object&gt; person3 = null; person1 = (Person&lt;Object&gt;)person2; //error! person2 = (Person&lt;String&gt;)person1; //error! person3 = new Person&lt;String&gt;();//OK! This is quite expected. The substituted type should be matched, even if it is an object type. public" />
     <meta property="og:url" content="http://localhost:4000/Generics2" />
     <meta property="og:image" content="http://localhost:4000/assets/images/bus.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2019-11-17T00:00:00+09:00" />
+    <meta property="article:modified_time" content="2019-11-17T00:00:00+09:00" />
     <meta property="article:tag" content="Java" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Generics and Wildcard expression_2" />
-    <meta name="twitter:description" content="Slow but steady wins the race." />
+    <meta name="twitter:description" content="Generics_Part 2 1. Generic type casting Person&lt;Object&gt; person1 = null; Person&lt;String&gt; person2 = null; Person&lt;? extends Object&gt; person3 = null; person1 = (Person&lt;Object&gt;)person2; //error! person2 = (Person&lt;String&gt;)person1; //error! person3 = new Person&lt;String&gt;();//OK! This is quite expected. The substituted type should be matched, even if it is an object type. public" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/bus.jpg" />
     <meta name="twitter:label1" content="Written by" />
@@ -59,8 +62,8 @@
     <meta name="twitter:data2" content="Java" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
-    <meta property="og:image:width" content="2000" />
-    <meta property="og:image:height" content="666" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
 
     <script type="application/ld+json">
 {
@@ -82,7 +85,7 @@
         "@type": "WebPage",
         "@id": "http://localhost:4000/Generics2"
     },
-    "description": "Slow but steady wins the race."
+    "description": "Generics_Part 2 1. Generic type casting Person&lt;Object&gt; person1 = null; Person&lt;String&gt; person2 = null; Person&lt;? extends Object&gt; person3 = null; person1 = (Person&lt;Object&gt;)person2; //error! person2 = (Person&lt;String&gt;)person1; //error! person3 = new Person&lt;String&gt;();//OK! This is quite expected. The substituted type should be matched, even if it is an object type. public"
 }
     </script>
 
@@ -99,7 +102,7 @@
 
 
 </head>
-<body class="home-template">
+<body class="post-template">
 
     <div class="site-wrapper">
         <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
@@ -148,7 +151,7 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  ">
+        <article class="post-full post tag-Java ">
 
             <header class="post-full-header">
                 <section class="post-full-meta">
@@ -172,9 +175,7 @@ into the {body} of the default.hbs template -->
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <p>reference: Java의 정석</p>
-
-<h3 id="generics_part-2">Generics_Part 2</h3>
+                    <h3 id="generics_part-2">Generics_Part 2</h3>
 
 <h4 id="1-generic-type-casting">1. Generic type casting</h4>
 <pre><code class="language-Java">    Person&lt;Object&gt; person1 = null;
@@ -451,7 +452,7 @@ into the {body} of the default.hbs template -->
             
                 
 
-    <article class="post-card ">
+    <article class="post-card post-template">
         
             <a class="post-card-image-link" href="/enum-type">
                 <div class="post-card-image" style="background-image: url(/assets/images/grapes.jpg)"></div>
@@ -508,7 +509,7 @@ into the {body} of the default.hbs template -->
             
                 
 
-    <article class="post-card ">
+    <article class="post-card post-template">
         
             <a class="post-card-image-link" href="/Enabling-Snippets">
                 <div class="post-card-image" style="background-image: url(/assets/images/bear.jpg)"></div>
@@ -695,6 +696,71 @@ into the {body} of the default.hbs template -->
 
 
     <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
     
 
     <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->

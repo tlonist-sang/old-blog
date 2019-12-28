@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="http://localhost:4000/author/martin/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2019-12-28T15:22:41+09:00</updated>
+  <updated>2019-12-28T15:56:36+09:00</updated>
   <id>http://localhost:4000/author/martin/feed.xml</id>
 
   
@@ -42,6 +42,250 @@
   
   
 
+  
+    <entry>
+      <title type="html">Tomcat 9 - Adding reason phrase 200 OK</title>
+      <link href="http://localhost:4000/Adding-reason-phrase" rel="alternate" type="text/html" title="Tomcat 9 - Adding reason phrase 200 OK" />
+      <published>2019-10-29T00:00:00+09:00</published>
+      <updated>2019-10-29T00:00:00+09:00</updated>
+      <id>http://localhost:4000/Adding-reason-phrase</id>
+      <content type="html" xml:base="http://localhost:4000/Adding-reason-phrase">&lt;h4 id=&quot;abstract&quot;&gt;Abstract&lt;/h4&gt;
+&lt;p&gt;From Tomcat 8.5 on, the &lt;strong&gt;‘reason phrase’&lt;/strong&gt;, which states some additional information to the incoming request according to the status code, is omitted. Not only did I feel frustrated for Apache developers who decided not to leave this even as an option, it was an acutal headache for me because the absence of the reason phrase was causing some serious issues for legacy projects.&lt;/p&gt;
+
+&lt;p&gt;There were many people who were suffering from the same cause. Here are some examples.
+    &lt;a href=&quot;https://stackoverflow.com/questions/40522145/javatomcat-9-status-code-200-but-response-message-null&quot;&gt;https://stackoverflow.com/questions/40522145/javatomcat-9-status-code-200-but-response-message-null&lt;/a&gt;&lt;br /&gt;
+    &lt;a href=&quot;http://tomcat.10.x6.nabble.com/Bug-60362-New-Missing-reason-phrase-in-response-td5057191i40.html&quot;&gt;http://tomcat.10.x6.nabble.com/Bug-60362-New-Missing-reason-phrase-in-response-td5057191i40.html&lt;/a&gt;&lt;br /&gt;
+    &lt;a href=&quot;https://superuser.com/questions/1201742/tomcat-reason-phrase&quot;&gt;ttps://superuser.com/questions/1201742/tomcat-reason-phrase&lt;/a&gt;&lt;br /&gt;
+    … etc&lt;/p&gt;
+
+&lt;p&gt;Here I’d like to share how to add the reason phrase manually, by manipulating Tomcat 9 source code itself.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The purpose of this article is to show that it is possible; and distribution of edited opensource project may not be permitted and is out of boundary of my knowledge.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;1-download-tomcat-9-source-code&quot;&gt;1. Download Tomcat 9 Source code&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Download Tomcat 9 Source from apache Tomcat website (https://tomcat.apache.org/download-90.cgi)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-download-tomcat-8or-85-source-code&quot;&gt;2. Download Tomcat 8(or 8.5) Source code&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Download Tomcat 8 Source from apache Tomcat website (https://tomcat.apache.org/download-80.cgi)
+    &lt;h4 id=&quot;3-observe-the-difference-near-reason-phrase&quot;&gt;3. Observe the difference near ‘reason phrase’&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now it gets interesting. Using your IDE or whatever tool you have, try to observe the differences in code where ‘reason phrase’ appears.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;tomcat-85&quot;&gt;Tomcat 8.5&lt;/h6&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sendStatus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Write protocol name&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;HTTP_11_BYTES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;headerBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Write status code&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getStatus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_200_BYTES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_400_BYTES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;404&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_404_BYTES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;headerBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sendReasonPhrase&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// Write message&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;apache&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;coyote&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;USE_CUSTOM_STATUS_MSG_IN_HEADER&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;HttpMessages&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isSafeInHttpHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HttpMessages&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLocale&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// The reason phrase is optional but the space before it is not. Skip&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// sending the reason phrase. Clients should ignore it (RFC 7230) and it&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// just wastes bytes.&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;headerBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;CR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LF&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Note the &lt;mark&gt;sendReasonPhrase&lt;/mark&gt; part. For 8.5, sending reason phrase is optional and can be manipulated from &lt;mark&gt;server.xml&lt;/mark&gt; file. (refer to &lt;a href=&quot;https://tomcat.apache.org/tomcat-8.5-doc/config/http.html&quot;&gt;link&lt;/a&gt;) But from Tomcat 9 on, it is no longer supported.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;tomcat-9026&quot;&gt;Tomcat 9.0.26&lt;/h6&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sendStatus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Write protocol name&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;HTTP_11_BYTES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;headerBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Write status code&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getStatus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_200_BYTES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_400_BYTES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;404&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_404_BYTES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;headerBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// The reason phrase is optional but the space before it is not. Skip&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// sending the reason phrase. Clients should ignore it (RFC 7230) and it&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// just wastes bytes.&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;headerBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;CR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Constants&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LF&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Contrasting the above two code snippets, you can notice that the entire part where it says &lt;mark&gt;sendReasonPhrase&lt;/mark&gt; is missing in Tomcat 9. Your job is to restore this part, together with all the dependencies that are missing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/images/tomcat9_red.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/tomcat9_red.png&quot; alt=&quot;img&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Now let’s do something about’em.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;4-add-missing-classes-and-variables&quot;&gt;4. Add missing classes and variables&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;HttpMessages (org.apache.tomcat.util.http)
+&lt;a href=&quot;http://localhost:4000/assets/images/tomcat9_httpmessages.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/tomcat9_httpmessages.png&quot; alt=&quot;img&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Constants (org.apache.coyote)
+&lt;a href=&quot;http://localhost:4000/assets/images/tomcat9_constants.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/tomcat9_constants.png&quot; alt=&quot;img&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;write function (overloading)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I’ve been trying this on my Macbook. Previously when I was testing this in my Windows desktop it was working smoothly, but somehow the Mac version is not. My IntelliJ is producing errors like below every time I try to launch my simple Spring MVC controller.
+&lt;a href=&quot;http://localhost:4000/assets/images/tomcat9_error.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/tomcat9_error.png&quot; alt=&quot;img&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;I read from somewhere that the directory system of linux(and Mac) is different from that of Windows, hence causing this kind of error. In fact, when I copied the exact file to Windows and tested it, it was working like a charm.&lt;/li&gt;
+  &lt;li&gt;To tackle this problem anyhow (it is absurd that source-built tomcat file cannot be run in OS other than Windows), I reviewd the log (Help -&amp;gt; Show log in Finder) and found out that I was missing a logging library.
+&lt;a href=&quot;http://localhost:4000/assets/images/tomcat9_missing_library.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/tomcat9_missing_library.png&quot; alt=&quot;img&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt; &amp;lt;dependencies&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;        &amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;            &amp;lt;groupId&amp;gt;&lt;/span&gt;org.slf4j&amp;lt;/groupId&amp;gt;
+&lt;span class=&quot;gp&quot;&gt;            &amp;lt;artifactId&amp;gt;&lt;/span&gt;slf4j-api&amp;lt;/artifactId&amp;gt;
+&lt;span class=&quot;gp&quot;&gt;            &amp;lt;version&amp;gt;&lt;/span&gt;1.8.0-beta2&amp;lt;/version&amp;gt;
+&lt;span class=&quot;gp&quot;&gt;            &amp;lt;scope&amp;gt;&lt;/span&gt;compile&amp;lt;/scope&amp;gt;
+&lt;span class=&quot;gp&quot;&gt;        &amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;    &amp;lt;/dependencies&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/assets/images/tomcat9_add_library.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/tomcat9_add_library.png&quot; alt=&quot;img&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It is not working; and something is terribly wrong, and I decided firmly that I won’t spend more than 30 minutes grappling with this bastard.
+    &lt;blockquote&gt;
+      &lt;p&gt;The problem was from an awefully simple mistake.&lt;/p&gt;
+      &lt;h5 id=&quot;i-downloaded-srczip-not-srctargz&quot;&gt;I downloaded src.zip, not src.tar.gz.&lt;/h5&gt;
+      &lt;p&gt;There was a reason why Apache Tomcat was provided with two different versions after all. The tomcat directory structure must have been different, something that &amp;gt;cannot be easily manipulated by changing directory structures of visible files.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;5-build-modified-tomcat-9-and-test-if-its-working&quot;&gt;5. Build modified Tomcat 9 and test if it’s working&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Now, go to the Tomcat source directory, and rebuild the project using ant command.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Result&lt;/strong&gt;
+&lt;a href=&quot;http://localhost:4000/assets/images/tomcat9_200notworking.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/tomcat9_200notworking.png&quot; alt=&quot;img&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;We definited expected something like this.
+&lt;a href=&quot;http://localhost:4000/assets/images/tomcat9_200working.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/tomcat9_200working.png&quot; alt=&quot;img&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Let’s examine why.&lt;/li&gt;
+  &lt;li&gt;If you look carefully into the class HttpMessages.java, you’ll find that the actual OK code will be inserted with &lt;em&gt;getMessage&lt;/em&gt; fucntion.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// method from Response.&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Does HTTP requires/allow international messages or&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// are pre-defined? The user doesn't see them most of the time&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st_200&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;st_200&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sc.200&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st_200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The string OK is picked up from a variable &lt;em&gt;sm&lt;/em&gt;, (StringManager). You can simply search from &lt;strong&gt;sc.200&lt;/strong&gt; from the whole package 8.5 or lower, to see where the key value is mapped into in the project. 
+&lt;a href=&quot;http://localhost:4000/assets/images/tomcat9_findsc200.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/tomcat9_findsc200.png&quot; alt=&quot;img&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Copy the entire package under the right position.
+&lt;a href=&quot;http://localhost:4000/assets/images/tomcat9_copypackage.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/tomcat9_copypackage.png&quot; alt=&quot;img&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Rebuild using ant, and enjoy the victory!
+&lt;a href=&quot;http://localhost:4000/assets/images/tomcat9_victory.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/tomcat9_victory.png&quot; alt=&quot;img&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;concluding&quot;&gt;Concluding…&lt;/h4&gt;
+
+&lt;p&gt;Though I was using Tomcat almost on daily basis with my company’s project, I’ve never actually looked into its source code until this problem was nagging me. OpenSource projects, especially something as big and historical as Tomcat, has somehow been intimidating for me, not just because of its sheer lines of codes, but because its enigmatic(without even looking into them in details!) comments and interfaces. This is a small thing, really; and I might have done something wrong in the process. But it nontheless made me realize that I do not need to run away from intimidating looking codes anymore!&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Martin Luther King</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Micellaneous" />
+      
+
+      
+        <summary type="html">Abstract From Tomcat 8.5 on, the ‘reason phrase’, which states some additional information to the incoming request according to the status code, is omitted. Not only did I feel frustrated for Apache developers who decided not to leave this even as an option, it was an acutal headache for me because the absence of the reason phrase was causing some serious issues for legacy projects.</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">The Purpose of Education</title>

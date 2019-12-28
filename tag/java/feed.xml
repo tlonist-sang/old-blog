@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="http://localhost:4000/tag/java/feed.xml" rel="self" type="application/atom+xml" />
   <link href="http://localhost:4000/" rel="alternate" type="text/html" />
-  <updated>2019-12-28T15:22:41+09:00</updated>
+  <updated>2019-12-28T15:56:36+09:00</updated>
   <id>http://localhost:4000/tag/java/feed.xml</id>
 
   
@@ -216,7 +216,7 @@ Below is a rough description of the method heal().&lt;/p&gt;
       
 
       <author>
-          <name></name>
+          <name>tlonist</name>
         
         
       </author>
@@ -517,7 +517,7 @@ On surface, there doesn’t seem to be any merit in implementing polymorphism, b
       
 
       <author>
-          <name></name>
+          <name>tlonist</name>
         
         
       </author>
@@ -718,7 +718,7 @@ Anyways, so it’s &lt;strong&gt;GOOD!&lt;/strong&gt;
       
 
       <author>
-          <name></name>
+          <name>tlonist</name>
         
         
       </author>
@@ -875,7 +875,7 @@ It was introduced from JDK 1.5, and is supposedly a better version of enum type 
       
 
       <author>
-          <name></name>
+          <name>tlonist</name>
         
         
       </author>
@@ -900,9 +900,7 @@ It was introduced from JDK 1.5, and is supposedly a better version of enum type 
       <published>2019-11-17T00:00:00+09:00</published>
       <updated>2019-11-17T00:00:00+09:00</updated>
       <id>http://localhost:4000/Generics2</id>
-      <content type="html" xml:base="http://localhost:4000/Generics2">&lt;p&gt;reference: Java의 정석&lt;/p&gt;
-
-&lt;h3 id=&quot;generics_part-2&quot;&gt;Generics_Part 2&lt;/h3&gt;
+      <content type="html" xml:base="http://localhost:4000/Generics2">&lt;h3 id=&quot;generics_part-2&quot;&gt;Generics_Part 2&lt;/h3&gt;
 
 &lt;h4 id=&quot;1-generic-type-casting&quot;&gt;1. Generic type casting&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&quot;language-Java&quot;&gt;    Person&amp;lt;Object&amp;gt; person1 = null;
@@ -972,7 +970,7 @@ It was introduced from JDK 1.5, and is supposedly a better version of enum type 
       
 
       <author>
-          <name></name>
+          <name>tlonist</name>
         
         
       </author>
@@ -984,7 +982,7 @@ It was introduced from JDK 1.5, and is supposedly a better version of enum type 
       
 
       
-        <summary type="html">reference: Java의 정석</summary>
+        <summary type="html">Generics_Part 2</summary>
       
 
       
@@ -1211,7 +1209,7 @@ It was introduced from JDK 1.5, and is supposedly a better version of enum type 
       
 
       <author>
-          <name></name>
+          <name>tlonist</name>
         
         
       </author>
@@ -1317,7 +1315,7 @@ RecursiveTask - task with return value&lt;/p&gt;
       
 
       <author>
-          <name></name>
+          <name>tlonist</name>
         
         
       </author>
