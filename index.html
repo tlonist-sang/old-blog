@@ -1,1626 +1,181 @@
-<!DOCTYPE html>
-<html>
-<head>
+---
+layout: main
+---
 
-    <!-- Document Settings -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+{% if site.paginate %}
+    {% assign posts = paginator.posts | where_exp:"post","post.is_generated != true" %}
+{% else %}
+    {% assign posts = site.posts | where_exp:"post","post.is_generated != true" %}
+{% endif %}
 
-    <!-- Base Meta -->
-    <!-- dynamically fixing the title for tag/author pages -->
+{% if site.show_hero and paginator == nil or paginator.page == 1 %}
+    {% assign offset = 1 %}
+{% else %}
+    {% assign offset = 0 %}
+{% endif %}
 
-
-
-    <title>steady stack</title>
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Styles'n'Scripts -->
-    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
-    <!-- highlight.js -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <style>.hljs { background: none; }</style>
-
-    <!--[if IE]>
-        <style>
-            p, ol, ul{
-                width: 100%;
-            }
-            blockquote{
-                width: 100%;
-            }
-        </style>
-    <![endif]-->
-    
-    <!-- This tag outputs SEO meta+structured data and other important settings -->
-    <meta name="description" content="Slow but steady wins the race." />
-    <link rel="shortcut icon" href="http://localhost:4000/assets/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="http://localhost:4000/" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
-
-     <!--title below is coming from _includes/dynamic_title-->
-    <meta property="og:site_name" content="steady stack" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="steady stack" />
-    <meta property="og:description" content="Slow but steady wins the race." />
-    <meta property="og:url" content="http://localhost:4000/" />
-    <meta property="og:image" content="http://localhost:4000/assets/images/blog-cover.jpg" />
-    <meta property="article:publisher" content="https://www.facebook.com/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="steady stack" />
-    <meta name="twitter:description" content="Slow but steady wins the race." />
-    <meta name="twitter:url" content="http://localhost:4000/" />
-    <meta name="twitter:image" content="http://localhost:4000/assets/images/blog-cover.jpg" />
-    <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="steady stack" />
-    <meta name="twitter:site" content="@" />
-    <meta name="twitter:creator" content="@" />
-    <meta property="og:image:width" content="2000" />
-    <meta property="og:image:height" content="666" />
-
-    <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Website",
-    "publisher": {
-        "@type": "Organization",
-        "name": "steady stack",
-        "logo": "http://localhost:4000/assets/images/blog-icon.png"
-    },
-    "url": "http://localhost:4000/",
-    "image": {
-        "@type": "ImageObject",
-        "url": "http://localhost:4000/assets/images/blog-cover.jpg",
-        "width": 2000,
-        "height": 666
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "http://localhost:4000/"
-    },
-    "description": "Slow but steady wins the race."
-}
-    </script>
-
-    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
-    <script type="text/javascript">
-    ghost.init({
-    	clientId: "ghost-frontend",
-    	clientSecret: "f84a07a72b17"
-    });
-    </script> -->
-
-    <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="steady stack" href="/feed.xml" />
-
-
-</head>
-<body class="home-template">
-
-    <div class="site-wrapper">
-        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
-        <!-- < default -->
-<!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template -->
-
-<!-- The big featured header, it uses blog cover image as a BG if available -->
-<header class="site-header outer " style="background-image:  url(/assets/images/blog-cover.jpg) ">
-    <div class="inner">
-        <div class="site-header-content">
-            <h1 class="site-title">
-                
-                    <img class="site-logo" src="/assets/images/blog-icon.png" alt="steady stack"/>
-                
-            </h1>
-            <h2 class="site-description">stat rosa pristina nomini, nomina nuda tenemus</h2>
-        </div>
-        <nav class="site-nav">
-    <div class="site-nav-left">
-        
-        
-            <ul class="nav" role="menu">
-    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
-    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
-    <!-- <li class="nav-getting-started" role="menuitem"><a href="/tag/getting-started/">Getting Started</a></li> -->
-    <li role="menuitem"><a href="/tag/java">Java</a></li>
-    <li role="menuitem"><a href="/tag/micellaneous">Micellaneous</a></li>
-</ul>
-
-        
-    </div>
-    <div class="site-nav-right">
-        <div class="social-links">
-            
-            
-        </div>
-        
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
-        
-    </div>
-</nav>
-
-    </div>
-</header>
-
-<!-- The main content area -->
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-
-        <div class="post-feed">
-            <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
-            
-
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/object-oriented-part3">
-                <div class="post-card-image" style="background-image: url(/assets/images/new-york.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/object-oriented-part3">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Object Oriented Programming - 3</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>So far I’ve covered Inheritance and Polymorphism. Now we have abstraction and encapsulation left. I will go on with the previous example of Clash Royale characters in explaining its concepts.
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      4 min read
-                    
+<main class="home {% if site.show_hero and paginator == nil or paginator.page == 1 %}no-padding{% endif %}" role="main">
+    {% if site.show_hero and paginator == nil or paginator.page == 1 %}
+        <!-- Hero -->
+        {% assign featured = posts.first %}
+        <section class="hero" style="background-image: url({{ featured.image }})">
+            <div class="pixels"></div>
+            <div class="gradient"></div>
+            <div class="content">
+                <time datetime="{{ featured.date | date_to_xmlschema }}" class="date">{{ featured.date | date: "%m.%d.%Y" }}</time>
+                <h1 class="title">{{ featured.title }}</h1>
+                <p class="description">{{ featured.subtitle }}</p>
+                <div class="buttons">
+                    <a href="{{ featured.url }}" role="button" class="button">
+                        <img src="/assets/img/icons/read.svg">
+                        <span>Read Now</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    <!-- Posts -->
+    <section id="grid" class="row flex-grid">
+        {% for post in posts offset: offset %}
+            <article class="box-item">
+                <span class="category">
+                    <a href="{{ site.baseurl }}/category/{{ post.category }}">
+                        <span>{{ post.category }}</span>
+                    </a>
                 </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/object-oriented-part2">
-                <div class="post-card-image" style="background-image: url(/assets/images/nevada.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/object-oriented-part2">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Object Oriented Programming - 2</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>(Continuing from the previous post…)
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      6 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/object-oriented-part1">
-                <div class="post-card-image" style="background-image: url(/assets/images/bora-bora.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/object-oriented-part1">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Object oriented programming - 1</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>What is an object-oriented programming? and why is it so important?
-Do I really understand what it is?
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      3 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/enum-type">
-                <div class="post-card-image" style="background-image: url(/assets/images/grapes.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/enum-type">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Enumeration</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>1. Enumeration
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      2 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/Generics2">
-                <div class="post-card-image" style="background-image: url(/assets/images/bus.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/Generics2">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Generics and Wildcard expression_2</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Generics_Part 2
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/Enabling-Snippets">
-                <div class="post-card-image" style="background-image: url(/assets/images/bear.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/Enabling-Snippets">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Micellaneous</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Enabling VS code snippets for markdown</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>[link_for_enabling_snippets] (https://github.com/Microsoft/vscode/issues/26108)
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/Generics">
-                <div class="post-card-image" style="background-image: url(/assets/images/bg_contact.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/Generics">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Generics and Wildcard expression_1</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Generics_Part 1
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      4 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/Adding-reason-phrase">
-                <div class="post-card-image" style="background-image: url(/assets/images/malaysia.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/Adding-reason-phrase">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Micellaneous</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Tomcat 9 - Adding reason phrase 200 OK</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Abstract From Tomcat 8.5 on, the ‘reason phrase’, which states some additional information to the incoming request according to the status code, is omitted. Not only did I feel frustrated for Apache developers</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/images/martin.jpg" alt="Martin Luther King" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/martin/">Martin Luther King</a>
-                        </span>
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      4 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/Building-Tomcat-Source-From-Source-2">
-                <div class="post-card-image" style="background-image: url(/assets/images/summit.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/Building-Tomcat-Source-From-Source-2">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Micellaneous</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Building Tomcat from its source-2</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>####Building Tomcat From Its Source - 2 
-#####Downloading Tomcat Source and Opening it from an IDE
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/Building-Tomcat-From-Source">
-                <div class="post-card-image" style="background-image: url(/assets/images/writing.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/Building-Tomcat-From-Source">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Micellaneous</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Building Tomcat from its source-1</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Building Tomcat From Its Source - 1
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/fork-and-join">
-                <div class="post-card-image" style="background-image: url(/assets/images/fork.png)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/fork-and-join">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">fork and join</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Fork &amp; Join
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/volatile">
-                <div class="post-card-image" style="background-image: url(/assets/images/magma.png)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/volatile">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">volatile</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Each multicore processor has its own cache, like the diagram below describes.
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/Thread-flow-and-control">
-                <div class="post-card-image" style="background-image: url(/assets/images/summit.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/Thread-flow-and-control">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Thread flow and control</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Thread flow and control
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      2 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/Daemon-Thread">
-                <div class="post-card-image" style="background-image: url(/assets/images/sweden.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/Daemon-Thread">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Thread - Daemon Thread</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Daemon Thread
-Daemon thread is a subsidiary thread that helps other non-daemon threads’ tasks. You can easily think of Java’s garbage collection, WordProcessor’s auto-save, or auto-screen reloading functionalities.
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/Thread-Priority">
-                <div class="post-card-image" style="background-image: url(/assets/images/grapes.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/Thread-Priority">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Thread - Thread Priority</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Thread Priority
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/Thread-definition-run-start-main">
-                <div class="post-card-image" style="background-image: url(/assets/images/himalayan.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/Thread-definition-run-start-main">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Thread - Definition, run()&start(), main</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Thread
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      2 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/JVM">
-                <div class="post-card-image" style="background-image: url(/assets/images/advanced.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/JVM">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Java</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">JVM</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>##[[JVM (Java Virtual Machine)]]
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/the-editor">
-                <div class="post-card-image" style="background-image: url(/assets/images/writing.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/the-editor">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Getting started</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Using the Ghost editor</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Ghost uses a language called Markdown to format text. When you go to edit a post and see special characters and colours intertwined between the words, those are Markdown shortcuts which tell Ghost</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/images/ghost.png" alt="Ghost" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/ghost/">Ghost</a>
-                        </span>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      3 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/using-tags">
-                <div class="post-card-image" style="background-image: url(/assets/images/tags.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/using-tags">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Getting started</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Organising your content with tags</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Ghost has a single, powerful organisational taxonomy, called tags. It doesn't matter whether you want to call them categories, tags, boxes, or anything else. You can think of Ghost tags a lot like</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/images/ghost.png" alt="Ghost" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/ghost/">Ghost</a>
-                        </span>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      2 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/managing-users">
-                <div class="post-card-image" style="background-image: url(/assets/images/team.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/managing-users">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Getting started</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Managing Ghost users</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Ghost has a number of different user roles for your team Authors The base user level in Ghost is an author. Authors can write posts, edit their own posts, and publish their own</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/images/ghost.png" alt="Ghost" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/ghost/">Ghost</a>
-                        </span>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/private-sites">
-                <div class="post-card-image" style="background-image: url(/assets/images/locked.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/private-sites">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Getting started</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Making your site private</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Sometimes you might want to put your site behind closed doors If you've got a publication that you don't want the world to see yet because it's not ready to launch, you can</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/images/ghost.png" alt="Ghost" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/ghost/">Ghost</a>
-                        </span>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/advanced-markdown">
-                <div class="post-card-image" style="background-image: url(/assets/images/advanced.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/advanced-markdown">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Getting started</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Advanced Markdown tips</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>There are lots of powerful things you can do with the Ghost editor If you've gotten pretty comfortable with all the basics of writing in Ghost, then you may enjoy some more advanced</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/images/ghost.png" alt="Ghost" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/ghost/">Ghost</a>
-                        </span>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      2 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/themes">
-                <div class="post-card-image" style="background-image: url(/assets/images/design.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/themes">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Getting started</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Setting up your own Ghost theme</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Creating a totally custom design for your publication Ghost comes with a beautiful default theme called Casper, which is designed to be a clean, readable publication layout and can be easily adapted for</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/images/ghost.png" alt="Ghost" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/ghost/">Ghost</a>
-                        </span>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/a-full-and-comprehensive-style-test">
-                <div class="post-card-image" style="background-image: url(/assets/images/bear.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/a-full-and-comprehensive-style-test">
-                <header class="post-card-header">
-                    
-
-                    <h2 class="post-card-title">A Full and Comprehensive Style Test</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/images/john.jpg" alt="John O'Nolan" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/john/">John O'Nolan</a>
-                        </span>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      5 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card home-template">
-        
-            <a class="post-card-image-link" href="/the-purpose-of-education">
-                <div class="post-card-image" style="background-image: url(/assets/images/grapes.jpg)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/the-purpose-of-education">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Speeches</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">The Purpose of Education</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>As I engage in the so-called “bull sessions” around and about the school, I too often find that most college men have a misconception of the purpose of education. Most of the “brethren”</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/images/martin.jpg" alt="Martin Luther King" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/martin/">Martin Luther King</a>
-                        </span>
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      2 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-
-        </div>
-
-    </div>
+                <div class="box-body">
+                    <div class="cover">
+                        {% include new-post-tag.html date=post.date %}
+                        <a href="{{ post.url | prepend: site.baseurl }}" {%if isnewpost %}class="new-post"{% endif %}>
+                            {% if post.optimized_image %}
+                                <img src="/assets/img/placeholder.png" width="100%" data-url="{{ post.optimized_image }}" class="preload">
+                                <noscript>
+                                    <img src="{{ post.optimized_image }}" width="100%">
+                                </noscript>
+                            {% elsif post.image %}
+                                <img src="/assets/img/placeholder.png" width="100%" data-url="{{ post.image }}" class="preload">
+                                <noscript>
+                                    <img src="{{ post.image }}" width="100%">
+                                </noscript>
+                            {% else %}
+                                <img src="/assets/img/placeholder.png" width="100%" data-url="/assets/img/off.jpg" class="preload">
+                                <noscript>
+                                    <img src="/assets/img/off.jpg" width="100%">
+                                </noscript>
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="box-info">
+                        <time datetime="{{ post.date | date_to_xmlschema }}" class="date">
+                            {% include date.html date=post.date %}
+                        </time>
+                        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                            <h2 class="post-title">
+                                {{ post.title }}
+                            </h2>
+                        </a>
+                        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                            <p class="description">{{ post.description }}</p>
+                        </a>
+                        <div class="tags">
+                            {% for tag in post.tags %}
+                                {% if tag != "" %}
+                                    <a href="{{ site.baseurl}}/tags/#{{tag | slugify }}">#{{ tag }}</a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+    <!-- Pagination -->
+    {% if site.paginate %}
+        {% include pagination-home.html %}
+    {% endif %}
 </main>
 
+{% assign social_urls = '' %}
+{% if site.github_username %}
+    {% assign social_urls = social_urls | append: '"https://github.com/' | append: site.github_username | append: '",' %}
+{% endif %}
+{% if site.facebook_username %}
+    {% assign social_urls = social_urls | append: '"https://www.facebook.com/' | append: site.facebook_username | append: '",' %}
+{% endif %}
+{% if site.twitter_username %}
+    {% assign social_urls = social_urls | append: '"https://twitter.com/' | append: site.twitter_username | append: '",' %}
+{% endif %}
+{% if site.medium_username %}
+    {% assign social_urls = social_urls | append: '"https://medium.com/@' | append: site.medium_username | append: '",' %}
+{% endif %}
+{% if site.instagram_username %}
+    {% assign social_urls = social_urls | append: '"https://www.instagram.com/' | append: site.instagram_username | append: '",' %}
+{% endif %}
+{% if site.linkedin_username %}
+    {% assign social_urls = social_urls | append: '"https://www.linkedin.com/in/' | append: site.linkedin_username | append: '",' %}
+{% endif %}
 
-        <!-- Previous/next page links - displayed on every page -->
-        
-
-        <!-- The footer at the very bottom of the screen -->
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="http://localhost:4000/">steady stack</a> &copy; 2019</section>
-                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
-                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
-                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
-                <nav class="site-footer-nav">
-                    <a href="/">Latest Posts</a>
-                    
-                    
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-                </nav>
-            </div>
-        </footer>
-
-    </div>
-
-    <!-- The big email subscribe modal content -->
-    
-        <div id="subscribe" class="subscribe-overlay">
-            <a class="subscribe-overlay-close" href="#"></a>
-            <div class="subscribe-overlay-content">
-                
-                    <img class="subscribe-overlay-logo" src="/assets/images/blog-icon.png" alt="steady stack" />
-                
-                <h1 class="subscribe-overlay-title">Subscribe to steady stack</h1>
-                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
-                <form method="post" action="/subscribe/" class="">
-    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
-
-    <div class="form-group">
-        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
-    </div>
-    <button class="" type="submit" disabled><span>Subscribe</span></button>
-    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
-</form>
-
-            </div>
-        </div>
-    
-
-    <!-- highlight.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
-    <script>$(document).ready(function() {
-      $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
-      });
-    });</script>
-
-    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
-
-
-    <!-- Paginator increased to "infinit" in _config.yml -->
-    <!-- if paginator.posts  -->
-    <!-- <script>
-        var maxPages = parseInt('1');
-    </script>
-    <script src="/assets/js/infinitescroll.js"></script> -->
-    <!-- /endif -->
-
-    
-
-
-    <!-- Add Google Analytics  -->
-    <!-- Google Analytics Tracking code -->
- <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-139982514-1', 'auto');
-  ga('send', 'pageview');
-
- </script>
-
-
-    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
-    
-
-    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
-    <!-- ghost_foot -->
-
-</body>
-</html>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebPage",
+  "mainEntity": {
+    "@type": "Blog",
+    "name": "{{ site.name }}",
+    "headline": "{{ site.title }}",
+    "description": "{{ site.description }}",
+    "url": "{{ site.url }}{{site.baseurl}}/",
+    "inLanguage": "{{ site.language }}",
+    "isFamilyFriendly": "true",
+    "creator": {
+        "@type": "Organization",
+        "name": "{{ site.name }}",
+        "url": "{{ site.url }}{{site.baseurl}}/",
+        "sameAs": [
+            {{ social_urls | split: "," | join: "," }}
+        ]
+    },
+    "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+        {% assign limit = 8 %}
+        {% for post in posts limit: limit %}
+            {% assign author = site.authors | where: "name", post.author | first %}
+            {
+                "@type": "BlogPosting",
+                "name": "{{ post.title }}",
+                "headline": "{{ post.subtitle }}",
+                "description": "{{ post.description }}",
+                "image": "{{ post.image }}",
+                "url": "{{ post.url | prepend: site.baseurl | prepend: site.url }}",
+                "inLanguage": "{{ site.language }}",
+                "dateCreated": "{{ post.date | date: '%Y-%m-%d/' }}",
+                "datePublished": "{{ post.date | date: '%Y-%m-%d/' }}",
+                "dateModified": "{{ post.date | date: '%Y-%m-%d/' }}",
+                "author": {
+                    "@type": "Person",
+                    "name": "{{ author.display_name }}",
+                    "url": "{{ author.url | prepend: site.baseurl | prepend: site.url }}"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "{{ site.name }}",
+                    "url": "{{ site.url }}{{site.baseurl}}/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "{{ site.url }}{{site.baseurl}}/assets/img/blog-image.png",
+                        "width": "600",
+                        "height": "315"
+                    }
+                },
+                "mainEntityOfPage": "True",
+                "genre": "{{ post.category | capitalize }}",
+		        "articleSection": "{{ post.category | capitalize }}",
+                "keywords": [{{ post.tags | join: '","' | append: '"' | prepend: '"' }}]
+            }{% if forloop.index < limit %},{% endif %}
+        {% endfor %}
+        ]
+    }
+  }
+}
+</script>

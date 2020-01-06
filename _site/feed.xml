@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>steady stack</title>
+    <description>slow but steady wins the race.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 06 Jan 2020 23:44:19 +0900</pubDate>
+    <lastBuildDate>Mon, 06 Jan 2020 23:44:19 +0900</lastBuildDate>
+    <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Object Oriented Programming - 3</title>
+        <description>&lt;p&gt;So far I’ve covered Inheritance and Polymorphism. Now we have abstraction and encapsulation left. I will go on with the previous example of Clash Royale characters in explaining its concepts.&lt;/p&gt; &lt;h3 id=&quot;3-abstraction&quot;&gt;3. Abstraction&lt;/h3&gt; &lt;p&gt;I think abstraction is one of the key abilities developers must have. Perhaps this is more important than ability to implement methods or using proper libraries because the stage of abstraction in any kinds of programs affects the entire product for a long time.&lt;/p&gt; &lt;h4 id=&quot;3-1-abstract-class&quot;&gt;3-1. Abstract Class&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Abstract class&lt;/strong&gt; is a class that contains at least one abstract method. Let’s think about adding a new method...</description>
+        <pubDate>Tue, 03 Dec 2019 00:45:22 +0900</pubDate>
+        <link>http://localhost:4000/object-oriented-part3-8.49.43-PM/</link>
+        <guid isPermaLink="true">http://localhost:4000/object-oriented-part3-8.49.43-PM/</guid>
+        
+        <category>Java</category>
+        
+        <category>java</category>
+      </item>
+    
+      <item>
+        <title>Object Oriented Programming - 2</title>
+        <description>&lt;p&gt;(Continuing from the previous post…)&lt;/p&gt; &lt;p&gt;So I covered the basics to enter the world of OOP, and got to know that OOP is a way of programming that deconstructs the world with objects and interactions among objects. I covered 1) How to instantiate objects 2) What comprises a class (variables and methods) 3) JVM memory structure 4) Various methods for initializing variables&lt;/p&gt; &lt;p&gt;In this posting, I will try to get hold of mainstream OOP features of Java language, namely encapsulation, polymorphism, inheritance, and abstraction. I’m not much of a novice to learn these concepts all anew, but I’d like to...</description>
+        <pubDate>Tue, 03 Dec 2019 00:45:22 +0900</pubDate>
+        <link>http://localhost:4000/object-oriented-part2-8.49.43-PM/</link>
+        <guid isPermaLink="true">http://localhost:4000/object-oriented-part2-8.49.43-PM/</guid>
+        
+        <category>Java</category>
+        
+        <category>java</category>
+      </item>
+    
+      <item>
+        <title>Object oriented programming - 1</title>
+        <description>&lt;p&gt;What is an object-oriented programming? and why is it so important? Do I really understand what it is?&lt;/p&gt; &lt;h4 id=&quot;object-oriented-language---abstract&quot;&gt;Object-Oriented Language - Abstract&lt;/h4&gt; &lt;blockquote&gt; &lt;p&gt;Simply put, it is a viewpoint that the world is made up of objects whose interactions make up all the events happening in the world.&lt;/p&gt; &lt;/blockquote&gt; &lt;ul&gt; &lt;li&gt;Major properties of Object-oriented languages &lt;ul&gt; &lt;li&gt;high re-usability&lt;/li&gt; &lt;li&gt;easy to manage and refactor&lt;/li&gt; &lt;li&gt;high integrity Anyways, so it’s &lt;strong&gt;GOOD!&lt;/strong&gt; &lt;br /&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;I’ll talk about four major features that Java has as an object-oriented language, namely &lt;strong&gt;‘Abstraction’, ‘Polymorphism’, ‘Inheritance’, ‘Encapsulation’.&lt;/strong&gt; &lt;br /&gt;&lt;/p&gt; &lt;/li&gt; &lt;li&gt;Before going further, let...</description>
+        <pubDate>Wed, 27 Nov 2019 00:45:22 +0900</pubDate>
+        <link>http://localhost:4000/object-oriented-part1-8.49.43-PM/</link>
+        <guid isPermaLink="true">http://localhost:4000/object-oriented-part1-8.49.43-PM/</guid>
+        
+        <category>Java</category>
+        
+        <category>java</category>
+      </item>
+    
+      <item>
+        <title>Generics and Wildcard expression_2</title>
+        <description>&lt;h3 id=&quot;generics_part-2&quot;&gt;Generics_Part 2&lt;/h3&gt; &lt;h4 id=&quot;1-generic-type-casting&quot;&gt;1. Generic type casting&lt;/h4&gt; &lt;pre&gt;&lt;code class=&quot;language-Java&quot;&gt; Person&amp;lt;Object&amp;gt; person1 = null; Person&amp;lt;String&amp;gt; person2 = null; Person&amp;lt;? extends Object&amp;gt; person3 = null; person1 = (Person&amp;lt;Object&amp;gt;)person2; //error! person2 = (Person&amp;lt;String&amp;gt;)person1; //error! person3 = new Person&amp;lt;String&amp;gt;();//OK! &lt;/code&gt;&lt;/pre&gt; &lt;ul&gt; &lt;li&gt;This is quite expected. The substituted type &lt;T&gt; should be matched, even if it is an object type.&lt;/T&gt;&lt;/li&gt; &lt;/ul&gt; &lt;pre&gt;&lt;code class=&quot;language-Java&quot;&gt;public final class Optional&amp;lt;T&amp;gt; { private static final Optional&amp;lt;?&amp;gt; EMPTY = new Optional&amp;lt;&amp;gt;(); private final T value; private Optional() { this.value = null; } public static&amp;lt;T&amp;gt; Optional&amp;lt;T&amp;gt; empty() { @SuppressWarnings(&quot;unchecked&quot;) Optional&amp;lt;T&amp;gt; t = (Optional&amp;lt;T&amp;gt;) EMPTY; return t; } &lt;/code&gt;&lt;/pre&gt; &lt;ul&gt; &lt;li&gt;Above is...</description>
+        <pubDate>Sun, 17 Nov 2019 00:45:22 +0900</pubDate>
+        <link>http://localhost:4000/Generics2/</link>
+        <guid isPermaLink="true">http://localhost:4000/Generics2/</guid>
+        
+        <category>Java</category>
+        
+        <category>java</category>
+      </item>
+    
+      <item>
+        <title>Generics and Wildcard expression_1</title>
+        <description>&lt;h3 id=&quot;generics_part-1&quot;&gt;Generics_Part 1&lt;/h3&gt; &lt;p&gt;Generics was introduced from JDK 1.5 and since then been serving as a major feature in using Java language.&lt;/p&gt; &lt;p&gt;Generics is a function that does compile-time type checks for method or collection classes that deals with various types of objects; hence classes like HashSet, ArrayList, and HashMap make very good uses of generics.&lt;/p&gt; &lt;h4 id=&quot;1-basics-&quot;&gt;&lt;span style=&quot;background-color: #DCDCDC&quot;&gt;1. Basics &lt;/span&gt;&lt;/h4&gt; &lt;h5 id=&quot;generics-does&quot;&gt;Generics does…&lt;/h5&gt; &lt;blockquote&gt; &lt;p&gt;&lt;strong&gt;enhances type stability&lt;/strong&gt; : it prevents objects from being saved in unintended types, and reduces errors when an object is taken out in a different type than its original type. &lt;br /&gt; &lt;strong&gt;simplifies the...</description>
+        <pubDate>Tue, 12 Nov 2019 00:45:22 +0900</pubDate>
+        <link>http://localhost:4000/Generics/</link>
+        <guid isPermaLink="true">http://localhost:4000/Generics/</guid>
+        
+        <category>Java</category>
+        
+        <category>java</category>
+      </item>
+    
+      <item>
+        <title>fork and join</title>
+        <description>&lt;h4 id=&quot;fork--join&quot;&gt;Fork &amp;amp; Join&lt;/h4&gt; &lt;p&gt;Multithread programming with &lt;strong&gt;fork &amp;amp; join&lt;/strong&gt; is ‘very’ fun. From JDK 1.7 onward, a framework called ‘fork &amp;amp; join’ is added. This framework makes it possible to split a task into many units of tasks, each of which is processed concurrently by different threads.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;RecursiveAction - task without any return value RecursiveTask - task with return value&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;What you need to do is to implement &lt;strong&gt;compute()&lt;/strong&gt; method by inheriting certain classes as&lt;/p&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SumJob&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RecursiveTask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Long&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span...</description>
+        <pubDate>Thu, 10 Oct 2019 00:45:22 +0900</pubDate>
+        <link>http://localhost:4000/fork-and-join/</link>
+        <guid isPermaLink="true">http://localhost:4000/fork-and-join/</guid>
+        
+        <category>Java</category>
+        
+        <category>java</category>
+      </item>
+    
+      <item>
+        <title>volatile</title>
+        <description>&lt;p&gt;Each multicore processor has its own cache, like the diagram below describes.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://qph.fs.quoracdn.net/main-qimg-434f6d0045b7959bd50a0a031716cc25&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt; &lt;p&gt;It wasn’t a problem when it was just a single core processor (with only one cache), but the problem starts when a value is updated differently for each of the caches that cores have.&lt;/p&gt; &lt;p&gt;To prevent this from happening, there is a keyword &lt;strong&gt;volatile&lt;/strong&gt;. Instead of reading a value from a cache, a variable with &lt;strong&gt;volatile&lt;/strong&gt; keyword always reads from the main system memory.&lt;/p&gt; &lt;p&gt;Quite the same effect is achieved by using ‘&lt;strong&gt;synchronized&lt;/strong&gt;’ keyword; because caches and memories are synchronized when a thread enters...</description>
+        <pubDate>Wed, 09 Oct 2019 00:45:22 +0900</pubDate>
+        <link>http://localhost:4000/volatile/</link>
+        <guid isPermaLink="true">http://localhost:4000/volatile/</guid>
+        
+        <category>Java</category>
+        
+        <category>java</category>
+      </item>
+    
+      <item>
+        <title>Thread flow and control</title>
+        <description>&lt;h4 id=&quot;thread-flow-and-control&quot;&gt;Thread flow and control&lt;/h4&gt; &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/img/Threadflow.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;sleep(long millis)&lt;/strong&gt; : stops a thread for a given amount of time (static method) &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ThreadSleepMain&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tsleep1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tsleep1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tsleep2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tsleep2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//t1 and t2 are simple threads that prints - and |, respectively&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span...</description>
+        <pubDate>Wed, 09 Oct 2019 00:45:22 +0900</pubDate>
+        <link>http://localhost:4000/Thread-flow-and-control/</link>
+        <guid isPermaLink="true">http://localhost:4000/Thread-flow-and-control/</guid>
+        
+        <category>Java</category>
+        
+        <category>java</category>
+      </item>
+    
+      <item>
+        <title>Thread - Daemon Thread</title>
+        <description>&lt;h4 id=&quot;daemon-thread&quot;&gt;Daemon Thread&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Daemon thread&lt;/strong&gt; is a subsidiary thread that helps other non-daemon threads’ tasks. You can easily think of Java’s garbage collection, WordProcessor’s auto-save, or auto-screen reloading functionalities.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;It terminates when all other non-daemon threads terminate.&lt;/li&gt; &lt;li&gt;It can not prevent the JVM from exiting when all the user threads finish their execution.&lt;/li&gt; &lt;li&gt;If JVM finds running daemon thread, it terminates the thread and after that shutdown itself. JVM does not care whether Daemon thread is running or not.&lt;/li&gt; &lt;li&gt;It is an utmost low priority thread.&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ThreadDaemon&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt;...</description>
+        <pubDate>Wed, 09 Oct 2019 00:45:22 +0900</pubDate>
+        <link>http://localhost:4000/Daemon-Thread/</link>
+        <guid isPermaLink="true">http://localhost:4000/Daemon-Thread/</guid>
+        
+        <category>Java</category>
+        
+        <category>java</category>
+      </item>
+    
+      <item>
+        <title>Thread - Thread Priority</title>
+        <description>&lt;h4 id=&quot;thread-priority&quot;&gt;Thread Priority&lt;/h4&gt; &lt;ul&gt; &lt;li&gt;You can set the priorities of existing threads by using &lt;strong&gt;setPriority&lt;/strong&gt; method. Below is the actual Java code for setPriority method.&lt;/li&gt; &lt;/ul&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;cm&quot;&gt;/** * Changes the priority of this thread. * Otherwise, the priority of this thread is set to the smaller of * the specified &amp;lt;code&amp;gt;newPriority&amp;lt;/code&amp;gt; and the maximum permitted * priority of the thread's thread group. * * @param newPriority priority to set this thread to * @exception IllegalArgumentException If the priority is not in the * range &amp;lt;code&amp;gt;MIN_PRIORITY&amp;lt;/code&amp;gt; to * &amp;lt;code&amp;gt;MAX_PRIORITY&amp;lt;/code&amp;gt;. * @exception SecurityException if the current...</description>
+        <pubDate>Wed, 09 Oct 2019 00:45:22 +0900</pubDate>
+        <link>http://localhost:4000/Thread-Priority/</link>
+        <guid isPermaLink="true">http://localhost:4000/Thread-Priority/</guid>
+        
+        <category>Java</category>
+        
+        <category>java</category>
+      </item>
+    
+      <item>
+        <title>Thread - Definition, run()&amp;start(), main</title>
+        <description>&lt;h2 id=&quot;thread&quot;&gt;Thread&lt;/h2&gt; &lt;blockquote&gt; &lt;h4 id=&quot;definitions--process-and-thread&quot;&gt;Definitions : Process and Thread&lt;/h4&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;strong&gt;Process&lt;/strong&gt; is simply a &lt;strong&gt;‘program in execution’&lt;/strong&gt;. When a program is executed, OS allocates appropriate resources(memory) to the program, making it a process.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Thread&lt;/strong&gt; is an actual executing module functioning within a process.&lt;/p&gt; &lt;p&gt;&lt;em&gt;&lt;strong&gt;Process&lt;/strong&gt; = &lt;strong&gt;Threads&lt;/strong&gt; + Resources (Data + Memory)&lt;/em&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Threads share the same address space and therefore can share both data and code&lt;/li&gt; &lt;li&gt;Context switching between threads is usually less expensive than between processes&lt;/li&gt; &lt;li&gt;Cost of thread intercommunication is relatively low that that of process intercommunication Threads allow different tasks to be performed concurrently.&lt;/li&gt; &lt;/ul&gt; &lt;blockquote&gt; &lt;h4...</description>
+        <pubDate>Sun, 06 Oct 2019 00:45:22 +0900</pubDate>
+        <link>http://localhost:4000/Thread-definition-run-start-main/</link>
+        <guid isPermaLink="true">http://localhost:4000/Thread-definition-run-start-main/</guid>
+        
+        <category>Java</category>
+        
+        <category>java</category>
+      </item>
+    
+      <item>
+        <title>JVM</title>
+        <description>&lt;p&gt;##[[JVM (Java Virtual Machine)]]&lt;/p&gt; &lt;ul&gt; &lt;li&gt;All applications made with Java is run on JVM&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Normal Application : [ Java Application ] + [OS(windows, linux)] + [Computer(Hardware)] Java Application : [ Java Application ] + &lt;strong&gt;[ JVM ]&lt;/strong&gt; + [OS(windows, linux)] + [Computer(Hardware)]&lt;/p&gt; &lt;p&gt;Because Java necessitates JVM,&lt;/p&gt; &lt;ul&gt; &lt;li&gt;write once, run anywhere is possible&lt;/li&gt; &lt;li&gt;it may be slower than non JVM apps. =&amp;gt; JIT compiler&lt;/li&gt; &lt;/ul&gt; &lt;blockquote&gt; &lt;h4 id=&quot;jdk-and-jrejava-runtime-environment&quot;&gt;JDK and JRE(Java Runtime Environment)&lt;/h4&gt; &lt;/blockquote&gt; &lt;blockquote&gt; &lt;p&gt;“JDK” contains&lt;/p&gt; &lt;ul&gt; &lt;li&gt;javac.exe : compiler that compiles Java source code to byte code&lt;/li&gt; &lt;li&gt;java.exe : interpreter that intereprets and executes byte code produced by...</description>
+        <pubDate>Sun, 06 Oct 2019 00:45:22 +0900</pubDate>
+        <link>http://localhost:4000/JVM/</link>
+        <guid isPermaLink="true">http://localhost:4000/JVM/</guid>
+        
+        <category>Java</category>
+        
+        <category>java</category>
+      </item>
+    
+      <item>
+        <title>Birds can fly, but this you knew already</title>
+        <description>&lt;p&gt;Cas sociis natoque penatibus et magnis &lt;a href=&quot;#&quot;&gt;dis parturient montes&lt;/a&gt;, nascetur ridiculus mus. &lt;em&gt;Aenean eu leo quam.&lt;/em&gt; Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;Etiam porta &lt;strong&gt;sem malesuada magna&lt;/strong&gt; mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.&lt;/p&gt; &lt;h2 id=&quot;inline-html-elements&quot;&gt;Inline HTML elements&lt;/h2&gt; &lt;p&gt;HTML defines a long list of available inline tags, a complete list of...</description>
+        <pubDate>Fri, 10 Sep 2010 21:26:40 +0900</pubDate>
+        <link>http://localhost:4000/birds-can-fly-but-this-you-knew-already/</link>
+        <guid isPermaLink="true">http://localhost:4000/birds-can-fly-but-this-you-knew-already/</guid>
+        
+        <category>life</category>
+        
+        <category>tips</category>
+        
+        <category>life</category>
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,108 @@
+[
+  
+  
+    {
+      "title"    : "Object Oriented Programming - 3",
+      "tags"     : "Java",
+      "categories" : "java",
+      "url"      : "/object-oriented-part3-8.49.43-PM/",
+      "date"     : "12/03/2019"
+    } ,
+  
+    {
+      "title"    : "Object Oriented Programming - 2",
+      "tags"     : "Java",
+      "categories" : "java",
+      "url"      : "/object-oriented-part2-8.49.43-PM/",
+      "date"     : "12/03/2019"
+    } ,
+  
+    {
+      "title"    : "Object oriented programming - 1",
+      "tags"     : "Java",
+      "categories" : "java",
+      "url"      : "/object-oriented-part1-8.49.43-PM/",
+      "date"     : "11/27/2019"
+    } ,
+  
+    {
+      "title"    : "Generics and Wildcard expression_2",
+      "tags"     : "Java",
+      "categories" : "java",
+      "url"      : "/Generics2/",
+      "date"     : "11/17/2019"
+    } ,
+  
+    {
+      "title"    : "Generics and Wildcard expression_1",
+      "tags"     : "Java",
+      "categories" : "java",
+      "url"      : "/Generics/",
+      "date"     : "11/12/2019"
+    } ,
+  
+    {
+      "title"    : "fork and join",
+      "tags"     : "Java",
+      "categories" : "java",
+      "url"      : "/fork-and-join/",
+      "date"     : "10/10/2019"
+    } ,
+  
+    {
+      "title"    : "volatile",
+      "tags"     : "Java",
+      "categories" : "java",
+      "url"      : "/volatile/",
+      "date"     : "10/09/2019"
+    } ,
+  
+    {
+      "title"    : "Thread flow and control",
+      "tags"     : "Java",
+      "categories" : "java",
+      "url"      : "/Thread-flow-and-control/",
+      "date"     : "10/09/2019"
+    } ,
+  
+    {
+      "title"    : "Thread - Daemon Thread",
+      "tags"     : "Java",
+      "categories" : "java",
+      "url"      : "/Daemon-Thread/",
+      "date"     : "10/09/2019"
+    } ,
+  
+    {
+      "title"    : "Thread - Thread Priority",
+      "tags"     : "Java",
+      "categories" : "java",
+      "url"      : "/Thread-Priority/",
+      "date"     : "10/09/2019"
+    } ,
+  
+    {
+      "title"    : "Thread - Definition, run()&amp;start(), main",
+      "tags"     : "Java",
+      "categories" : "java",
+      "url"      : "/Thread-definition-run-start-main/",
+      "date"     : "10/06/2019"
+    } ,
+  
+    {
+      "title"    : "JVM",
+      "tags"     : "Java",
+      "categories" : "java",
+      "url"      : "/JVM/",
+      "date"     : "10/06/2019"
+    } ,
+  
+    {
+      "title"    : "Birds can fly, but this you knew already",
+      "tags"     : "life and tips",
+      "categories" : "life",
+      "url"      : "/birds-can-fly-but-this-you-knew-already/",
+      "date"     : "09/10/2010"
+    } 
+  
+]
