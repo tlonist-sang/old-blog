@@ -9,7 +9,8 @@ tags:
   - theme
   - netlify
 email: tlonist.sang@gmail.com
-disqus_username: steadystack
+disqus:
+  shortname: steadystack
 show_hero: true
 
 
