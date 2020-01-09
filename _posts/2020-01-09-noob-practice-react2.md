@@ -74,11 +74,14 @@ class SearchBar extends React.component{
 - (2) What should be done next? of course calling the API with the keyword of user's choice. Wait.. but really?
 
 Assume that the above process takes place like this.
-[![img]({{ "/assets/img/react2-searchbar"|absolute_url}})]({{ "/assets/img/react2-searchbar"|absolute_url}})
+[![img]({{ "/assets/img/react2-searchbar.png"|absolute_url}})]({{ "/assets/img/react2-searchbar.png"|absolute_url}})
 
 The question is, How can I deliver the retrieved data to the sibling component. The diagram from previous post clearly shows that the SearchBar component and ImageList component are independent of each other. Hence they can't be communicated directly using props.
 
 What can be done is that, upon calling the onSubmit event, it can call a method passed down from its parent component, App. How? by passing from App a method that will be called in SearchBar as a prop. All I have left is to make that passed on method (from App to SearchBar) to fire an API call to the API server.
+
+[![img]({{ "/assets/img/react2-suggestion1.png"|absolute_url}})]({{ "/assets/img/react2-suggestion1.png"|absolute_url}})
+
 
 ```javascript
 class App extends React.Component{

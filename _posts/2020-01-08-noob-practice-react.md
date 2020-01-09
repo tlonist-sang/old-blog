@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React.js - simple app practice"
+title:  "React.js - simple app practice (1/4)"
 subtitle: "Image fetching app, part1 - structure"
 description:
 date:   2020-01-08 00:45:22 +0900
