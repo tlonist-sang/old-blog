@@ -28,11 +28,21 @@ Simple as it may sound, this exercise covers following important topics.
 This is a very elementary exercise, and I will cover some other advanced topics (hopefully) as I get better at this.
 ***Entire code can be found from the source [Stephen Grider's React Course - pics](https://github.com/StephenGrider/redux-code/tree/master/pics)***
 
+
+Creating the scaffold of a react application is easy. 
+```javascript
+create-react-app YOUR_REACT_APP_NAME //will just do!
+```
+
 Below is the structure of components that will consist the practice react app.
 [![img]({{ "/assets/img/react-structure.png"|absolute_url}})]({{ "/assets/img/react-structure.png"|absolute_url}})
 
+- APP => The entirity of simple app 
+- SearchBar => input box that takes user input
+- ImageList => div section that encompasses many images 
+- ImageCard => individual images searched with user's input
 
-What is really different about using React.js rather than (jQuery + html) is that it basically uses only **one** page to build the entire frontend. All I basically need is **index.js** into which I put all of my components in and out. If you look into index.js, 
+What is different about using React.js from using jQuery + html is that it basically uses only **one** page to build the entire frontend. All I basically need is **index.js** into which I put all of my components in and out. If you look into index.js, 
 
 ```javascript
 import React from 'react';
