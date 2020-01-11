@@ -5,8 +5,8 @@ subtitle: "Image fetching app, part3 - api"
 description:
 date:   2020-01-11 00:45:22 +0900
 comments: true
-image: /assets/img/mumbai.jpg
-optimized_image: /assets/img/mumbai.jpg
+image: /assets/img/mumbai.jpeg
+optimized_image: /assets/img/mumbai.jpeg
 category: javascript
 tags: JavaScript, React.js
 author: tlonist
