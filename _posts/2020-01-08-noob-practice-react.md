@@ -8,7 +8,7 @@ comments: true
 image: /assets/img/sweden.jpg
 optimized_image: /assets/img/sweden.jpg
 category: javascript
-tags: JavaScript
+tags: JavaScript, React.js
 author: tlonist
 ---
 

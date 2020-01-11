@@ -8,7 +8,7 @@ comments: true
 image: /assets/img/water.jpg
 optimized_image: /assets/img/water.jpg
 category: javascript
-tags: JavaScript
+tags: JavaScript, React.js
 author: tlonist
 ---
 
@@ -127,7 +127,7 @@ class SearchBar extends React.component{
 ```
 
 
-- (3) Let's talk about **state** here. **State** is a plain javascript object that is managed **within** a component to represent changes in the component.
+- (3) Let's talk about **state** here. **State** is a plain javascript object that is managed **within a component** to represent changes in the component.
       <br>
       For the component SearchBar, the information of interest is 'input'. It has to be read, and it has to be delivered.
       onChange() event is called whenever a change is made within the specified html tag. You can retrieve the actual input value with **e.target.value**.
