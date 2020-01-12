@@ -25,12 +25,13 @@
                     <img src="{{ page.image }}" alt="Featured image" class="post-cover">
                 {% endif %}
 
-                {%- if site.disqus.shortname -%} 
-                {%- include disqus_comments.html -%}
-        {%- endif -%} 
+               
                 {% include pagination-post.html progressBar=true %}
 
                 {{ content }}
+                {%- if site.disqus.shortname -%} 
+                {%- include disqus_comments.html -%}
+        {%- endif -%} 
 
                 {% include pagination-post.html %}
                 
