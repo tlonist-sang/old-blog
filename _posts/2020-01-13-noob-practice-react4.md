@@ -128,7 +128,7 @@ class ImageCard extends React.Component{
             width: '250px'
         }
         return(
-            <div style={{gridRowEnd:`span ${this.state.spans}`}}> 
+            <div style={gridRowEnd:`span ${this.state.spans}`}> 
                 <img 
                     ref={this.imageRef}
                     alt={description}
