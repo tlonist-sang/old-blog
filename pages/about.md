@@ -10,9 +10,9 @@ menu: true
 
 # About
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Hi, I'm Sanghyun. I started my career as a web developer who had to do little bit of everything - backend Java, frontend JavaScript, DB, NSIS, Jenkins and so on. I realized with trial and error that having a solid understanding  in concepts on topics like network, design pattern and language itself is important, and started this blogging channel to satiate those needs myself. Please feel free to correct or question anything I post here. I'll be happy to communicate. 
+
+I'm a huge fan of an Argentine writer Jorge Luis Borges, and the name tlonist (mind the absence of umlaut) comes from one of his fiction. :)
+
+Thanks for reading.
+
