@@ -14,8 +14,6 @@ author: tlonist
 
 In this posting, I'd like to know clearly what synchronous and asynchronous coding means.
 
-#### What I know about synchronous and asynchronous codes.
-
 - Synchronous : 
 Suppose you have to watch two movies and write essays on them. If you decide to be honest and not look up for sparknotes or wikipedia, you will have to watch one movie, and write an essay about it. Once you are finished with one, you would have to watch another movie and after done watching you will be able to write another essay. In this case you were doing a **synchonous** job, because you had to wait until the movie is over to write an essay about it. 
 [![img]({{ "/assets/img/sync1.png"|absolute_url}})]({{ "/assets/img/sync1.png"|absolute_url}})
@@ -30,6 +28,7 @@ If the calling function waits for return of called function's job, or cares abou
 
 Then let's go for actual code examples for sync and async models. In fact, this is already covered in the postings related to threads in my blog. First off, synchronous model in Java.
 
+###Java
 ```java
 public class Test {
     public static void main(String[] args) {
@@ -104,6 +103,7 @@ Of course, these multiple threads can be made run synchronously.
 
 Even more, a single thread in Java can be made synchronously and asynchronously as well. But I think **JavaScript**, which is natively single-thread, can explain better. So here it goes.
 
+###JavaScript
 Unlike Java, JavaScript uses only single thread. Synchronous model is exactly the same with that of Java.
 ```javascript
 const printA = ()=>{
