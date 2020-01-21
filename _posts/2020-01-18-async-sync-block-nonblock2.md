@@ -83,7 +83,7 @@ While it is clearly an easy way to program, there are some noticeable disadvanta
 
 So we have an async model this time. It is a little more complicated implementation. Let us bear in mind that the non-blocking means **the called function returning right away so that the calling function can do other work**.
 
-[![img]({{ "/assets/img/blocking4.png"|absolute_url}})]({{ "/assets/img/blocking4.png"|absolute_url}})
+[![img]({{ "/assets/img/block4.png"|absolute_url}})]({{ "/assets/img/block4.png"|absolute_url}})
 
 In non-blocking I/O model of Java, there is a special thread called **selector**, that governs all of the incoming and outgoing communications of multiple clients. How is this possible?
 
