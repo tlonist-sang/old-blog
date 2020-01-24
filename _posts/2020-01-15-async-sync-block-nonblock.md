@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "sync-async, blocking-nonblocking, with examples"
+title:  "synchronous VS asynchronous, blocking VS non-blocking, explained (1/2)"
 subtitle: "sync-async(1/2)"
 description:
 date:   2020-01-15 00:45:22 +0900
@@ -12,13 +12,17 @@ tags: Java, JavaScript
 author: tlonist
 ---
 
-In this posting, I'd like to know clearly what synchronous and asynchronous coding means.
+The goal of this post is to answer some ambush questions by friends of mine or a novice programmer asking 'Yo, so what's the difference between synchronous and asynchronous models? what about blocking and non-blocking?' I am VERY TIRED of not being able to answer clearly at the spot. So here it goes!
 
 - Synchronous : 
+---------------
+
 Suppose you have to watch two movies and write essays on them. If you decide to be honest and not look up for sparknotes or wikipedia, you will have to watch one movie, and write an essay about it. Once you are finished with one, you would have to watch another movie and after done watching you will be able to write another essay. In this case you were doing a **synchonous** job, because you had to wait until the movie is over to write an essay about it. 
 [![img]({{ "/assets/img/sync1.png"|absolute_url}})]({{ "/assets/img/sync1.png"|absolute_url}})
 
 - Asynchronous : 
+----------------
+
 In the middle of watching the movie, you realized that you forgot to feed your dog. So you fill his bowl with pet cereals, and while he is eating you go back to continue watch the movie. In this situation, you were doing two jobs - watching a movie and feeding your dog - **asynchronously**.
 [![img]({{ "/assets/img/sync2.png"|absolute_url}})]({{ "/assets/img/sync2.png"|absolute_url}})
 
@@ -28,7 +32,7 @@ If the calling function waits for return of called function's job, or cares abou
 
 Then let's go for actual code examples for sync and async models. In fact, this is already covered in the postings related to threads in my blog. First off, synchronous model in Java.
 
-###Java
+### Java
 ```java
 public class Test {
     public static void main(String[] args) {
@@ -103,7 +107,7 @@ Of course, these multiple threads can be made run synchronously.
 
 Even more, a single thread in Java can be made synchronously and asynchronously as well. But I think **JavaScript**, which is natively single-thread, can explain better. So here it goes.
 
-###JavaScript
+### JavaScript
 Unlike Java, JavaScript uses only single thread. Synchronous model is exactly the same with that of Java.
 ```javascript
 const printA = ()=>{
@@ -160,7 +164,7 @@ In the following posting, I will cover blocking and non-blocking natures in prog
 
 
 references
-[https://medium.com/swift-india/concurrency-parallelism-threads-processes-async-and-sync-related-39fd951bc61d](https://medium.com/swift-india/concurrency-parallelism-threads-processes-async-and-sync-related-39fd951bc61d)
-[https://www.geeksforgeeks.org/asynchronous-synchronous-callbacks-java/](https://www.geeksforgeeks.org/asynchronous-synchronous-callbacks-java/)
-[https://homoefficio.github.io/2017/02/19/Blocking-NonBlocking-Synchronous-Asynchronous/#about](https://homoefficio.github.io/2017/02/19/Blocking-NonBlocking-Synchronous-Asynchronous/#about)
-[https://djkeh.github.io/articles/Boost-application-performance-using-asynchronous-IO-kor/](https://djkeh.github.io/articles/Boost-application-performance-using-asynchronous-IO-kor/)
+- [https://medium.com/swift-india/concurrency-parallelism-threads-processes-async-and-sync-related-39fd951bc61d](https://medium.com/swift-india/concurrency-parallelism-threads-processes-async-and-sync-related-39fd951bc61d)
+- [https://www.geeksforgeeks.org/asynchronous-synchronous-callbacks-java/](https://www.geeksforgeeks.org/asynchronous-synchronous-callbacks-java/)
+- [https://homoefficio.github.io/2017/02/19/Blocking-NonBlocking-Synchronous-Asynchronous/#about](https://homoefficio.github.io/2017/02/19/Blocking-NonBlocking-Synchronous-Asynchronous/#about)
+- [https://djkeh.github.io/articles/Boost-application-performance-using-asynchronous-IO-kor/](https://djkeh.github.io/articles/Boost-application-performance-using-asynchronous-IO-kor/)
