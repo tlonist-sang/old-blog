@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "synchronous VS asynchronous, blocking VS non-blocking, explained (2/2)"
-subtitle: "blocking and non-blocking(2/2)"
+title:  "Blocking VS Non-blocking (2/2)"
+subtitle: "Is sync == blocking and async == non-blocking ? (2/2)"
 description:
 date:   2020-01-21 00:45:22 +0900
 comments: true
