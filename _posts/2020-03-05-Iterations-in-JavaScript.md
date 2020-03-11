@@ -7,8 +7,8 @@ date:   2020-03-05 00:45:22 +0900
 comments: true
 image: /assets/img/nz.jpeg
 optimized_image: /assets/img/nz.jpeg
-category: JavaScript
-tags: JavaScript
+category: javascript
+tags: javascript
 author: tlonist
 ---
 
@@ -17,9 +17,9 @@ JavaScript is Very very fun actually! Look below :D
 [![img]({{ "/assets/img/thx_js.jpeg"|absolute_url}})]({{ "/assets/img/thx_js.jpeg"|absolute_url}})
 
 
-(1) Removing an element from an array
-(2) Adding an element to an array
-(3) Replacing an element in an array
+(1) Removing an element from an array <br>
+(2) Adding an element to an array <br>
+(3) Replacing an element in an array <br>
 
 ```javascript
     let arr = ['java', 'python', 'ruby'];
@@ -38,9 +38,9 @@ JavaScript is Very very fun actually! Look below :D
 ["javascript", "python", "ruby"]
 ```
 
-(4) Removing an entry in an object
-(5) Adding an entry to an object
-(6) Updating an entry in an object
+(4) Removing an entry in an object <br>
+(5) Adding an entry to an object <br>
+(6) Updating an entry in an object <br>
 ```javascript
 let state = {name:'harry', max_pullups:'21'}
 let removing_value = {...state, name: undefined} 
@@ -60,9 +60,9 @@ console.log(updating_entry);
 {name: "harry", max_pullups: "21", age: "99"}
 ```
 
-(7) Iterating keys in object
-(8) Iterating values in object
-(8) Iterating entries in object
+(7) Iterating keys in object <br>
+(8) Iterating values in object <br>
+(8) Iterating entries in object <br>
 ```javascript
 let state = {'name':'alex Delarge', age:22, createdby:'anthony burgess'}
 
