@@ -4,8 +4,8 @@ layout: post
 title:  "Variables and Arrays"
 subtitle: Review
 description: a short review
-image: /assets/img/advanced.jpg
-optimized_image: /assets/img/array.jpg
+image: /assets/img/array.jpeg
+optimized_image: /assets/img/array.jpeg
 category: java
 tags: Java
 author: tlonist
@@ -19,6 +19,7 @@ Primitive Types : Saves data literal. (boolean, byte, short, int, long, float, d
 Reference Types : Saves address of the data. (String, etc...)
 
 Ranges of various variable types
+
 |       | byte         | short          | int        | long         |
 |-------|--------------|----------------|------------|--------------|
 | size  | 1 byte       | 2 bytes        | 4 bytes    | 8 bytes      |
