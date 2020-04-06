@@ -61,8 +61,9 @@ these methods for better performance.
 #### 2. Making serializable classes
 
 - Making a class serializable can be done by implemening **serializable** interface to the original class. 
+
 ```java
-/**
+/*
  * Serializability of a class is enabled by the class implementing the
  * java.io.Serializable interface. Classes that do not implement this
  * interface will not have any of their state serialized or
@@ -78,7 +79,7 @@ these methods for better performance.
  * initialize the class's state.  It is an error to declare a class
  * Serializable if this is not the case.  The error will be detected at
  * runtime. <p>
-**/
+*/
 public class UserInfo implements Serializable {
 }
 ```
