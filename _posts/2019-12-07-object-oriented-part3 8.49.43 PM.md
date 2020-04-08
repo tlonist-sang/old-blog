@@ -46,13 +46,42 @@ public class BabyDragon extends Unit{
 
 One may ask, why do I need to add 'abstract' modifier to the attack method? just leaving it without abstract would also work, because child class can override it anytime suitable. We use **abstract** to **force** child classes to implement the abstract method, so that every child class has its own implementation of the method. Let's look into more details.
 
+```java
+public class Babarian extends Unit{
+    void attck(){
+        // barbarian attacking motion
+    }
+}
+
+public class Prince extends Unit{
+    void attack(){
+        // prince attacking motion
+    }
+}
+
+public static void main(String[] args){
+    Unit[] army = new Unit[];
+    army[0] = new Barbarian();
+    army[1] = new Prince();
+
+    for(Unit unit : army){
+        unit.attck(); // each unit attacks with its own motion.
+    }
+}
+```
+<img src="https://media1.tenor.com/images/6449750a47d565b5d38ef7762becaa29/tenor.gif?itemid=7313243" width="400" height="500" />
+![](https://tenor.com/view/clash-royal-attack-video-game-gif-7313243)
+- From the code above, only units, the reference variables of parent class, attack. But the way of attacking will be implemeneted differently according to which object the reference variable refers to. Hence the motion of units will vary, as can be noted from the gif above.
+
+
 #### 3-2. Interface
 
 If abstract class is an unfinished blueprint, interface is a basic blueprint. It can only have abstract methods and constants as its members. 
 Because it has only abstract methods and constants as its members, it is possible that a child class(interface) **inherits from multiple parents(interface)**.
 <br>
 One feature of hog rider unit is that it can jump rivers.
-[![img]({{ "/assets/img/oop3-1.png"|absolute_url}})]({{ "/assets/img/oop3-1.png"|absolute_url}})
+<!-- [![img]({{ "/assets/img/oop3-1.png"|absolute_url}})]({{ "/assets/img/oop3-1.png"|absolute_url}}) -->
+[![img]({{ "/assets/img/hog-jump.gif"|absolute_url}})]({{ "/assets/img/hog-jump.gif"|absolute_url}})
 
 and for explanation's sake let's say hog rider also shouts. (which is true)
 

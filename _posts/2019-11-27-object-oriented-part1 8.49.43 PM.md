@@ -56,7 +56,7 @@ a = new Fruit();  //After making a fruit instance, the address of fruit instance
 ```java
 Fruit[] fArr = new Fruit[3]; // Fruit type reference array with length 3
 ```
-Remember, the instantiation did not take place yet. You may want to do something like below.
+Remember, the instantiation did not take place yet. You may want to do something like below for actual creation of objects.
 
 ```java
 for(int i=0 ; i<3; i++){
@@ -158,6 +158,23 @@ Class Test{
     ```
     As can be noted, class initializing block is executed only once when a class is first loaded to the memory; instance initializing block is executed every time when an instance is instantiated. 
     It is also noteworthy that **initializing blocks always precede constructors**.
+
+    ```java 
+    class Test {
+        int id;
+        int element;
+        {
+            id = 1;
+            element = 2;
+        }
+        public Test(){
+            id = 98;
+            element = 99;
+        }
+    }
+    ```
+    For situation above, creating Test test = new Test(); will render test.id to be 98 and element to be 99.
+
     <br>
 
     In the following postings, I'll cover the real OOP topics.
