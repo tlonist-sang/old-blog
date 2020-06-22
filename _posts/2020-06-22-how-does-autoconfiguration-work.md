@@ -6,8 +6,8 @@ description:
 date:   2020-06-22 00:00:00 +0900
 tags: Springboot
 comments: True
-image: /assets/img/adapter.jpeg
-optimized_image: /assets/img/adapter.jpeg
+image: /assets/img/spring.jpeg
+optimized_image: /assets/img/spring.jpeg
 author: tlonist
 category: Spring
 ---
@@ -46,7 +46,7 @@ The example is the H2ConsoleAutoConfiguration class that makes use of many @Cond
 [![img]({{ "/assets/img/factory.png"|absolute_url}})]({{ "/assets/img/factory.png"|absolute_url}})
 
 - Looking into the Spring-AutoConfigure library, inside spring.factories you can find lots of autoconfiguring classes like below.
-[![img]({{ "/assets/img/autoconfigure1.png"|absolute_url}})]({{ "/assets/img/autoconfigure1.png"|absolute_url}})
+[![img]({{ "/assets/img/autoconfig1.png"|absolute_url}})]({{ "/assets/img/autoconfig1.png"|absolute_url}})
 
 All these classes will be tested on conditions for bean instantiating. This autoconfiguring process is activated upon **@EnableAutoConfiguration** annotataion included with **@SpringbootApplication**. This autoconfiguration has some degrees of freedom. For example, you can
 - exclude some classes from autoconfiguration process using **exclude**, like @EnableAutoConfiguration(exclude{BatchAutoConfiguration.class})
