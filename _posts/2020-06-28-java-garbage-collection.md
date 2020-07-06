@@ -121,8 +121,7 @@ There are several things to consider when using this GC.
 #### instructions
 [https://docs.oracle.com/javase/9/gctuning/toc.htm](https://docs.oracle.com/javase/9/gctuning/toc.htm)
 
-[https://johngrib.github.io/wiki/java-gc-tuning/#survivor%EB%8A%94-%EC%99%9C-%EB%91%90-%EA%B0%9C%EC%9D%B8%EA%B0%80]
-(https://johngrib.github.io/wiki/java-gc-tuning/#survivor%EB%8A%94-%EC%99%9C-%EB%91%90-%EA%B0%9C%EC%9D%B8%EA%B0%80)
+[johngrib-blog](https://johngrib.github.io/wiki/java-gc-tuning/#survivor%EB%8A%94-%EC%99%9C-%EB%91%90-%EA%B0%9C%EC%9D%B8%EA%B0%80)
 
 - Following is a helpful guide on how one should tune the GC for applications.
 
