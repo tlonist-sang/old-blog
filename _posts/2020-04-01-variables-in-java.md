@@ -88,4 +88,5 @@ public static void main(String[] args){
 - Diagram explanation below.
 [![img]({{ "/assets/img/multiarr.png"|absolute_url}})]({{ "/assets/img/multiarr.png"|absolute_url}})
 
+Read more - [Statics Variables in Java - Scaler Topic](https://www.scaler.com/topics/static-variable-in-java/)
 
